@@ -159,7 +159,7 @@
     <section class="section">
       <h2>The rates</h2>
       <div class="table-scroll">
-      <table class="table num-3"><thead><tr><th>Tax</th><th>Employee</th><th>Employer</th><th>Limit</th></tr></thead><tbody><tr><td>Social Security</td><td>6.2%</td><td>6.2%</td><td>Wage base $184,500 (2027)</td></tr><tr><td>Medicare</td><td>1.45%</td><td>1.45%</td><td>No limit</td></tr><tr><td>Additional Medicare</td><td>0.9%</td><td>None</td><td>Wages over $200,000</td></tr></tbody></table>
+      <table class="table num-3"><thead><tr><th>Tax</th><th>Employee</th><th>Employer</th><th>Limit</th></tr></thead><tbody><tr><td>Social Security</td><td>6.2%</td><td>6.2%</td><td>Wage base $192,300 (2027)</td></tr><tr><td>Medicare</td><td>1.45%</td><td>1.45%</td><td>No limit</td></tr><tr><td>Additional Medicare</td><td>0.9%</td><td>None</td><td>Wages over $200,000</td></tr></tbody></table>
       </div>
       <figure style="margin:18px 0">
         <img src="/blog/images/fica-rate-split.png" width="1200" height="720" alt="Bar chart of employee FICA: Social Security at 6.2 percent plus Medicare at 1.45 percent, totaling 7.65 percent of wages." style="max-width:100%;height:auto;border-radius:12px;border:1px solid #d5deea;background:#fff" />
@@ -205,6 +205,86 @@
       <p>Nebraska income tax is calculated separately and is not applied on top of FICA amounts.</p></details>
       <details><summary>Do tips count for FICA?</summary><p>Yes. Reported tips are subject to Social Security and Medicare, and your employer withholds FICA on them from your regular wages.</p></details>
       <details><summary>Will FICA rates change?</summary><p>The 6.2% and 1.45% rates have been stable for decades. The Social Security wage base rises most years with average wages, so check the new figure each January.</p></details>
+    </section>
+
+    <section class="section">
+      <h2>The 2027 wage base</h2>
+      <p>Social Security tax in 2027 is 6.2% of wages up to $192,300. That cap was $184,500 in 2026. Hit the cap and the employee's Social Security tax for the year is $11,922.60. The employer pays the same $11,922.60. Medicare does not stop.</p>
+      <p>The rate pair has been 6.2% and 1.45% for a long time. What moves every year is the cap. A paycheck article that still says $184,500 for a 2027 check is using last year's ceiling. This calculator uses $192,300 when the pay date is in 2027 and $184,500 when it is in 2026.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th></th><th>2026</th><th>2027</th></tr></thead>
+        <tbody>
+          <tr><td>Social Security wage base</td><td>$184,500</td><td>$192,300</td></tr>
+          <tr><td>Employee Social Security at the cap</td><td>$11,439.00</td><td>$11,922.60</td></tr>
+          <tr><td>Employee rate below the cap</td><td>6.2%</td><td>6.2%</td></tr>
+          <tr><td>Medicare rate</td><td>1.45%</td><td>1.45%</td></tr>
+          <tr><td>Additional Medicare</td><td>0.9% over $200,000</td><td>0.9% over $200,000</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>$184,500 times 6.2% is $11,439. The 2027 figure is $192,300 times 6.2%. Both are the employee half only.</p>
+    </section>
+
+    <section class="section">
+      <h2>FICA next to Nebraska tax</h2>
+      <p>On a middle income, FICA is often the larger of the two. The $60,000 example this site uses — single, one allowance, biweekly, no pre-tax deductions, 2027 pay date — withholds $176.54 of FICA and $73.80 of Nebraska tax. FICA is more than double the state line. Across the year that FICA is about $4,590, which is 7.65% of $60,000. The state line for the year is $1,918.80, or 3.20% of gross.</p>
+      <p>The pattern holds further up the wage scale until the Social Security cap. It does not mean Nebraska tax is trivial. It means a conversation about "Nebraska taxes on my check" that ignores 7.65% is missing the bigger withholding. Federal income tax is frequently bigger than both. On that same check it is $193.08.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>2027 biweekly gross, single, one allowance</th><th>FICA</th><th>Nebraska</th></tr></thead>
+        <tbody>
+          <tr><td>$15.26 an hour, 40-hour weeks ($1,220.80)</td><td>$93.39</td><td>$31.80</td></tr>
+          <tr><td>$20 an hour, 40-hour weeks ($1,600)</td><td>$122.40</td><td>$46.09</td></tr>
+          <tr><td>$60,000 salary ($2,307.69)</td><td>$176.54</td><td>$73.80</td></tr>
+          <tr><td>$90,000 salary ($3,461.54)</td><td>$264.81</td><td>$119.52</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Every FICA figure in that table is 7.65% of gross, within a cent. None of these wages is over the Social Security cap, and none has a pre-tax benefit reducing FICA wages. Add a health premium and both columns can fall. Add a traditional 401(k) and only the Nebraska column falls.</p>
+    </section>
+
+    <section class="section">
+      <h2>Which deductions actually cut FICA</h2>
+      <p>Section 125 benefits reduce FICA wages. That is the medical, dental, and vision premium run through the cafeteria plan, a health FSA, and an HSA contribution taken out of payroll. The calculator's "pre-tax benefits" field is this pile. Enter a yearly amount. Social Security and Medicare both drop.</p>
+      <p>A traditional 401(k) or 403(b) does not. The deferral is out of the wage for federal income tax and for Nebraska income tax, and it is still in the wage for FICA. The tool's retirement field behaves that way: income tax goes down, the 7.65% does not. A Roth deferral reduces neither income tax nor FICA. It only reduces the deposit.</p>
+      <p>People move dollars into a 401(k) and expect the Social Security line to shrink. It will not. The Medicare line will not either. If you want a smaller FICA line, the lever is the Section 125 benefit, not the retirement plan. Whether you should contribute to the retirement plan is a different question. The tax line that improves is the income-tax line.</p>
+    </section>
+
+    <section class="section">
+      <h2>Crossing $192,300, and crossing it twice</h2>
+      <p>The 6.2% stops for the rest of the year once that employer's wages for you pass $192,300. Later checks in the same year get larger by 6.2% of the wages over the cap. Medicare at 1.45% continues on every dollar. If you change jobs in July, the new employer does not know what the old one already withheld. The new employer starts the 6.2% again. You can pay over $11,922.60. The excess comes back as a credit on the federal return, not as a refund from Nebraska and not as a smaller Nebraska bracket.</p>
+      <p>Additional Medicare is the other cliff, and it is not the same cliff. Employers withhold an extra 0.9% once wages they pay you go past $200,000, and they do it without asking your filing status. On the return, the 0.9% applies over $200,000 of earned income for single filers and over $250,000 for married people filing jointly. A two-earner couple can owe the 0.9% at filing even though neither employer withheld it, because neither job crossed $200,000. Form 8959 is where that gets reconciled. This calculator applies the extra 0.9% only when the annualized wage from the job you enter is over $200,000. It cannot see a spouse's W-2.</p>
+    </section>
+
+    <section class="section">
+      <h2>Tips, overtime, and a bonus</h2>
+      <p>Reported tips are FICA wages. The employer withholds the employee share from your regular cash wages when the tips themselves are not in the paycheck. If cash wages are too small to cover the FICA on the tips, the unpaid employee tax is still yours and shows up at filing. Overtime dollars are wages too. Time-and-a-half is not exempt from Social Security.</p>
+      <p>A bonus is the same. Whether it is paid inside the regular check or as a separate payment, it is FICA wages until you are over the cap. Nebraska may withhold income tax on a separate bonus at a flat 3.5%. That 3.5% is income-tax withholding. It is not a FICA rate, and it does not replace 7.65%.</p>
+    </section>
+
+    <section class="section">
+      <h2>Self-employed, briefly</h2>
+      <p>Someone with net self-employment income pays both halves, 12.4% for Social Security up to the wage base and 2.9% for Medicare, which is the 15.3% people quote, and can deduct half of that tax in figuring income tax. Wages and self-employment earnings share the Social Security cap. A W-2 job that already used part of the $192,300 leaves less room on the self-employment side. None of that is withheld by an employer, so it is not a line on the paycheck this site calculates. Estimated payments are the mechanism. The employer-match view of the same 15.3%, for a regular job, is on the <a href="/blog/nebraska-payroll-taxes">payroll tax page</a>.</p>
+    </section>
+
+    <section class="section">
+      <h2>What FICA is not</h2>
+      <p>It is not Nebraska tax, and Nebraska does not tax the FICA dollars as if they were a second wage. It is not refunded in April just because you had too much income tax withheld. The exceptions are narrow: excess Social Security when two employers both withheld up to the cap, and a few categories of workers who were exempt and had tax taken anyway. A normal over-withholding of federal or Nebraska income tax does not drag a FICA refund with it.</p>
+      <p>The rates are a poor place to look for a raise. The cap is where the year-to-year change actually sits. In 2027 that cap is $192,300. See the whole check, FICA included, on the <a href="/">paycheck calculator</a>. See where the line sits among the other deductions on the <a href="/blog/nebraska-take-home-pay">take-home guide</a>.</p>
+    </section>
+
+    <section class="section">
+      <h2>Check the percentage before you check the story</h2>
+      <p>On a normal week under the wage base, with no pre-tax benefits, Social Security plus Medicare equals 7.65% of gross. A $610.40 week at $15.26 an hour is $46.70 of FICA, 7.65% of that gross, and the hourly calculator shows the same $46.70. A $2,000 biweekly gross is $124.00 of Social Security and $29.00 of Medicare, $153.00 together. If your stub's FICA is far from 7.65% of the FICA wage, either a Section 125 benefit reduced the wage, you are over the Social Security cap, or the wage on the stub is not the wage you divided.</p>
+      <p>The boxes are often labeled OASDI and MED, or SS and HI. Add them. Do not add the federal income-tax box into that test. Federal income tax is not 7.65% of anything in particular. It moves when the W-4 moves. FICA does not.</p>
+    </section>
+
+    <section class="section">
+      <h2>Year-to-date is the cap, not this check</h2>
+      <p>The $192,300 limit is a year-to-date wage, not a per-check wage. A biweekly gross of $4,000 is nowhere near the cap by itself and is still fully taxed at 6.2%. The 6.2% drops off only after the wages already paid this year, plus this check, cross $192,300. The check that straddles the line is split: 6.2% on the portion under the cap, nothing for Social Security on the rest, Medicare on all of it.</p>
+      <p>Look at the year-to-date Social Security wages on the stub, not at the current gross, if a fall paycheck suddenly got larger. $192,300 minus that year-to-date figure is what is left for the 6.2%. In 2026 the same exercise used $184,500. A stub from last year cannot be the template for a 2027 cap check.</p>
+      <p>Additional Medicare is a second year-to-date test. Employers add 0.9% once the wages they pay you go past $200,000. Crossing the Social Security cap makes the check bigger. Crossing $200,000 makes it a little smaller. A worker can hit the first and never hit the second. The cap sits $7,700 below that $200,000 line, and wages in the gap are Medicare at 1.45% with no Social Security and no extra 0.9%.</p>
     </section>
 
     <aside class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/">check FICA on your own paycheck</a> — Nebraska paycheck calculator</li><li><a href="/blog/nebraska-payroll-taxes">Nebraska payroll taxes: employer vs. employee</a> — the employer match and unemployment tax</li><li><a href="/blog/nebraska-take-home-pay">gross-to-net pay breakdown</a> — where FICA fits</li><li><a href="/blog/">more Nebraska pay guides</a></li></ul></aside>
