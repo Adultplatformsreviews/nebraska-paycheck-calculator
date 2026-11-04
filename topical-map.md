@@ -28,7 +28,7 @@
 | brackets | tax, state-tax-rate, w4n, hub |
 | state-tax-rate | tax, brackets, w4n, hub |
 | w4n | tax, brackets, state-tax-rate, hub |
-| min-wage | hourly ("calculate take-home at $15 an hour"), take-home, omaha-lincoln, hub |
+| min-wage | hourly ("calculate take-home at $15.26 an hour"), take-home, omaha-lincoln, hub |
 | take-home | index ("Nebraska take-home pay calculator"), fica, min-wage, hub |
 | payroll | index, fica, w4n, hub |
 | fica | index, payroll, take-home, hub |
@@ -50,7 +50,7 @@ Note: the canonical URLs use the placeholder https://nebraskapaycheckcalculator.
 | `/blog/` blog/index.html | nebraska pay & tax guides (hub) | all posts, /, /hourly, /tax | Hub |
 | `/blog/nebraska-income-tax-brackets.html` | nebraska income tax brackets | /tax.html, / | Rates by bracket |
 | `/blog/nebraska-state-tax-rate.html` | nebraska state tax rate | /tax.html, / | Quick rate answer |
-| `/blog/nebraska-minimum-wage.html` | nebraska minimum wage 2027 | /hourly.html, / | $15 wage facts |
+| `/blog/nebraska-minimum-wage.html` | nebraska minimum wage 2027 | /hourly.html, / | $15.26 wage facts |
 | `/blog/nebraska-take-home-pay.html` | nebraska take home pay (explainer) | /, /hourly.html | Gross vs net concepts |
 | `/blog/omaha-lincoln-paycheck.html` | omaha paycheck (city cost context), lincoln | /, /hourly, /tax | City guide, not a calculator |
 | `/blog/nebraska-payroll-taxes.html` | nebraska payroll taxes | /, /tax.html | Employer vs employee |
