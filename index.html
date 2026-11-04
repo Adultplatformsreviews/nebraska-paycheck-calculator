@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nebraska Paycheck Calculator 2026 – Take-Home Pay After Tax</title>
+  <meta name="description" content="Free Nebraska paycheck calculator for 2026: estimate take-home pay after federal, FICA, and NE state tax for salary or hourly pay. Get your net pay now." />
+  <link rel="canonical" href="https://nebraskapaycheckcalculator.com/" />
+  <meta name="robots" content="index,follow" />
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --ink: #122033;
+      --muted: #5b6b7c;
+      --line: #d5deea;
+      --card: #fff;
+      --blue: #1a5fb4;
+      --blue-dark: #134a8c;
+      --soft: #e8f0fb;
+      --red: #b42318;
+      --shadow: 0 8px 24px rgba(18,32,51,.06);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .note-bar { background: #0f2a4a; color: #dcebff; text-align: center; font-size: 13px; padding: 9px 12px; }
+    .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+    header h1 { margin: 0 0 8px; font-size: clamp(1.85rem, 4vw, 2.55rem); letter-spacing: -.02em; line-height: 1.15; }
+    header p { margin: 0 0 22px; color: var(--muted); max-width: 62ch; }
+    .calc { display: grid; grid-template-columns: 1.05fr .95fr; gap: 16px; margin-bottom: 34px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 20px; }
+    .card h2 { margin: 0 0 14px; font-size: 1.15rem; }
+    label { display: block; font-size: 13px; font-weight: 700; margin: 0 0 6px; }
+    .hint { font-weight: 500; color: var(--muted); font-size: 12px; }
+    .field, select { width: 100%; border: 1px solid #c7d3e0; border-radius: 10px; padding: 11px 12px; font: inherit; margin-bottom: 12px; background: #fff; }
+    .seg { display: flex; gap: 8px; margin-bottom: 12px; }
+    .seg button { flex: 1; border: 1px solid #c7d3e0; background: #fff; border-radius: 999px; padding: 9px 10px; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .seg button.active { background: var(--soft); color: var(--blue-dark); border-color: #9bb8e0; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn { width: 100%; border: 0; border-radius: 10px; padding: 12px 14px; background: var(--blue); color: #fff; font-weight: 800; cursor: pointer; }
+    .btn:hover { background: var(--blue-dark); }
+    .net { background: var(--soft); border: 1px solid #b7cceb; border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+    .net .k { font-size: 13px; font-weight: 700; color: var(--blue-dark); }
+    .net .v { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin-top: 2px; }
+    .net .s { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .line { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #edf1f6; font-size: 14px; }
+    .line:last-child { border-bottom: 0; font-weight: 800; }
+    .neg { color: var(--red); font-weight: 700; }
+    .zero { color: var(--blue-dark); font-weight: 700; }
+    .tiny { margin-top: 10px; font-size: 12px; color: var(--muted); }
+    .section { margin-top: 28px; }
+    .section h2 { margin: 0 0 10px; font-size: 1.45rem; }
+    .section p, .section li { color: var(--muted); }
+    .steps { display: grid; gap: 10px; }
+    .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; grid-template-columns: 42px 1fr; gap: 10px; align-items: start; }
+    .step b { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--soft); color: var(--blue-dark); }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tile { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+    .tile strong { display: block; margin-bottom: 4px; }
+    .tile span { color: var(--muted); font-size: 13px; }
+    .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq p { margin: 8px 0 0; }
+    footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
+      .table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+    .table th,.table td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--line)}
+    .table th:first-child,.table td:first-child{text-align:left}
+    .table tr:nth-child(even) td{background:#f7f9fb}
+    .section h3{margin:16px 0 6px;font-size:1.1rem}
+    .links a{margin-right:14px}
+
+    .site-nav{display:flex;gap:18px;flex-wrap:wrap;padding:12px 0;margin-bottom:14px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+    .site-nav a[aria-current]{color:var(--ink)}
+    .related{margin-top:30px;background:var(--soft);border:1px solid #b7cceb;border-radius:14px;padding:16px 18px}
+    .related h2{margin:0 0 8px;font-size:1.15rem}.related ul{margin:0;padding-left:18px}.related li{color:var(--muted);margin:4px 0}
+    footer nav{margin-top:8px}
+    .site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:14px 0;margin-bottom:10px;border-bottom:1px solid var(--line)}
+    .site-header .brand{font-weight:800;font-size:17px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+    .site-header .brand span{color:var(--blue)}
+    .site-header .site-nav{border:0;margin:0;padding:0}
+    .site-nav a{text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
+    .site-nav a[aria-current]{border-bottom-color:var(--blue)}
+    .breadcrumbs{font-size:13px;color:var(--muted);margin:0 0 16px}
+    .breadcrumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+    .breadcrumbs li+li::before{content:"\203A";margin-right:6px;color:var(--muted)}
+    .breadcrumbs a{color:var(--blue);text-decoration:none}
+    .site-footer{text-align:left;margin-top:40px;padding:24px 0 12px}
+    .site-footer .footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:18px}
+    .site-footer h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:0 0 8px}
+    .site-footer ul{list-style:none;margin:0;padding:0}
+    .site-footer li{margin:4px 0}
+    .site-footer a{color:var(--blue);text-decoration:none}
+    .site-footer .disclaimer{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
+    .site-footer .copy{margin:6px 0 0;font-size:12px}
+  </style>
+
+  <!-- seo-meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Nebraska Paycheck Calculator" />
+  <meta property="og:title" content="Nebraska Paycheck Calculator 2026 – Take-Home Pay After Tax" />
+  <meta property="og:description" content="Free Nebraska paycheck calculator for 2026: estimate take-home pay after federal, FICA, and NE state tax for salary or hourly pay. Get your net pay now." />
+  <meta property="og:url" content="https://nebraskapaycheckcalculator.com/" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Nebraska Paycheck Calculator 2026 – Take-Home Pay After Tax" />
+  <meta name="twitter:description" content="Free Nebraska paycheck calculator for 2026: estimate take-home pay after federal, FICA, and NE state tax for salary or hourly pay. Get your net pay now." />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://nebraskapaycheckcalculator.com/#org", "name": "Nebraska Paycheck Calculator", "url": "https://nebraskapaycheckcalculator.com/"}, {"@type": "WebSite", "@id": "https://nebraskapaycheckcalculator.com/#website", "name": "Nebraska Paycheck Calculator", "url": "https://nebraskapaycheckcalculator.com/", "inLanguage": "en-US", "publisher": {"@id": "https://nebraskapaycheckcalculator.com/#org"}}, {"@type": "WebApplication", "name": "Nebraska Paycheck Calculator 2026: Take-Home Pay After Taxes", "url": "https://nebraskapaycheckcalculator.com/", "applicationCategory": "FinanceApplication", "operatingSystem": "Any (web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Free Nebraska paycheck calculator for 2026: estimate take-home pay after federal, FICA, and NE state tax for salary or hourly pay. Get your net pay now.", "publisher": {"@id": "https://nebraskapaycheckcalculator.com/#org"}}, {"@type": "WebPage", "@id": "https://nebraskapaycheckcalculator.com/#webpage", "url": "https://nebraskapaycheckcalculator.com/", "name": "Nebraska Paycheck Calculator 2026 – Take-Home Pay After Tax", "description": "Free Nebraska paycheck calculator for 2026: estimate take-home pay after federal, FICA, and NE state tax for salary or hourly pay. Get your net pay now.", "isPartOf": {"@id": "https://nebraskapaycheckcalculator.com/#website"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".faq summary + p", "details p"]}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I estimate taxes out of my paycheck in Nebraska?", "acceptedAnswer": {"@type": "Answer", "text": "Take gross pay, subtract pre-tax deductions, then withhold federal income tax, Social Security (6.2%), Medicare (1.45%), and Nebraska income tax based on your W-4N. The calculator above does all of these steps at once."}}, {"@type": "Question", "name": "What taxes come out of a Nebraska paycheck?", "acceptedAnswer": {"@type": "Answer", "text": "Federal income tax, Social Security, Medicare, and Nebraska state income tax. There is no local or city income tax in Nebraska."}}, {"@type": "Question", "name": "How much is $60,000 a year after taxes in Nebraska?", "acceptedAnswer": {"@type": "Answer", "text": "For a single filer paid biweekly with one W-4N allowance and no deductions, this estimator shows about $1,856 per check, or roughly $48,270 a year."}}, {"@type": "Question", "name": "Does Nebraska have a city or local income tax?", "acceptedAnswer": {"@type": "Answer", "text": "No. Omaha, Lincoln, and other Nebraska cities do not withhold a local wage tax from employee paychecks."}}, {"@type": "Question", "name": "What is the Nebraska state income tax rate on paychecks?", "acceptedAnswer": {"@type": "Answer", "text": "Withholding follows graduated rates from about 2.26% up to 4.60% for 2026 estimates, applied after W-4N allowances. See the withholding guide for the bracket walkthrough."}}, {"@type": "Question", "name": "Is this a Nebraska paycheck calculator with taxes and deductions?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It includes federal, FICA, and state taxes plus fields for pre-tax and post-tax deductions, so the net figure reflects both."}}, {"@type": "Question", "name": "How is a biweekly paycheck calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Annual pay is divided by 26. Annual tax estimates are divided the same way, so each biweekly check carries 1/26 of the year's withholding."}}, {"@type": "Question", "name": "Can I calculate an hourly paycheck here?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, switch to Hourly. For hourly-specific examples and overtime tips, use the Nebraska hourly paycheck calculator."}}, {"@type": "Question", "name": "How does a 401(k) change my Nebraska take-home pay?", "acceptedAnswer": {"@type": "Answer", "text": "Traditional 401(k) contributions lower federal and Nebraska taxable wages, so net pay drops by less than the amount you contribute. Roth contributions do not lower current taxes."}}, {"@type": "Question", "name": "How does this compare to ADP or other payroll calculators?", "acceptedAnswer": {"@type": "Answer", "text": "Many people compare results from brand-name tools such as ADP, SmartAsset, or their own payroll portal. This is an independent educational estimator and is not affiliated with any of them. Small differences usually come from rounding and table versions."}}, {"@type": "Question", "name": "Why is my real paycheck different from the estimate?", "acceptedAnswer": {"@type": "Answer", "text": "Employer payroll uses exact IRS and Nebraska tables, year-to-date wages, benefit timing, and your precise forms. Treat this as a planning guide, not a pay stub."}}, {"@type": "Question", "name": "Is this calculator free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. There is no sign-up and no data stored. Calculations run in your browser."}}]}]}</script>
+  <!-- /seo-meta -->
+</head>
+<body>
+  <div class="note-bar">Educational paycheck estimates only. Not tax, legal, or payroll advice.</div>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="index.html">Nebraska <span>Paycheck</span> Calculator</a>
+      <nav class="site-nav" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="hourly.html">Hourly</a><a href="tax.html">Tax</a><a href="blog/">Guides</a></nav>
+    </header>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li aria-current="page">Home</li></ol></nav>
+    <header>
+      <h1>Nebraska Paycheck Calculator 2026: Take-Home Pay After Taxes</h1>
+      <p>Estimate Nebraska take-home pay after federal tax, FICA, and Nebraska state income tax</p>
+    </header>
+
+    <div class="calc">
+      <section class="card">
+        <h2>Build your paycheck</h2>
+        <label>Type</label>
+        <div class="seg" id="paySeg">
+          <button type="button" class="active" data-pay="salary">Salary</button>
+          <button type="button" data-pay="hourly">Hourly</button>
+        </div>
+
+        <div id="salaryBox">
+          <label for="salary">Annual salary (USD)</label>
+          <input class="field" id="salary" type="number" min="0" step="100" value="60000" />
+        </div>
+        <div id="hourlyBox" style="display:none">
+          <div class="row2">
+            <div>
+              <label for="hourly">Hourly rate (USD)</label>
+              <input class="field" id="hourly" type="number" min="0" step="0.01" value="28" />
+            </div>
+            <div>
+              <label for="hours">Hours / week</label>
+              <input class="field" id="hours" type="number" min="1" step="0.5" value="40" />
+            </div>
+          </div>
+        </div>
+
+        <label for="frequency">Pay frequency</label>
+        <select id="frequency">
+          <option value="52">Weekly</option>
+          <option value="26" selected>Biweekly</option>
+          <option value="24">Semi-monthly</option>
+          <option value="12">Monthly</option>
+          <option value="1">Annual</option>
+        </select>
+
+        <label for="status">Federal / Nebraska filing status</label>
+        <select id="status">
+          <option value="single">Single or married filing separately</option>
+          <option value="married">Married filing jointly</option>
+          <option value="hoh">Head of household</option>
+        </select>
+
+        <label for="allowances">Nebraska W-4N allowances <span class="hint">each ≈ $2,440 off taxable wages</span></label>
+        <input class="field" id="allowances" type="number" min="0" step="1" value="1" />
+
+        <div class="row2">
+          <div>
+            <label for="pretaxYear">Pre-tax deductions / year <span class="hint">401(k), HSA, medical</span></label>
+            <input class="field" id="pretaxYear" type="number" min="0" step="100" value="0" />
+          </div>
+          <div>
+            <label for="posttax">Post-tax / paycheck</label>
+            <input class="field" id="posttax" type="number" min="0" step="1" value="0" />
+          </div>
+        </div>
+
+        <label for="credits">Estimated annual tax credits <span class="hint">Child tax credit, etc.</span></label>
+        <input class="field" id="credits" type="number" min="0" step="100" value="0" />
+
+        <button class="btn" id="calcBtn" type="button">Calculate take-home</button>
+        <p class="tiny">Estimates use approximate federal withholding brackets (paycheck-style), FICA (SS 6.2% / Medicare 1.45%), and Nebraska Circular EN–style percentage withholding (rates about 2.26%–4.60%). Nebraska has no local wage tax. Not tax advice.</p>
+      </section>
+
+      <section class="card">
+        <h2>Take-home estimate</h2>
+        <div class="net">
+          <div class="k">Net take-home</div>
+          <div class="v" id="netPay">$0.00</div>
+          <div class="s" id="netMeta">net per biweekly paycheck · $0.00 / year</div>
+        </div>
+        <div class="line"><span>Gross pay</span><span id="gross">$0.00</span></div>
+        <div class="line"><span>Pre-tax deductions</span><span class="neg" id="pretaxOut">− $0.00</span></div>
+        <div class="line"><span>Federal income tax</span><span class="neg" id="fit">− $0.00</span></div>
+        <div class="line"><span>Social Security (6.2%)</span><span class="neg" id="ss">− $0.00</span></div>
+        <div class="line"><span>Medicare (1.45%)</span><span class="neg" id="med">− $0.00</span></div>
+        <div class="line"><span>Nebraska state income tax</span><span class="neg" id="state">− $0.00</span></div>
+        <div class="line"><span>Nebraska local income tax</span><span class="zero" id="local">$0.00</span></div>
+        <div class="line"><span>Post-tax deductions</span><span class="neg" id="postOut">− $0.00</span></div>
+        <div class="line"><span>Net take-home</span><span id="netLine">$0.00</span></div>
+        <p class="tiny" id="effRate">Effective tax + FICA rate ≈ 0% of gross.</p>
+      </section>
+    </div>
+
+    <section class="section">
+      <h2>Free Nebraska paycheck calculator for take-home pay</h2>
+      <p>This Nebraska paycheck calculator answers the question most workers actually care about: after federal income tax, Social Security, Medicare, and Nebraska state income tax, how much of each check reaches your bank account? Enter a salary or hourly wage, choose a pay frequency, pick a filing status, and add your W-4N allowances and any benefit deductions. The breakdown on the right updates instantly and shows gross pay, every withholding line, and estimated net pay per paycheck and per year.</p>
+      <p>The tool is built for planning: comparing job offers, checking whether a raise is worth it after taxes, sizing a 401(k) contribution, or sanity-checking a first pay stub. It is an independent educational estimator, so treat results as close approximations rather than an employer payroll figure.</p>      <p class="links"><a href="hourly.html">Nebraska hourly paycheck calculator</a><a href="tax.html">Nebraska income tax withholding guide</a></p>
+    </section>
+
+    <section class="section">
+      <h2>How Nebraska paycheck taxes work</h2>
+      <p>Every Nebraska paycheck follows the same order of operations. Knowing that order makes it much easier to read a pay stub and to see why two people with the same salary can take home different amounts.</p>
+      <div class="steps">
+        <div class="step"><b>01</b><div><strong>Start with gross pay</strong><p style="margin:4px 0 0">Annual salary divided by the number of pay periods, or hourly rate × hours × 52 split by frequency. Overtime, bonuses, and commissions raise gross pay for the period they are paid.</p></div></div>
+        <div class="step"><b>02</b><div><strong>Subtract pre-tax deductions</strong><p style="margin:4px 0 0">Traditional 401(k) or 403(b) contributions, HSA deposits, health FSA elections, and pre-tax medical premiums come off before income tax is figured. Section 125 items such as premiums and FSA also usually reduce FICA wages.</p></div></div>
+        <div class="step"><b>03</b><div><strong>Withhold federal income tax</strong><p style="margin:4px 0 0">Your employer uses IRS Publication 15-T and your federal W-4 (filing status, dependents, extra withholding). This calculator approximates that with the standard deduction and current brackets.</p></div></div>
+        <div class="step"><b>04</b><div><strong>Withhold FICA</strong><p style="margin:4px 0 0">Social Security takes 6.2% of wages up to the annual wage base, and Medicare takes 1.45% of all wages, plus an extra 0.9% on wages above $200,000.</p></div></div>
+        <div class="step"><b>05</b><div><strong>Withhold Nebraska state income tax</strong><p style="margin:4px 0 0">Nebraska uses its Circular EN tables and your Form W-4N. Allowances reduce wages subject to state withholding, and graduated rates from about 2.26% to 4.60% apply to the rest.</p></div></div>
+        <div class="step"><b>06</b><div><strong>Subtract post-tax deductions</strong><p style="margin:4px 0 0">Roth 401(k) contributions, union dues, wage garnishments, and voluntary insurance come out last. What remains is your net pay.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Federal vs. Nebraska state vs. FICA vs. local tax</h2>
+      <div class="grid3">
+        <div class="tile"><strong>Federal income tax</strong><span>Progressive brackets from 10% to 37% on income above the standard deduction. Usually the largest variable withholding line.</span></div>
+        <div class="tile"><strong>FICA (7.65%)</strong><span>Social Security 6.2% plus Medicare 1.45%. A flat rate that does not depend on your W-4 or W-4N.</span></div>
+        <div class="tile"><strong>Nebraska income tax</strong><span>Graduated state rates of roughly 2.26%–4.60% after W-4N allowances. Withheld under Circular EN.</span></div>
+      </div>
+      <p><strong>Local tax is $0.</strong> Unlike Ohio, Pennsylvania, or Kentucky, Nebraska cities and counties do not levy a municipal wage or occupational income tax on typical employee pay. That is why the local line in the calculator always reads $0.00, whether you work in Omaha, Lincoln, Grand Island, or a small town. Local sales and property taxes exist, but they never show up on a pay stub.</p>
+      <p>In practice, FICA is predictable, federal tax depends heavily on filing status and pre-tax savings, and Nebraska tax is a modest but meaningful slice, often 3%–4% of gross for middle incomes. For a closer look at the state line alone, see the <a href="tax.html">Nebraska income tax withholding guide</a>.</p>
+    </section>
+
+    <section class="section">
+      <h2>Salary, hourly, and pay frequency: weekly, biweekly, semi-monthly, monthly</h2>
+      <p>Your annual taxes are roughly the same no matter how often you are paid. What changes is the size of each check. Pick the schedule your employer uses so the per-paycheck numbers match your stub.</p>
+      <table class="table"><thead><tr><th>Frequency</th><th>Checks per year</th><th>$60,000 gross per check</th></tr></thead><tbody>
+        <tr><td>Weekly</td><td>52</td><td>$1,153.85</td></tr>
+        <tr><td>Biweekly</td><td>26</td><td>$2,307.69</td></tr>
+        <tr><td>Semi-monthly</td><td>24</td><td>$2,500.00</td></tr>
+        <tr><td>Monthly</td><td>12</td><td>$5,000.00</td></tr>
+      </tbody></table>
+      <h3>Salary paycheck</h3>
+      <p>Salaried employees divide annual pay by the number of periods. The calculator does exactly that, then applies withholding to each period's share. Biweekly pay is the most common schedule in Nebraska, and it produces two "extra" paychecks a year compared with a twice-a-month schedule. Those two months with three paydays are good for savings goals.</p>
+      <h3>Hourly paycheck</h3>
+      <p>Hourly workers multiply rate by weekly hours. Hours can change from week to week, so many people model a typical week and a busy week. Our dedicated <a href="hourly.html">Nebraska hourly paycheck calculator</a> page covers overtime, part-time schedules, and Nebraska's minimum wage context in more depth.</p>
+      <h3>Semi-monthly vs. biweekly</h3>
+      <p>Semi-monthly pay (24 checks, usually on the 15th and last day of the month) gives slightly larger checks than biweekly (26 checks) for the same salary. Monthly budgeting is simpler on a semi-monthly schedule, while biweekly checks line up with weekly hourly work.</p>
+    </section>
+
+    <section class="section">
+      <h2>Example Nebraska take-home pay by salary (biweekly, single)</h2>
+      <p>The figures below come from this calculator's own engine: single filer, biweekly pay, one Nebraska W-4N allowance, no pre-tax deductions, no federal credits. They are illustrative estimates. Your actual check will vary with benefits, W-4 choices, and your employer's exact tables.</p>
+      <table class="table"><thead><tr><th>Annual salary</th><th>Gross / check</th><th>Federal tax</th><th>FICA</th><th>Nebraska tax</th><th>Est. net / check</th></tr></thead><tbody>
+        <tr><td>$30,000</td><td>$1,153.85</td><td>$54.62</td><td>$88.27</td><td>$30.86</td><td><strong>$980.10</strong></td></tr>
+        <tr><td>$50,000</td><td>$1,923.08</td><td>$146.92</td><td>$147.12</td><td>$64.48</td><td><strong>$1,564.56</strong></td></tr>
+        <tr><td>$60,000</td><td>$2,307.69</td><td>$193.08</td><td>$176.54</td><td>$81.71</td><td><strong>$1,856.37</strong></td></tr>
+        <tr><td>$75,000</td><td>$2,884.62</td><td>$295.00</td><td>$220.67</td><td>$107.55</td><td><strong>$2,261.39</strong></td></tr>
+        <tr><td>$100,000</td><td>$3,846.15</td><td>$506.54</td><td>$294.23</td><td>$151.66</td><td><strong>$2,893.73</strong></td></tr>
+      </tbody></table>
+      <p>A $60,000 salary works out to about $2,307.69 gross every two weeks and roughly <strong>$1,856.37</strong> net, about $48,266 a year. Moving from $60k to $75k adds about $577 gross per check but about $405 net, because more of the raise lands in the 22% federal bracket and Nebraska's top 4.60% rate.</p>
+    </section>
+
+    <section class="section">
+      <h2>Deductions, withholdings, and net pay</h2>
+      <p>Net pay is gross pay minus taxes and deductions. Where a deduction falls in that order matters as much as its size.</p>
+      <h3>Pre-tax deductions (lower your taxes)</h3>
+      <p>Traditional 401(k) and 403(b) contributions reduce federal and Nebraska taxable wages, but not FICA. HSA contributions through payroll and health FSA elections under a cafeteria plan usually reduce federal, state, and FICA wages. Pre-tax medical, dental, and vision premiums work the same way. Enter the annual total in the "Pre-tax deductions" field. As a rule of thumb, each $100 of pre-tax savings costs a middle-income Nebraskan only about $70–$75 of take-home pay.</p>
+      <h3>Post-tax deductions (no tax benefit now)</h3>
+      <p>Roth 401(k) contributions, after-tax life or disability insurance, union dues, charitable payroll giving, and garnishments come out after all taxes. Enter these per paycheck in the "Post-tax deductions" field.</p>
+      <h3>Adjusting withholding</h3>
+      <p>If you get a big refund every spring, you are over-withholding. You could raise W-4N allowances or adjust your federal W-4 to increase each check. If you owe, add extra withholding instead. The "federal credits" field lets you model annual dependent credits from Step 3 of the W-4.</p>
+    </section>
+
+    <section class="section">
+      <h2>Omaha, Lincoln, and remote workers</h2>
+      <p>Because Nebraska has no local wage tax, an Omaha paycheck and a Lincoln paycheck at the same pay are taxed the same way. There is no separate Omaha paycheck calculator, because one state tool covers every city. The one common cross-border case is the Omaha–Council Bluffs metro. Iowa residents working in Nebraska, and Nebraska residents working in Iowa, may have withholding for one state and file in both, with a credit for taxes paid to the other state. Remote employees generally have withholding for the state where they physically do the work. Rules depend on your facts, so confirm with your employer or a tax professional. This page is educational, not legal or tax advice.</p>
+    </section>
+
+    <section class="section">
+      <h2>How to use this Nebraska paycheck calculator</h2>
+      <div class="steps">
+        <div class="step"><b>01</b><div><strong>Choose salary or hourly</strong><p style="margin:4px 0 0">Enter annual salary, or hourly rate and typical weekly hours.</p></div></div>
+        <div class="step"><b>02</b><div><strong>Select pay frequency</strong><p style="margin:4px 0 0">Weekly, biweekly, semi-monthly, monthly, or annual, matching your employer.</p></div></div>
+        <div class="step"><b>03</b><div><strong>Set filing status and W-4N allowances</strong><p style="margin:4px 0 0">Use the same status as your federal W-4 and the allowance count from your Nebraska W-4N.</p></div></div>
+        <div class="step"><b>04</b><div><strong>Add deductions and credits</strong><p style="margin:4px 0 0">Annual pre-tax benefits, per-check post-tax items, and any annual federal credits.</p></div></div>
+        <div class="step"><b>05</b><div><strong>Read the breakdown</strong><p style="margin:4px 0 0">Compare gross, each tax line, and net per check. Try what-ifs, like a raise or a higher 401(k) percentage.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section faq">
+      <h2>Nebraska paycheck calculator FAQs</h2>
+      <details>
+        <summary>How do I estimate taxes out of my paycheck in Nebraska?</summary>
+        <p>Take gross pay, subtract pre-tax deductions, then withhold federal income tax, Social Security (6.2%), Medicare (1.45%), and Nebraska income tax based on your W-4N. The calculator above does all of these steps at once.</p>
+      </details>
+      <details>
+        <summary>What taxes come out of a Nebraska paycheck?</summary>
+        <p>Federal income tax, Social Security, Medicare, and Nebraska state income tax. There is no local or city income tax in Nebraska.</p>
+      </details>
+      <details>
+        <summary>How much is $60,000 a year after taxes in Nebraska?</summary>
+        <p>For a single filer paid biweekly with one W-4N allowance and no deductions, this estimator shows about $1,856 per check, or roughly $48,270 a year.</p>
+      </details>
+      <details>
+        <summary>Does Nebraska have a city or local income tax?</summary>
+        <p>No. Omaha, Lincoln, and other Nebraska cities do not withhold a local wage tax from employee paychecks.</p>
+      </details>
+      <details>
+        <summary>What is the Nebraska state income tax rate on paychecks?</summary>
+        <p>Withholding follows graduated rates from about 2.26% up to 4.60% for 2026 estimates, applied after W-4N allowances. See the <a href="tax.html">withholding guide</a> for the bracket walkthrough.</p>
+      </details>
+      <details>
+        <summary>Is this a Nebraska paycheck calculator with taxes and deductions?</summary>
+        <p>Yes. It includes federal, FICA, and state taxes plus fields for pre-tax and post-tax deductions, so the net figure reflects both.</p>
+      </details>
+      <details>
+        <summary>How is a biweekly paycheck calculated?</summary>
+        <p>Annual pay is divided by 26. Annual tax estimates are divided the same way, so each biweekly check carries 1/26 of the year's withholding.</p>
+      </details>
+      <details>
+        <summary>Can I calculate an hourly paycheck here?</summary>
+        <p>Yes, switch to Hourly. For hourly-specific examples and overtime tips, use the <a href="hourly.html">Nebraska hourly paycheck calculator</a>.</p>
+      </details>
+      <details>
+        <summary>How does a 401(k) change my Nebraska take-home pay?</summary>
+        <p>Traditional 401(k) contributions lower federal and Nebraska taxable wages, so net pay drops by less than the amount you contribute. Roth contributions do not lower current taxes.</p>
+      </details>
+      <details>
+        <summary>How does this compare to ADP or other payroll calculators?</summary>
+        <p>Many people compare results from brand-name tools such as ADP, SmartAsset, or their own payroll portal. This is an independent educational estimator and is not affiliated with any of them. Small differences usually come from rounding and table versions.</p>
+      </details>
+      <details>
+        <summary>Why is my real paycheck different from the estimate?</summary>
+        <p>Employer payroll uses exact IRS and Nebraska tables, year-to-date wages, benefit timing, and your precise forms. Treat this as a planning guide, not a pay stub.</p>
+      </details>
+      <details>
+        <summary>Is this calculator free?</summary>
+        <p>Yes. There is no sign-up and no data stored. Calculations run in your browser.</p>
+      </details>
+    </section>
+
+
+    <aside class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="hourly.html">Nebraska hourly paycheck calculator</a> — paid by the hour? estimate take-home from your wage and hours</li><li><a href="tax.html">Nebraska income tax withholding guide</a> — see how W-4N allowances change state withholding</li><li><a href="blog/nebraska-take-home-pay.html">gross vs. net pay explained</a> — what comes out of each check and why</li><li><a href="blog/fica-social-security-medicare-paycheck.html">Social Security and Medicare on your paycheck</a> — the 7.65% FICA line, decoded</li><li><a href="blog/omaha-lincoln-paycheck.html">Omaha and Lincoln paycheck guide</a> — city cost-of-living context for your net pay</li></ul></aside>
+    <footer class="site-footer">
+      <div class="footer-cols">
+        <nav aria-label="Tools"><h2>Tools</h2><ul><li><a href="index.html">Paycheck calculator</a></li><li><a href="hourly.html">Hourly calculator</a></li><li><a href="tax.html">Tax withholding calculator</a></li></ul></nav>
+        <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="blog/">All guides</a></li><li><a href="blog/nebraska-take-home-pay.html">Take-home pay explained</a></li><li><a href="blog/nebraska-income-tax-brackets.html">2026 tax brackets</a></li><li><a href="blog/nebraska-minimum-wage.html">Minimum wage</a></li><li><a href="blog/nebraska-w4n-allowances.html">W-4N allowances</a></li><li><a href="blog/fica-social-security-medicare-paycheck.html">FICA explained</a></li></ul></nav>
+        <nav aria-label="Company and legal"><h2>Company &amp; Legal</h2><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="disclaimer.html">Disclaimer</a></li><li><a href="sitemap.html">Sitemap</a></li></ul></nav>
+      </div>
+      <p class="disclaimer">Independent educational Nebraska paycheck estimator · Not affiliated with the IRS, the Nebraska Department of Revenue, ADP, or any payroll provider or government agency</p>
+      <p class="copy">© 2026 Nebraska Paycheck Calculator</p>
+    </footer>
+  </div>
+
+  <script>
+    const money = n => '$' + (Math.max(0, n) || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const minus = n => '− ' + money(n);
+    const FREQ_LABEL = { '52': 'weekly', '26': 'biweekly', '24': 'semi-monthly', '12': 'monthly', '1': 'annual' };
+
+    const BRACKETS = {
+      single: [
+        { upto: 12400, rate: 0.10 }, { upto: 50400, rate: 0.12 }, { upto: 105700, rate: 0.22 },
+        { upto: 201775, rate: 0.24 }, { upto: 256225, rate: 0.32 }, { upto: 640600, rate: 0.35 }, { upto: Infinity, rate: 0.37 }
+      ],
+      married: [
+        { upto: 24800, rate: 0.10 }, { upto: 100800, rate: 0.12 }, { upto: 211400, rate: 0.22 },
+        { upto: 403550, rate: 0.24 }, { upto: 512450, rate: 0.32 }, { upto: 768700, rate: 0.35 }, { upto: Infinity, rate: 0.37 }
+      ],
+      hoh: [
+        { upto: 17700, rate: 0.10 }, { upto: 67500, rate: 0.12 }, { upto: 105700, rate: 0.22 },
+        { upto: 201750, rate: 0.24 }, { upto: 256200, rate: 0.32 }, { upto: 640600, rate: 0.35 }, { upto: Infinity, rate: 0.37 }
+      ]
+    };
+    const STD = { single: 16100, married: 32200, hoh: 24150 }; // aligned to common 2026 paycheck withholding estimates
+    const SS_RATE = 0.062, SS_BASE = 184500, MED_RATE = 0.0145;
+    const NE_ALLOWANCE = 2440;
+
+    // Approximate NE Circular EN annual percentage method (educational)
+    const NE_SINGLE = [
+      { floor: 0, base: 0, rate: 0, start: 0 },
+      { floor: 3430, base: 0, rate: 0.0226, start: 3430 },
+      { floor: 6710, base: 74.13, rate: 0.0322, start: 6710 },
+      { floor: 21810, base: 560.35, rate: 0.0421, start: 21810 },
+      { floor: 31610, base: 972.93, rate: 0.0435, start: 31610 },
+      { floor: 40130, base: 1343.55, rate: 0.0448, start: 40130 },
+      { floor: 75370, base: 2922.30, rate: 0.0460, start: 75370 }
+    ];
+    const NE_MARRIED = [
+      { floor: 0, base: 0, rate: 0, start: 0 },
+      { floor: 8190, base: 0, rate: 0.0226, start: 8190 },
+      { floor: 13470, base: 119.33, rate: 0.0322, start: 13470 },
+      { floor: 33720, base: 771.38, rate: 0.0421, start: 33720 },
+      { floor: 44920, base: 1242.90, rate: 0.0435, start: 44920 },
+      { floor: 54440, base: 1656.60, rate: 0.0448, start: 54440 },
+      { floor: 82920, base: 2932.70, rate: 0.0460, start: 82920 }
+    ];
+
+    let payType = 'salary';
+
+    function federalAnnual(taxable, status) {
+      let tax = 0, prev = 0;
+      for (const b of BRACKETS[status]) {
+        const slice = Math.min(taxable, b.upto) - prev;
+        if (slice > 0) tax += slice * b.rate;
+        if (taxable <= b.upto) break;
+        prev = b.upto;
+      }
+      return Math.max(0, tax);
+    }
+
+    function nebraskaAnnual(wagesAfterAllow, status) {
+      const table = status === 'married' ? NE_MARRIED : NE_SINGLE;
+      let row = table[0];
+      for (const r of table) {
+        if (wagesAfterAllow >= r.floor) row = r;
+      }
+      if (row.rate === 0) return 0;
+      return Math.max(0, row.base + row.rate * (wagesAfterAllow - row.start));
+    }
+
+    function calc() {
+      const periods = Number(document.getElementById('frequency').value);
+      const status = document.getElementById('status').value;
+      const pretaxYear = Number(document.getElementById('pretaxYear').value) || 0;
+      const posttax = Number(document.getElementById('posttax').value) || 0;
+      const credits = Number(document.getElementById('credits').value) || 0;
+      const allowances = Math.max(0, Number(document.getElementById('allowances').value) || 0);
+
+      const annualGross = payType === 'hourly'
+        ? (Number(document.getElementById('hourly').value) || 0) * (Number(document.getElementById('hours').value) || 0) * 52
+        : (Number(document.getElementById('salary').value) || 0);
+
+      const gross = annualGross / periods;
+      const pretaxPer = pretaxYear / periods;
+      const fedTaxable = Math.max(0, annualGross - pretaxYear - STD[status]);
+      const fit = Math.max(0, federalAnnual(fedTaxable, status) - credits) / periods;
+      const ssBaseAnnual = Math.min(Math.max(0, annualGross - pretaxYear), SS_BASE);
+      const ss = (ssBaseAnnual / periods) * SS_RATE;
+      const med = (Math.max(0, annualGross - pretaxYear) / periods) * MED_RATE;
+
+      const neBase = Math.max(0, annualGross - pretaxYear - allowances * NE_ALLOWANCE);
+      const state = nebraskaAnnual(neBase, status) / periods;
+
+      const net = Math.max(0, gross - pretaxPer - fit - ss - med - state - posttax);
+      const taxAll = fit + ss + med + state;
+      const eff = gross ? (taxAll / gross) * 100 : 0;
+
+      document.getElementById('netPay').textContent = money(net);
+      document.getElementById('netMeta').textContent = `net per ${FREQ_LABEL[String(periods)]} paycheck · ${money(net * periods)} / year`;
+      document.getElementById('gross').textContent = money(gross);
+      document.getElementById('pretaxOut').textContent = minus(pretaxPer);
+      document.getElementById('fit').textContent = minus(fit);
+      document.getElementById('ss').textContent = minus(ss);
+      document.getElementById('med').textContent = minus(med);
+      document.getElementById('state').textContent = minus(state);
+      document.getElementById('local').textContent = '$0.00';
+      document.getElementById('postOut').textContent = minus(posttax);
+      document.getElementById('netLine').textContent = money(net);
+      document.getElementById('effRate').textContent = `Effective federal + FICA + NE ≈ ${eff.toFixed(1)}% of gross. Annual gross ${money(annualGross)}.`;
+    }
+
+    document.querySelectorAll('#paySeg button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#paySeg button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        payType = btn.dataset.pay;
+        document.getElementById('salaryBox').style.display = payType === 'salary' ? 'block' : 'none';
+        document.getElementById('hourlyBox').style.display = payType === 'hourly' ? 'block' : 'none';
+        calc();
+      });
+    });
+
+    ['salary','hourly','hours','frequency','status','allowances','pretaxYear','posttax','credits'].forEach(id => {
+      const el = document.getElementById(id);
+      el.addEventListener('input', calc);
+      el.addEventListener('change', calc);
+    });
+    document.getElementById('calcBtn').addEventListener('click', calc);
+    calc();
+  </script>
+</body>
+</html>
