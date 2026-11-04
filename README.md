@@ -1,6 +1,6 @@
 # Nebraska Paycheck Calculator
 
-Static site for [nebraskapaycheckcalculator.com](https://nebraskapaycheckcalculator.com/). It estimates 2026 Nebraska take-home pay after federal income tax, FICA, and Nebraska state withholding. All pages are self-contained HTML: styles and calculator logic live in each file, and numbers stay in the browser.
+Static site for [nebraskapaycheckcalculator.com](https://nebraskapaycheckcalculator.com/). It estimates 2027 Nebraska take-home pay after federal income tax, FICA, and Nebraska state withholding. All pages are self-contained HTML: styles and calculator logic live in each file, and numbers stay in the browser.
 
 ## Pages
 
