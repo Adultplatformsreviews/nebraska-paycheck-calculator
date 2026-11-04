@@ -194,6 +194,80 @@
     </section>
 
 
+    <section class="section">
+      <h2>A 2027 percentage-method example</h2>
+      <p>The Nebraska income tax withholding calculator on this page follows Circular EN, the Department of Revenue booklet for wages paid on or after January 1, 2027. The return you file later uses the statutory brackets. Payroll does not.</p>
+      <p>Here is one biweekly check, worked with the published 2027 single table. Gross wages are $2,307.69, which is $60,000 divided by 26. One allowance removes $96.54. Wages left for the table are $2,211.15.</p>
+      <p>That amount sits in the row for wages over $1,589. The row's tax is $49.35 plus 3.93% of the amount above $1,589. The excess is $622.15, 3.93% of it is about $24.45, and the Nebraska withholding is $73.80. That matches the single, one-allowance result in the table higher on this page when you switch the mental model from 2026 to 2027.</p>
+      <p>The married column for the same check uses a wider set of rows. After the same $96.54 allowance, $2,211.15 falls in the row over $1,996: $55.36 plus 3.81% of the excess, which is $63.56. Head of household uses the single column, the same way the published percentage-method tables group that status.</p>
+      <table class="table"><thead><tr><th>W-4N allowances</th><th>2027 NE tax, single</th><th>2027 NE tax, married</th></tr></thead><tbody>
+        <tr><td>0</td><td>$77.59</td><td>$67.24</td></tr>
+        <tr><td>1</td><td>$73.80</td><td>$63.56</td></tr>
+        <tr><td>2</td><td>$70.01</td><td>$59.88</td></tr>
+        <tr><td>3</td><td>$66.21</td><td>$56.20</td></tr>
+      </tbody></table>
+      <p>$60,000, biweekly, pay date in 2027, no pre-tax deductions. Married rows use the married Circular EN table. Each extra allowance trims a little over $4 from this particular check because the wage is still inside a mid-table rate.</p>
+    </section>
+
+    <section class="section">
+      <h2>Allowance amounts for every pay frequency</h2>
+      <p>Circular EN for 2027 values one withholding allowance at $2,510 for the year. The per-check subtraction is that amount divided into the payroll period, rounded the way the booklet prints it.</p>
+      <p>Subtract the allowance value before you look up a row. Looking up the gross wage and then subtracting a tax credit is a different system, and it is not what these tables do.</p>
+      <table class="table"><thead><tr><th>Payroll period</th><th>One allowance in 2027</th></tr></thead><tbody>
+        <tr><td>Daily or miscellaneous</td><td>$9.65</td></tr>
+        <tr><td>Weekly</td><td>$48.27</td></tr>
+        <tr><td>Biweekly</td><td>$96.54</td></tr>
+        <tr><td>Semimonthly</td><td>$104.58</td></tr>
+        <tr><td>Monthly</td><td>$209.17</td></tr>
+        <tr><td>Quarterly</td><td>$627.50</td></tr>
+        <tr><td>Semiannual</td><td>$1,255.00</td></tr>
+        <tr><td>Annual</td><td>$2,510.00</td></tr>
+      </tbody></table>
+      <p>The calculator on this page uses the weekly, biweekly, semimonthly, monthly, and annual rows. The other rows are in the same 2027 allowance table for employers who pay on those cycles.</p>
+      <p>The 2026 booklet used $2,440 for the year, or $93.85 on a biweekly check. A 2026 pay date on this calculator still uses that value. Its percentage-method rows are 2.26%, 3.22%, 4.21%, 4.35%, 4.48%, and 4.60%. A 2027 pay date uses 2.26%, 3.22%, 3.69%, 3.81%, 3.93%, and 4.03%.</p>
+      <p>Zero allowances do not mean zero tax. They mean the table sees the full wage. Employers who never received a W-4N from someone who completed a federal W-4 on or after January 1, 2020 generally withhold as single with zero allowances.</p>
+    </section>
+
+    <section class="section">
+      <h2>Percentage method and wage-bracket tables</h2>
+      <p>Employers may use either the percentage method or the wage-bracket tables in the same Circular EN. The percentage method is the base-plus-rate formula above. The wage-bracket tables are a grid of wage ranges and allowance columns, and they can differ by a few dollars on the same check.</p>
+      <p>This calculator uses the percentage method so the result moves smoothly when you change the wage by a dollar. A payroll system on the bracket grid may land on the midpoint of a wage band instead.</p>
+      <p>Bracket grids in the booklet stop at ten allowances. Above that, the instructions say to subtract the value of the extra allowances from wages and then read the ten-allowance column. The percentage method does not need that workaround. It subtracts every allowance first.</p>
+      <p>Employers with more than 24 employees also face a special minimum: at least 1.5% of taxable wages, unless the employee documents a lower amount. The booklet shades wage-bracket cells that miss that floor and explains when 50% of a one-allowance single result, or a two-allowance married result, can satisfy it. If your stub shows a round 1.5% and this percentage-method estimate is lower, that special rule is a likely reason.</p>
+    </section>
+
+    <section class="section">
+      <h2>Bonuses and other supplemental wages</h2>
+      <p>When a bonus, commission, or taxable award is paid in the same check as regular wages, Circular EN treats the total as one wage payment for that payroll period. The percentage method then runs on the combined amount.</p>
+      <p>When the supplemental pay is a separate payment, the employer may add it to regular wages for the current or last period and withhold on the total, or it may withhold a flat 3.5% on the supplemental wages. Overtime that is already in your hourly rate belongs in the hourly calculator. A one-time bonus is this supplemental rule.</p>
+      <p>A flat 3.5% withheld today is still an estimate. The income is taxed under the brackets when you file Form 1040N, and any gap becomes a refund or a balance due. Federal supplemental withholding, often 22% on bonuses under the IRS aggregate or flat methods, is a separate federal step and is not the Nebraska 3.5%.</p>
+    </section>
+
+    <section class="section">
+      <h2>What the withholding formula can see</h2>
+      <p>Pre-tax deductions that the booklet treats as excluded from taxable wages come off before the allowance subtraction. In this calculator, traditional retirement deferrals and Section 125 benefits both reduce the Nebraska wage. Post-tax deductions do not.</p>
+      <p>Extra withholding on the W-4N is a flat dollar amount added after the table. It does not change which row you land in. People with a second job, a spouse's income, or self-employment profit often use that line because allowances alone cannot see the other income.</p>
+      <p>The federal W-4 does not set the Nebraska allowance count. Publication 15-T still drives federal income tax in this estimator, using the 2026 percentage-method worksheets until the IRS publishes the next set. Nebraska tax on a 2027 pay date does not wait for that federal update.</p>
+      <p>A nonresident who works both in Nebraska and in other states can give the employer Form 9N and name the percentage of wages subject to Nebraska withholding. The employer figures tax on the full wage, then multiplies by that percentage. Someone working in Nebraska all the time does not use Form 9N to wipe the tax off. A nonresident servicemember's spouse who elects the servicemember's other state of residence uses Form 9N so Nebraska tax is not withheld.</p>
+      <p>That percentage is only for withholding. It does not set the Nebraska wage box on the W-2. For tax years beginning on or after January 1, 2025, Circular EN also describes narrow cases where withholding is not required on some nonresident pay, including seven or fewer duty days in the state and certain convenience-rule wages. This calculator does not apply those exceptions. It treats the wages you enter as fully subject to Nebraska tax.</p>
+    </section>
+
+    <section class="section">
+      <h2>Withholding compared with Form 1040N</h2>
+      <p>Withholding is a prepayment. Form 1040N computes the year's Nebraska tax from federal adjusted gross income, Nebraska adjustments, and the credits the return allows. Social Security benefits are exempt from Nebraska income tax. A slice of military retirement pay can be excluded. Neither of those adjustments is something a typical wage table can apply to a weekly check.</p>
+      <p>On the $60,000 example, one allowance, single, 2027, the state line is $73.80 a check, or about $1,919 across 26 checks. That is about 3.2% of gross wages withheld. It is not automatically 3.2% of Nebraska taxable income, because the return starts from a different income figure and applies credits the paycheck never saw.</p>
+      <p>A refund means the prepayments, including withholding, exceeded the tax on the return. A balance due means they fell short. Changing allowances changes the prepayment. It does not change the tax on the same year's income unless your life actually changes.</p>
+      <p>The statutory rates people quote for 2027, about 2.46%, 3.51%, and a top rate of 3.99%, live on the return. The withholding rows for a 2027 pay date step from about 2.26% to about 4.03%. Both can be true, because they are different schedules. The <a href="/blog/nebraska-income-tax-brackets">2027 bracket guide</a> is the place for the filing rates. This page stays with the amount the employer sends in from the check.</p>
+    </section>
+
+    <section class="section">
+      <h2>How to read the withholding result</h2>
+      <p>Use the calculator above when the question is "how much Nebraska tax comes out of this check?" Set the pay date, the frequency, the filing status the employer will use, and the allowance count. Add extra withholding if the W-4N has a dollar amount on that line.</p>
+      <p>The Nebraska line in the result is the estimate. Federal tax and FICA are shown so you can see the state line in context, and the full take-home picture lives on the <a href="/">full Nebraska take-home pay calculator</a>.</p>
+      <p>If you are deciding how many allowances to claim, or whether you must file a new W-4N by February 15 to renew an exemption, use the <a href="/blog/nebraska-w4n-allowances">W-4N form guide</a>. That page walks through the certificate. This page walks through the math the certificate feeds.</p>
+      <p>Compare a real stub with the same gross and the same allowances before you treat a difference as an error. Bracket-table employers, the 1.5% special rule, and rounding all create small gaps that are still "right" under Circular EN.</p>
+    </section>
+
     <aside class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/">full Nebraska take-home pay calculator</a> — combine federal, FICA and state tax in one estimate</li><li><a href="/blog/nebraska-income-tax-brackets">2027 Nebraska income tax brackets</a> — rates by filing status</li><li><a href="/blog/nebraska-w4n-allowances">how many W-4N allowances to claim</a> — form walkthrough with examples</li><li><a href="/blog/nebraska-state-tax-rate">Nebraska state tax rate overview</a> — income, sales and effective rates</li><li><a href="/blog/nebraska-payroll-taxes">employer vs. employee payroll taxes</a> — who pays what</li></ul></aside>
     <footer class="site-footer">
       <div class="footer-cols">
