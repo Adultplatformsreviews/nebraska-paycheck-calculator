@@ -3,7 +3,6 @@
 Static site for [nebraskapaycheckcalculator.com](https://nebraskapaycheckcalculator.com/). It estimates Nebraska take-home pay after federal income tax, FICA, and Nebraska state withholding. Pages are static HTML. Shared calculator logic lives in `paycheck.js`, and numbers stay in the browser.
 
 `node paycheck.test.js` checks the published sample: $60,000, single, biweekly, one W-4N allowance is about $1,856.37 net on a 2026 pay date and about $1,864.28 on a 2027 pay date.
-
 ## Pages
 
 - `index.html` — salary paycheck calculator (weekly, biweekly, semi-monthly, monthly)
