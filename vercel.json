@@ -1,0 +1,27 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "statusCode": 301 },
+    { "source": "/index.html/", "destination": "/", "statusCode": 301 },
+    { "source": "/blog/index.html", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/blog/index.html/", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/index", "destination": "/", "statusCode": 301 },
+    { "source": "/blog/index", "destination": "/blog/", "statusCode": 301 },
+    { "source": "/:path*.html", "destination": "/:path*", "statusCode": 301 },
+    { "source": "/:path*.html/", "destination": "/:path*", "statusCode": 301 }
+  ],
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/", "destination": "/blog/index.html" },
+    { "source": "/hourly", "destination": "/hourly.html" },
+    { "source": "/tax", "destination": "/tax.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/disclaimer", "destination": "/disclaimer.html" },
+    { "source": "/sitemap", "destination": "/sitemap.html" },
+    { "source": "/blog/:slug", "destination": "/blog/:slug.html" }
+  ]
+}
