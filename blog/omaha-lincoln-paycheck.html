@@ -65,10 +65,14 @@
     .faq p { margin: 8px 0 0; }
     footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
     @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
-      .table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
-    .table th,.table td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--line)}
-    .table th:first-child,.table td:first-child{text-align:left}
-    .table tr:nth-child(even) td{background:#f7f9fb}
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:10px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:1px solid #c5d0de}
+    .table th:nth-child(2),.table td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums}
+    .table.num-3 th:nth-child(3),.table.num-3 td:nth-child(3){text-align:right;font-variant-numeric:tabular-nums}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
     .section h3{margin:16px 0 6px;font-size:1.1rem}
     .links a{margin-right:14px}
 
@@ -149,7 +153,9 @@
       <h2>Budgeting from net pay</h2>
       <p>A common guide is the 50/30/20 rule: half of take-home pay for needs, 30% for wants, and 20% for savings and debt payoff. For example, a $55,000 salary in Omaha might produce roughly $1,700 to $1,800 per biweekly check after taxes, before benefits.</p>
       <p>That is about $3,800 per month, so a needs budget near $1,900 has to cover rent, utilities, groceries, insurance, and transportation.</p>
-      <table class="table"><thead><tr><th>Item</th><th>Omaha</th><th>Lincoln</th></tr></thead><tbody><tr><td>City income tax</td><td>None</td><td>None</td></tr><tr><td>Combined sales tax</td><td>~7.0%</td><td>~7.25%</td></tr><tr><td>State income tax top rate (2026)</td><td>3.99%</td><td>3.99%</td></tr></tbody></table>
+      <div class="table-scroll">
+      <table class="table num-3"><thead><tr><th>Item</th><th>Omaha</th><th>Lincoln</th></tr></thead><tbody><tr><td>City income tax</td><td>None</td><td>None</td></tr><tr><td>Combined sales tax</td><td>~7.0%</td><td>~7.25%</td></tr><tr><td>State income tax top rate (2026)</td><td>3.99%</td><td>3.99%</td></tr></tbody></table>
+      </div>
     </section>
     <section class="section">
       <h2>Other Nebraska cities</h2>

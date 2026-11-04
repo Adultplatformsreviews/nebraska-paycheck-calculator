@@ -65,10 +65,14 @@
     .faq p { margin: 8px 0 0; }
     footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
     @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
-      .table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
-    .table th,.table td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--line)}
-    .table th:first-child,.table td:first-child{text-align:left}
-    .table tr:nth-child(even) td{background:#f7f9fb}
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:10px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:1px solid #c5d0de}
+    .table th:nth-child(2),.table td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums}
+    .table.num-3 th:nth-child(3),.table.num-3 td:nth-child(3){text-align:right;font-variant-numeric:tabular-nums}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
     .section h3{margin:16px 0 6px;font-size:1.1rem}
     .links a{margin-right:14px}
 
@@ -137,6 +141,7 @@
         <img src="/blog/images/nebraska-income-tax-rates.png" width="1200" height="720" alt="Bar chart of Nebraska 2026 income tax tiers: about 2.46 percent, 3.51 percent, and a top rate of 3.99 percent." style="max-width:100%;height:auto;border-radius:12px;border:1px solid #d5deea;background:#fff" />
         <figcaption style="font-size:13px;color:#5b6b7c;margin-top:8px">2026 statutory tiers. Each rate applies only to income inside that tier.</figcaption>
       </figure>
+      <div class="table-scroll">
       <table class="table">
         <thead><tr><th>2026 tier</th><th>Approx. rate</th><th>Applies to</th></tr></thead>
         <tbody>
@@ -145,6 +150,8 @@
           <tr><td>Top</td><td>3.99%</td><td>Income above the top threshold</td></tr>
         </tbody>
       </table>
+      </div>
+      <div class="table-scroll">
       <table class="table">
         <thead><tr><th>Year</th><th>Top individual rate</th></tr></thead>
         <tbody>
@@ -155,6 +162,7 @@
           <tr><td>2026</td><td>3.99%</td></tr>
         </tbody>
       </table>
+      </div>
     </section>
     <section class="section">
       <h2>How a bracket calculation works</h2>
