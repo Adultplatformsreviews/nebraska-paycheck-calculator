@@ -116,6 +116,7 @@
   <meta name="twitter:description" content="Nebraska hourly paycheck calculator for 2027: enter your hourly wage, hours, and overtime to see take-home pay after federal, FICA, and NE tax. Try it free." />
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://nebraskapaycheckcalculator.com/#org", "name": "Nebraska Paycheck Calculator", "url": "https://nebraskapaycheckcalculator.com/"}, {"@type": "WebApplication", "name": "Nebraska Hourly Paycheck Calculator: Hourly Wage After Taxes", "url": "https://nebraskapaycheckcalculator.com/hourly", "applicationCategory": "FinanceApplication", "operatingSystem": "Any (web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Nebraska hourly paycheck calculator for 2027: enter your hourly wage, hours, and overtime to see take-home pay after federal, FICA, and NE tax. Try it free.", "publisher": {"@id": "https://nebraskapaycheckcalculator.com/#org"}}, {"@type": "WebPage", "@id": "https://nebraskapaycheckcalculator.com/hourly#webpage", "url": "https://nebraskapaycheckcalculator.com/hourly", "name": "Nebraska Hourly Paycheck Calculator 2027 – Wage After Taxes", "description": "Nebraska hourly paycheck calculator for 2027: enter your hourly wage, hours, and overtime to see take-home pay after federal, FICA, and NE tax. Try it free.", "isPartOf": {"@id": "https://nebraskapaycheckcalculator.com/#website"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".faq summary + p", "details p"]}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://nebraskapaycheckcalculator.com/"}, {"@type": "ListItem", "position": 2, "name": "Nebraska Hourly Paycheck Calculator: Hourly Wage After Taxes", "item": "https://nebraskapaycheckcalculator.com/hourly"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much is $20 an hour after taxes in Nebraska?", "acceptedAnswer": {"@type": "Answer", "text": "At 40 hours a week, single, paid weekly with one allowance, this tool estimates about $660 per week, or roughly $34,300 a year."}}, {"@type": "Question", "name": "How do I calculate a biweekly paycheck from an hourly wage?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply rate by weekly hours by 52, then divide by 26 for gross. Switch frequency to Biweekly above to see net."}}, {"@type": "Question", "name": "Are tips and overtime taxed in Nebraska paychecks?", "acceptedAnswer": {"@type": "Answer", "text": "Reported tips and overtime are wages for withholding purposes. Federal deduction rules for tips or overtime are claimed when you file, so they may not change per-check withholding. Check current IRS guidance."}}, {"@type": "Question", "name": "Does working in Omaha or Lincoln change my hourly take-home?", "acceptedAnswer": {"@type": "Answer", "text": "No. Nebraska has no local wage tax, so the same rate nets the same pay statewide."}}]}]}</script>
   <!-- /seo-meta -->
+  <link rel="stylesheet" href="/paycheck.css" />
 </head>
 <body>
   <div class="note-bar">Educational paycheck estimates only. Not tax, legal, or payroll advice.</div>
@@ -130,88 +131,7 @@
       <p>Turn an hourly wage and weekly hours into estimated Nebraska take-home pay</p>
     </header>
 
-    <div class="calc">
-      <section class="card">
-        <h2>Build your paycheck</h2>
-        <label>Type</label>
-        <div class="seg" id="paySeg">
-          <button type="button" class="active" data-pay="salary">Salary</button>
-          <button type="button" data-pay="hourly">Hourly</button>
-        </div>
-
-        <div id="salaryBox">
-          <label for="salary">Annual salary (USD)</label>
-          <input class="field" id="salary" type="number" min="0" step="100" value="60000" />
-        </div>
-        <div id="hourlyBox" style="display:none">
-          <div class="row2">
-            <div>
-              <label for="hourly">Hourly rate (USD)</label>
-              <input class="field" id="hourly" type="number" min="0" step="0.01" value="28" />
-            </div>
-            <div>
-              <label for="hours">Hours / week</label>
-              <input class="field" id="hours" type="number" min="1" step="0.5" value="40" />
-            </div>
-          </div>
-        </div>
-
-        <label for="frequency">Pay frequency</label>
-        <select id="frequency">
-          <option value="52">Weekly</option>
-          <option value="26" selected>Biweekly</option>
-          <option value="24">Semi-monthly</option>
-          <option value="12">Monthly</option>
-          <option value="1">Annual</option>
-        </select>
-
-        <label for="status">Federal / Nebraska filing status</label>
-        <select id="status">
-          <option value="single">Single or married filing separately</option>
-          <option value="married">Married filing jointly</option>
-          <option value="hoh">Head of household</option>
-        </select>
-
-        <label for="allowances">Nebraska W-4N allowances <span class="hint">each ≈ $2,440 off taxable wages</span></label>
-        <input class="field" id="allowances" type="number" min="0" step="1" value="1" />
-
-        <div class="row2">
-          <div>
-            <label for="pretaxYear">Pre-tax deductions / year <span class="hint">401(k), HSA, medical</span></label>
-            <input class="field" id="pretaxYear" type="number" min="0" step="100" value="0" />
-          </div>
-          <div>
-            <label for="posttax">Post-tax / paycheck</label>
-            <input class="field" id="posttax" type="number" min="0" step="1" value="0" />
-          </div>
-        </div>
-
-        <label for="credits">Estimated annual tax credits <span class="hint">Child tax credit, etc.</span></label>
-        <input class="field" id="credits" type="number" min="0" step="100" value="0" />
-
-        <button class="btn" id="calcBtn" type="button">Calculate take-home</button>
-        <p class="tiny">Estimates use approximate federal withholding brackets (paycheck-style), FICA (SS 6.2% / Medicare 1.45%), and Nebraska Circular EN–style percentage withholding (rates about 2.26%–4.60%). Nebraska has no local wage tax. Not tax advice.</p>
-      </section>
-
-      <section class="card">
-        <h2>Take-home estimate</h2>
-        <div class="net">
-          <div class="k">Net take-home</div>
-          <div class="v" id="netPay">$0.00</div>
-          <div class="s" id="netMeta">net per biweekly paycheck · $0.00 / year</div>
-        </div>
-        <div class="line"><span>Gross pay</span><span id="gross">$0.00</span></div>
-        <div class="line"><span>Pre-tax deductions</span><span class="neg" id="pretaxOut">− $0.00</span></div>
-        <div class="line"><span>Federal income tax</span><span class="neg" id="fit">− $0.00</span></div>
-        <div class="line"><span>Social Security (6.2%)</span><span class="neg" id="ss">− $0.00</span></div>
-        <div class="line"><span>Medicare (1.45%)</span><span class="neg" id="med">− $0.00</span></div>
-        <div class="line"><span>Nebraska state income tax</span><span class="neg" id="state">− $0.00</span></div>
-        <div class="line"><span>Nebraska local income tax</span><span class="zero" id="local">$0.00</span></div>
-        <div class="line"><span>Post-tax deductions</span><span class="neg" id="postOut">− $0.00</span></div>
-        <div class="line"><span>Net take-home</span><span id="netLine">$0.00</span></div>
-        <p class="tiny" id="effRate">Effective tax + FICA rate ≈ 0% of gross.</p>
-      </section>
-    </div>
+    <div id="paycheck-app"></div>
 
     <section class="section">
       <h2>Hourly wage to Nebraska take-home pay</h2>
@@ -222,11 +142,11 @@
 
     <section class="section">
       <h2>Example weekly take-home for Nebraska hourly wages</h2>
-      <p>Single filer, 40 hours a week, paid weekly, one W-4N allowance, no deductions. These are estimates from this tool's engine.</p>
+      <p>Single filer, 40 hours a week, paid weekly, one W-4N allowance, no deductions, 2026 pay date. These are estimates from this tool's engine. A 2027 pay date uses the newer Nebraska tables.</p>
       <table class="table"><thead><tr><th>Hourly rate</th><th>Annual gross</th><th>Gross / week</th><th>Federal</th><th>FICA</th><th>Nebraska</th><th>Est. net / week</th></tr></thead><tbody>
         <tr><td>$15.00</td><td>$31,200</td><td>$600.00</td><td>$30.08</td><td>$45.90</td><td>$16.40</td><td><strong>$507.62</strong></td></tr>
-        <tr><td>$18.00</td><td>$37,440</td><td>$720.00</td><td>$44.48</td><td>$55.08</td><td>$21.55</td><td><strong>$598.90</strong></td></tr>
-        <tr><td>$20.00</td><td>$41,600</td><td>$800.00</td><td>$54.08</td><td>$61.20</td><td>$25.03</td><td><strong>$659.70</strong></td></tr>
+        <tr><td>$18.00</td><td>$37,440</td><td>$720.00</td><td>$44.48</td><td>$55.08</td><td>$21.55</td><td><strong>$598.89</strong></td></tr>
+        <tr><td>$20.00</td><td>$41,600</td><td>$800.00</td><td>$54.08</td><td>$61.20</td><td>$25.03</td><td><strong>$659.69</strong></td></tr>
         <tr><td>$25.00</td><td>$52,000</td><td>$1,000.00</td><td>$78.08</td><td>$76.50</td><td>$33.96</td><td><strong>$811.46</strong></td></tr>
         <tr><td>$30.00</td><td>$62,400</td><td>$1,200.00</td><td>$102.08</td><td>$91.80</td><td>$42.92</td><td><strong>$963.20</strong></td></tr>
       </tbody></table>
@@ -241,8 +161,7 @@
 
     <section class="section">
       <h2>Overtime, part-time, and variable hours</h2>
-      <p>Federal law generally requires overtime at 1.5× the regular rate for non-exempt employees working more than 40 hours in a workweek. To estimate a week with overtime, convert the hours: 45 hours with 5 at time-and-a-half equals 47.5 "straight-time" hours.</p>
-      <p>Enter that number in the hours field.</p>
+      <p>Federal law generally requires overtime at 1.5× the regular rate for non-exempt employees working more than 40 hours in a workweek. Enter regular hours and overtime hours separately. The overtime rate starts at 1.5× your wage until you type a different rate. Salary checks can add overtime the same way, as an extra hourly amount on top of annual pay.</p>
       <p>Part-time workers often find federal withholding is small or zero, because annualized pay falls near the standard deduction. FICA still applies from the first dollar, and Nebraska tax starts once wages after allowances pass the lowest bracket threshold.</p>
       <p>If you work two hourly jobs, each employer withholds as if it were your only job. That can leave you under-withheld.</p>
       <p>The federal W-4 multiple-jobs step and extra Nebraska withholding on the W-4N are the usual fixes. The <a href="/tax">Nebraska withholding guide</a> explains how allowances interact with the state tables.</p>
@@ -282,132 +201,6 @@
     </footer>
   </div>
 
-  <script>
-    const money = n => '$' + (Math.max(0, n) || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    const minus = n => '− ' + money(n);
-    const FREQ_LABEL = { '52': 'weekly', '26': 'biweekly', '24': 'semi-monthly', '12': 'monthly', '1': 'annual' };
-
-    const BRACKETS = {
-      single: [
-        { upto: 12400, rate: 0.10 }, { upto: 50400, rate: 0.12 }, { upto: 105700, rate: 0.22 },
-        { upto: 201775, rate: 0.24 }, { upto: 256225, rate: 0.32 }, { upto: 640600, rate: 0.35 }, { upto: Infinity, rate: 0.37 }
-      ],
-      married: [
-        { upto: 24800, rate: 0.10 }, { upto: 100800, rate: 0.12 }, { upto: 211400, rate: 0.22 },
-        { upto: 403550, rate: 0.24 }, { upto: 512450, rate: 0.32 }, { upto: 768700, rate: 0.35 }, { upto: Infinity, rate: 0.37 }
-      ],
-      hoh: [
-        { upto: 17700, rate: 0.10 }, { upto: 67500, rate: 0.12 }, { upto: 105700, rate: 0.22 },
-        { upto: 201750, rate: 0.24 }, { upto: 256200, rate: 0.32 }, { upto: 640600, rate: 0.35 }, { upto: Infinity, rate: 0.37 }
-      ]
-    };
-    const STD = { single: 16100, married: 32200, hoh: 24150 }; // aligned to common 2027 paycheck withholding estimates
-    const SS_RATE = 0.062, SS_BASE = 184500, MED_RATE = 0.0145;
-    const NE_ALLOWANCE = 2440;
-
-    // Approximate NE Circular EN annual percentage method (educational)
-    const NE_SINGLE = [
-      { floor: 0, base: 0, rate: 0, start: 0 },
-      { floor: 3430, base: 0, rate: 0.0226, start: 3430 },
-      { floor: 6710, base: 74.13, rate: 0.0322, start: 6710 },
-      { floor: 21810, base: 560.35, rate: 0.0421, start: 21810 },
-      { floor: 31610, base: 972.93, rate: 0.0435, start: 31610 },
-      { floor: 40130, base: 1343.55, rate: 0.0448, start: 40130 },
-      { floor: 75370, base: 2922.30, rate: 0.0460, start: 75370 }
-    ];
-    const NE_MARRIED = [
-      { floor: 0, base: 0, rate: 0, start: 0 },
-      { floor: 8190, base: 0, rate: 0.0226, start: 8190 },
-      { floor: 13470, base: 119.33, rate: 0.0322, start: 13470 },
-      { floor: 33720, base: 771.38, rate: 0.0421, start: 33720 },
-      { floor: 44920, base: 1242.90, rate: 0.0435, start: 44920 },
-      { floor: 54440, base: 1656.60, rate: 0.0448, start: 54440 },
-      { floor: 82920, base: 2932.70, rate: 0.0460, start: 82920 }
-    ];
-
-    let payType = 'salary';
-
-    function federalAnnual(taxable, status) {
-      let tax = 0, prev = 0;
-      for (const b of BRACKETS[status]) {
-        const slice = Math.min(taxable, b.upto) - prev;
-        if (slice > 0) tax += slice * b.rate;
-        if (taxable <= b.upto) break;
-        prev = b.upto;
-      }
-      return Math.max(0, tax);
-    }
-
-    function nebraskaAnnual(wagesAfterAllow, status) {
-      const table = status === 'married' ? NE_MARRIED : NE_SINGLE;
-      let row = table[0];
-      for (const r of table) {
-        if (wagesAfterAllow >= r.floor) row = r;
-      }
-      if (row.rate === 0) return 0;
-      return Math.max(0, row.base + row.rate * (wagesAfterAllow - row.start));
-    }
-
-    function calc() {
-      const periods = Number(document.getElementById('frequency').value);
-      const status = document.getElementById('status').value;
-      const pretaxYear = Number(document.getElementById('pretaxYear').value) || 0;
-      const posttax = Number(document.getElementById('posttax').value) || 0;
-      const credits = Number(document.getElementById('credits').value) || 0;
-      const allowances = Math.max(0, Number(document.getElementById('allowances').value) || 0);
-
-      const annualGross = payType === 'hourly'
-        ? (Number(document.getElementById('hourly').value) || 0) * (Number(document.getElementById('hours').value) || 0) * 52
-        : (Number(document.getElementById('salary').value) || 0);
-
-      const gross = annualGross / periods;
-      const pretaxPer = pretaxYear / periods;
-      const fedTaxable = Math.max(0, annualGross - pretaxYear - STD[status]);
-      const fit = Math.max(0, federalAnnual(fedTaxable, status) - credits) / periods;
-      const ssBaseAnnual = Math.min(Math.max(0, annualGross - pretaxYear), SS_BASE);
-      const ss = (ssBaseAnnual / periods) * SS_RATE;
-      const med = (Math.max(0, annualGross - pretaxYear) / periods) * MED_RATE;
-
-      const neBase = Math.max(0, annualGross - pretaxYear - allowances * NE_ALLOWANCE);
-      const state = nebraskaAnnual(neBase, status) / periods;
-
-      const net = Math.max(0, gross - pretaxPer - fit - ss - med - state - posttax);
-      const taxAll = fit + ss + med + state;
-      const eff = gross ? (taxAll / gross) * 100 : 0;
-
-      document.getElementById('netPay').textContent = money(net);
-      document.getElementById('netMeta').textContent = `net per ${FREQ_LABEL[String(periods)]} paycheck · ${money(net * periods)} / year`;
-      document.getElementById('gross').textContent = money(gross);
-      document.getElementById('pretaxOut').textContent = minus(pretaxPer);
-      document.getElementById('fit').textContent = minus(fit);
-      document.getElementById('ss').textContent = minus(ss);
-      document.getElementById('med').textContent = minus(med);
-      document.getElementById('state').textContent = minus(state);
-      document.getElementById('local').textContent = '$0.00';
-      document.getElementById('postOut').textContent = minus(posttax);
-      document.getElementById('netLine').textContent = money(net);
-      document.getElementById('effRate').textContent = `Effective federal + FICA + NE ≈ ${eff.toFixed(1)}% of gross. Annual gross ${money(annualGross)}.`;
-    }
-
-    document.querySelectorAll('#paySeg button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('#paySeg button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        payType = btn.dataset.pay;
-        document.getElementById('salaryBox').style.display = payType === 'salary' ? 'block' : 'none';
-        document.getElementById('hourlyBox').style.display = payType === 'hourly' ? 'block' : 'none';
-        calc();
-      });
-    });
-
-    ['salary','hourly','hours','frequency','status','allowances','pretaxYear','posttax','credits'].forEach(id => {
-      const el = document.getElementById(id);
-      el.addEventListener('input', calc);
-      el.addEventListener('change', calc);
-    });
-    document.getElementById('calcBtn').addEventListener('click', calc);
-    calc();
-  </script>
-  <script>document.querySelector('#paySeg button[data-pay="hourly"]').click();</script>
-</body>
+  <script src="/paycheck.js"></script>
+  <script>NebraskaPaycheck.mount(document.getElementById('paycheck-app'), { payType: 'hourly', heading: 'Hourly paycheck' });</script></body>
 </html>
