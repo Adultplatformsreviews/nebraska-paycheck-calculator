@@ -65,10 +65,14 @@
     .faq p { margin: 8px 0 0; }
     footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
     @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
-      .table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
-    .table th,.table td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--line)}
-    .table th:first-child,.table td:first-child{text-align:left}
-    .table tr:nth-child(even) td{background:#f7f9fb}
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:10px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:1px solid #c5d0de}
+    .table th:nth-child(2),.table td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums}
+    .table.num-3 th:nth-child(3),.table.num-3 td:nth-child(3){text-align:right;font-variant-numeric:tabular-nums}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
     .section h3{margin:16px 0 6px;font-size:1.1rem}
     .links a{margin-right:14px}
 
@@ -132,6 +136,7 @@
       <h2>Current rate</h2>
       <p>Nebraska's minimum wage rose to <strong>$15.00 per hour on January 1, 2026</strong>. Voters approved Initiative 433 in 2022, which stepped the wage up from $9.00 to $10.50 (2023), $12.00 (2024), $13.50 (2025), and $15.00 (2026).</p>
       <p>Starting in 2027 the rate is scheduled to adjust annually with inflation, unless the Legislature changes the law. Check the Nebraska Department of Labor for any updates.</p>
+      <div class="table-scroll">
       <table class="table">
         <thead><tr><th>Year</th><th>Hourly minimum</th></tr></thead>
         <tbody>
@@ -143,6 +148,7 @@
           <tr><td>2027 on</td><td>Adjusts with inflation, unless the law changes</td></tr>
         </tbody>
       </table>
+      </div>
     </section>
     <section class="section">
       <h2>Who is covered</h2>
@@ -153,7 +159,9 @@
     <section class="section">
       <h2>What $15 an hour means per year</h2>
       <p>At 40 hours a week for 52 weeks, $15.00 an hour is $31,200 a year, or $1,200 gross per biweekly check. A part-time schedule of 25 hours a week is $19,500 a year.</p>
-      <table class="table"><thead><tr><th>Hours / week</th><th>Weekly gross</th><th>Annual gross</th></tr></thead><tbody><tr><td>20</td><td>$300</td><td>$15,600</td></tr><tr><td>30</td><td>$450</td><td>$23,400</td></tr><tr><td>40</td><td>$600</td><td>$31,200</td></tr></tbody></table>
+      <div class="table-scroll">
+      <table class="table num-3"><thead><tr><th>Hours / week</th><th>Weekly gross</th><th>Annual gross</th></tr></thead><tbody><tr><td>20</td><td>$300</td><td>$15,600</td></tr><tr><td>30</td><td>$450</td><td>$23,400</td></tr><tr><td>40</td><td>$600</td><td>$31,200</td></tr></tbody></table>
+      </div>
     </section>
     <section class="section">
       <h2>From gross to take-home</h2>

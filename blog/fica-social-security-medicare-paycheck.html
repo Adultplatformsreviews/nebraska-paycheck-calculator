@@ -65,10 +65,14 @@
     .faq p { margin: 8px 0 0; }
     footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
     @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
-      .table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
-    .table th,.table td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--line)}
-    .table th:first-child,.table td:first-child{text-align:left}
-    .table tr:nth-child(even) td{background:#f7f9fb}
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:10px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:1px solid #c5d0de}
+    .table th:nth-child(2),.table td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums}
+    .table.num-3 th:nth-child(3),.table.num-3 td:nth-child(3){text-align:right;font-variant-numeric:tabular-nums}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
     .section h3{margin:16px 0 6px;font-size:1.1rem}
     .links a{margin-right:14px}
 
@@ -135,7 +139,9 @@
     </section>
     <section class="section">
       <h2>The rates</h2>
-      <table class="table"><thead><tr><th>Tax</th><th>Employee</th><th>Employer</th><th>Limit</th></tr></thead><tbody><tr><td>Social Security</td><td>6.2%</td><td>6.2%</td><td>Wage base $184,500 (2026)</td></tr><tr><td>Medicare</td><td>1.45%</td><td>1.45%</td><td>No limit</td></tr><tr><td>Additional Medicare</td><td>0.9%</td><td>None</td><td>Wages over $200,000</td></tr></tbody></table>
+      <div class="table-scroll">
+      <table class="table num-3"><thead><tr><th>Tax</th><th>Employee</th><th>Employer</th><th>Limit</th></tr></thead><tbody><tr><td>Social Security</td><td>6.2%</td><td>6.2%</td><td>Wage base $184,500 (2026)</td></tr><tr><td>Medicare</td><td>1.45%</td><td>1.45%</td><td>No limit</td></tr><tr><td>Additional Medicare</td><td>0.9%</td><td>None</td><td>Wages over $200,000</td></tr></tbody></table>
+      </div>
       <figure style="margin:18px 0">
         <img src="/blog/images/fica-rate-split.png" width="1200" height="720" alt="Bar chart of employee FICA: Social Security at 6.2 percent plus Medicare at 1.45 percent, totaling 7.65 percent of wages." style="max-width:100%;height:auto;border-radius:12px;border:1px solid #d5deea;background:#fff" />
         <figcaption style="font-size:13px;color:#5b6b7c;margin-top:8px">Employee share only. Employers pay a matching 6.2% and 1.45%.</figcaption>
@@ -145,7 +151,8 @@
       <h2>Example</h2>
       <p>A Nebraska worker earning $52,000 a year, paid biweekly, has $2,000 gross per check. Social Security is $124.00 and Medicare is $29.00, for $153.00 of FICA every check, or $3,978 a year.</p>
       <p>Nebraska income tax on the same check is often less than that.</p>
-      <table class="table">
+      <div class="table-scroll">
+      <table class="table num-3">
         <thead><tr><th>Line</th><th>Each biweekly check</th><th>Full year</th></tr></thead>
         <tbody>
           <tr><td>Gross pay</td><td>$2,000</td><td>$52,000</td></tr>
@@ -154,6 +161,7 @@
           <tr><td>FICA total</td><td>$153.00</td><td>$3,978</td></tr>
         </tbody>
       </table>
+      </div>
       <p>To see FICA alongside federal and Nebraska tax for your own pay, use the <a href="/">Nebraska paycheck calculator</a>.</p>
     </section>
     <section class="section">

@@ -65,10 +65,14 @@
     .faq p { margin: 8px 0 0; }
     footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
     @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
-      .table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
-    .table th,.table td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--line)}
-    .table th:first-child,.table td:first-child{text-align:left}
-    .table tr:nth-child(even) td{background:#f7f9fb}
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:10px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:1px solid #c5d0de}
+    .table th:nth-child(2),.table td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums}
+    .table.num-3 th:nth-child(3),.table.num-3 td:nth-child(3){text-align:right;font-variant-numeric:tabular-nums}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
     .section h3{margin:16px 0 6px;font-size:1.1rem}
     .links a{margin-right:14px}
 
@@ -137,7 +141,8 @@
       <h2>What an allowance does</h2>
       <p>Each allowance subtracts a fixed amount from your annualized wages before the Circular EN withholding formula runs. In recent schedules, one allowance is worth roughly $2,400 to $2,500 of annual wages.</p>
       <p>At a 3–4% marginal rate, each allowance lowers yearly Nebraska withholding by about $75 to $100.</p>
-      <table class="table">
+      <div class="table-scroll">
+      <table class="table num-3">
         <thead><tr><th>Allowances</th><th>Annual wages removed</th><th>Less withheld per year</th></tr></thead>
         <tbody>
           <tr><td>1</td><td>about $2,400–$2,500</td><td>about $75–$100</td></tr>
@@ -145,11 +150,14 @@
           <tr><td>3</td><td>about $7,200–$7,500</td><td>about $225–$300</td></tr>
         </tbody>
       </table>
+      </div>
       <p>You can see the exact effect for your pay with the <a href="/tax">Nebraska income tax withholding calculator</a>; change the allowance count and watch the per-check amount move.</p>
     </section>
     <section class="section">
       <h2>How many to claim</h2>
+      <div class="table-scroll">
       <table class="table"><thead><tr><th>Situation</th><th>Typical allowances</th></tr></thead><tbody><tr><td>Single, one job, no dependents</td><td>1</td></tr><tr><td>Married, one earner</td><td>2 + one per dependent</td></tr><tr><td>Married, both working</td><td>Split allowances; often 1 each</td></tr><tr><td>Two or more jobs</td><td>0 on the second job</td></tr><tr><td>Want a bigger refund</td><td>0 or extra withholding</td></tr></tbody></table>
+      </div>
       <p>These are starting points. The W-4N worksheet walks through personal, spouse, dependent, and deduction lines to get an exact number.</p>
     </section>
     <section class="section">

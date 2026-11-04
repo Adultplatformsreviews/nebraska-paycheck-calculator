@@ -65,10 +65,14 @@
     .faq p { margin: 8px 0 0; }
     footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
     @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
-      .table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
-    .table th,.table td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--line)}
-    .table th:first-child,.table td:first-child{text-align:left}
-    .table tr:nth-child(even) td{background:#f7f9fb}
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:10px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:1px solid #c5d0de}
+    .table th:nth-child(2),.table td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums}
+    .table.num-3 th:nth-child(3),.table.num-3 td:nth-child(3){text-align:right;font-variant-numeric:tabular-nums}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
     .section h3{margin:16px 0 6px;font-size:1.1rem}
     .links a{margin-right:14px}
 
@@ -132,6 +136,7 @@
       <h2>The short answer</h2>
       <p>For 2026, the Nebraska state income tax rate tops out at <strong>3.99%</strong>. Lower slices of income are taxed at about 2.46% and 3.51%.</p>
       <p>The statewide sales tax rate is <strong>5.5%</strong>, and cities may add up to about 2% more (Omaha totals 7%). Nebraska has no local income tax on wages.</p>
+      <div class="table-scroll">
       <table class="table">
         <thead><tr><th>Tax</th><th>2026 rate</th><th>On a paycheck?</th></tr></thead>
         <tbody>
@@ -142,6 +147,7 @@
           <tr><td>Local wage or income tax</td><td>None</td><td>No</td></tr>
         </tbody>
       </table>
+      </div>
       <p>If you only care about how much state tax leaves each paycheck, the <a href="/tax">Nebraska income tax withholding calculator</a> gives a per-check figure based on your pay frequency and W-4N allowances.</p>
     </section>
     <section class="section">
