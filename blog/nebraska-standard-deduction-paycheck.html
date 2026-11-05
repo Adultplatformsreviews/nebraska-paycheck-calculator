@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="aT-_To54tuHU7xgf4H4Hu3deLyW_8XjMq0NQvhRLbXE" />
+  <title>Nebraska Standard Deduction and Paycheck Withholding</title>
+  <meta name="description" content="The Nebraska standard deduction on Form 1040N, the latest published amounts, and why 2027 paycheck withholding subtracts a W-4N allowance instead of it." />
+  <link rel="canonical" href="https://nebraskapaycheckcalculator.com/blog/nebraska-standard-deduction-paycheck" />
+  <meta name="robots" content="index,follow" />
+  <style>
+    html { scrollbar-gutter: stable; }
+    img { max-width: 100%; height: auto; }
+    :root {
+      --bg: #f3f6fb;
+      --ink: #122033;
+      --muted: #5b6b7c;
+      --line: #d5deea;
+      --card: #fff;
+      --blue: #1a5fb4;
+      --blue-dark: #134a8c;
+      --soft: #e8f0fb;
+      --red: #b42318;
+      --shadow: 0 8px 24px rgba(18,32,51,.06);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .note-bar { background: #0f2a4a; color: #dcebff; text-align: center; font-size: 13px; padding: 9px 12px; }
+    .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+    header h1 { margin: 0 0 8px; font-size: clamp(1.85rem, 4vw, 2.55rem); letter-spacing: -.02em; line-height: 1.15; }
+    header p { margin: 0 0 22px; color: var(--muted); max-width: 62ch; }
+    .calc { display: grid; grid-template-columns: 1.05fr .95fr; gap: 16px; margin-bottom: 34px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 20px; }
+    .card h2 { margin: 0 0 14px; font-size: 1.15rem; }
+    label { display: block; font-size: 13px; font-weight: 700; margin: 0 0 6px; }
+    .hint { font-weight: 500; color: var(--muted); font-size: 12px; }
+    .field, select { width: 100%; border: 1px solid #c7d3e0; border-radius: 10px; padding: 11px 12px; font: inherit; margin-bottom: 12px; background: #fff; }
+    .seg { display: flex; gap: 8px; margin-bottom: 12px; }
+    .seg button { flex: 1; border: 1px solid #c7d3e0; background: #fff; border-radius: 999px; padding: 9px 10px; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .seg button.active { background: var(--soft); color: var(--blue-dark); border-color: #9bb8e0; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn { width: 100%; border: 0; border-radius: 10px; padding: 12px 14px; background: var(--blue); color: #fff; font-weight: 800; cursor: pointer; }
+    .btn:hover { background: var(--blue-dark); }
+    .net { background: var(--soft); border: 1px solid #b7cceb; border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+    .net .k { font-size: 13px; font-weight: 700; color: var(--blue-dark); }
+    .net .v { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin-top: 2px; }
+    .net .s { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .line { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #edf1f6; font-size: 14px; }
+    .line:last-child { border-bottom: 0; font-weight: 800; }
+    .neg { color: var(--red); font-weight: 700; }
+    .zero { color: var(--blue-dark); font-weight: 700; }
+    .tiny { margin-top: 10px; font-size: 12px; color: var(--muted); }
+    .section { margin-top: 28px; }
+    .section h2 { margin: 0 0 10px; font-size: 1.45rem; }
+    .section p, .section li { color: var(--muted); }
+    .steps { display: grid; gap: 10px; }
+    .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; grid-template-columns: 42px 1fr; gap: 10px; align-items: start; }
+    .step b { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--soft); color: var(--blue-dark); }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tile { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+    .tile strong { display: block; margin-bottom: 4px; }
+    .tile span { color: var(--muted); font-size: 13px; }
+    .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq p { margin: 8px 0 0; }
+    footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;table-layout:fixed;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:12px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line);overflow-wrap:break-word}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:2px solid #c5d0de}
+    .table th:first-child,.table td:first-child{text-align:left}
+    .table th:not(:first-child):not(:last-child),.table td:not(:first-child):not(:last-child){text-align:right;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+    .table th:last-child,.table td:last-child{text-align:right}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
+    .table tr > :nth-child(1):nth-last-child(2){width:62%}
+    .table tr > :nth-child(2):nth-last-child(1){width:38%}
+    .table tr > :nth-child(1):nth-last-child(3){width:42%}
+    .table tr > :nth-child(2):nth-last-child(2){width:22%}
+    .table tr > :nth-child(3):nth-last-child(1){width:36%}
+    .table.num-3 tr > :nth-child(1):nth-last-child(3){width:34%}
+    .table.num-3 tr > :nth-child(2):nth-last-child(2){width:33%}
+    .table.num-3 tr > :nth-child(3):nth-last-child(1){width:33%}
+    .table tr > :nth-child(1):nth-last-child(4){width:28%}
+    .table tr > :nth-child(2):nth-last-child(3){width:14%}
+    .table tr > :nth-child(3):nth-last-child(2){width:14%}
+    .table tr > :nth-child(4):nth-last-child(1){width:44%}
+    @media (max-width:700px){
+      .table th,.table td{padding:10px 8px}
+      .table tr > :nth-child(1):nth-last-child(3){width:40%}
+      .table tr > :nth-child(2):nth-last-child(2){width:28%}
+      .table tr > :nth-child(3):nth-last-child(1){width:32%}
+    }
+    .section h3{margin:16px 0 6px;font-size:1.1rem}
+    .links a{margin-right:14px}
+
+    .site-nav{display:flex;gap:18px;flex-wrap:wrap;padding:12px 0;margin-bottom:14px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+    .site-nav a[aria-current]{color:var(--ink)}
+    .related{margin-top:30px;background:var(--soft);border:1px solid #b7cceb;border-radius:14px;padding:16px 18px}
+    .related h2{margin:0 0 8px;font-size:1.15rem}.related ul{margin:0;padding-left:18px}.related li{color:var(--muted);margin:4px 0}
+    footer nav{margin-top:8px}
+    .site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:14px 0;margin-bottom:10px;border-bottom:1px solid var(--line)}
+    .site-header .brand{font-weight:800;font-size:17px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+    .site-header .brand span{color:var(--blue)}
+    .site-header .site-nav{border:0;margin:0;padding:0}
+    .site-nav a{text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
+    .site-nav a[aria-current]{border-bottom-color:var(--blue)}
+    .breadcrumbs{font-size:13px;color:var(--muted);margin:0 0 16px}
+    .breadcrumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+    .breadcrumbs li+li::before{content:"\203A";margin-right:6px;color:var(--muted)}
+    .breadcrumbs a{color:var(--blue);text-decoration:none}
+    .site-footer{text-align:left;margin-top:40px;padding:24px 0 12px}
+    .site-footer .footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:18px}
+    .site-footer h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:0 0 8px}
+    .site-footer ul{list-style:none;margin:0;padding:0}
+    .site-footer li{margin:4px 0}
+    .site-footer a{color:var(--blue);text-decoration:none}
+    .site-footer .disclaimer{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
+    .site-footer .copy{margin:6px 0 0;font-size:12px}
+  </style>
+
+
+  <!-- seo-meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nebraska Paycheck Calculator" />
+  <meta property="og:title" content="Nebraska Standard Deduction and Paycheck Withholding" />
+  <meta property="og:description" content="The Nebraska standard deduction on Form 1040N, the latest published amounts, and why 2027 paycheck withholding subtracts a W-4N allowance instead of it." />
+  <meta property="og:url" content="https://nebraskapaycheckcalculator.com/blog/nebraska-standard-deduction-paycheck" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Nebraska Paycheck Calculator — 2027 take-home pay after federal, FICA, and Nebraska tax" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta name="twitter:title" content="Nebraska Standard Deduction and Paycheck Withholding" />
+  <meta name="twitter:description" content="The Nebraska standard deduction on Form 1040N, the latest published amounts, and why 2027 paycheck withholding subtracts a W-4N allowance instead of it." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nebraskapaycheckcalculator.com/#org","name":"Nebraska Paycheck Calculator","url":"https://nebraskapaycheckcalculator.com/"},{"@type":"BlogPosting","headline":"Nebraska Standard Deduction and Paycheck Withholding","description":"The Nebraska standard deduction on Form 1040N, the latest published amounts, and why 2027 paycheck withholding subtracts a W-4N allowance instead of it.","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-standard-deduction-paycheck","mainEntityOfPage":"https://nebraskapaycheckcalculator.com/blog/nebraska-standard-deduction-paycheck","inLanguage":"en-US","dateModified":"2026-11-05","author":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"publisher":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"about":"nebraska standard deduction"},{"@type":"WebPage","@id":"https://nebraskapaycheckcalculator.com/blog/nebraska-standard-deduction-paycheck#webpage","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-standard-deduction-paycheck","name":"Nebraska Standard Deduction and Paycheck Withholding","description":"The Nebraska standard deduction on Form 1040N, the latest published amounts, and why 2027 paycheck withholding subtracts a W-4N allowance instead of it.","isPartOf":{"@id":"https://nebraskapaycheckcalculator.com/#website"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".faq summary + p","details p"]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nebraskapaycheckcalculator.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://nebraskapaycheckcalculator.com/blog/"},{"@type":"ListItem","position":3,"name":"Nebraska Standard Deduction and Paycheck Withholding","item":"https://nebraskapaycheckcalculator.com/blog/nebraska-standard-deduction-paycheck"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Nebraska paycheck withholding subtract the standard deduction?","acceptedAnswer":{"@type":"Answer","text":"No. Withholding subtracts W-4N allowances and then uses the Circular EN table. The Nebraska standard deduction is subtracted on Form 1040N."}},{"@type":"Question","name":"What is the Nebraska standard deduction?","acceptedAnswer":{"@type":"Answer","text":"On the 2025 Form 1040N instructions the base amounts are $8,600 single or married filing separately, $17,200 married filing jointly or qualifying surviving spouse, and $12,600 head of household. The 2026 estimated-tax worksheet uses $8,850, $17,700, and $12,950. A 2027 indexed amount is not printed on this page."}},{"@type":"Question","name":"Is a W-4N allowance the same as the standard deduction?","acceptedAnswer":{"@type":"Answer","text":"No. One allowance in 2027 removes $2,510 from annualized wages, which is $96.54 on a biweekly check. The standard deduction is a larger subtraction on the return, and it applies whether or not you claimed the allowance."}},{"@type":"Question","name":"If I take the federal standard deduction, what does Nebraska use?","acceptedAnswer":{"@type":"Answer","text":"The Nebraska standard deduction. Nebraska itemized deductions are available only if you itemized on the federal return, and state income taxes are subtracted before Nebraska compares that figure with the standard deduction."}}]}]}</script>
+  <!-- /seo-meta -->
+</head>
+<body>
+  <div class="note-bar">Educational guide only. Not tax, legal, or payroll advice.</div>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="/">Nebraska <span>Paycheck</span> Calculator</a>
+      <nav class="site-nav" aria-label="Main"><a href="/">Home</a><a href="/hourly">Hourly</a><a href="/tax">Tax</a><a href="/blog/">Guides</a></nav>
+    </header>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li aria-current="page">Nebraska Standard Deduction and Paycheck Withholding</li></ol></nav>
+    <header>
+      <h1>Nebraska Standard Deduction and Paycheck Withholding</h1>
+      <p>A Form 1040N subtraction the stub never prints</p>
+    </header>
+
+    <section class="section">
+      <h2>The return subtracts it, and the stub has no line for it</h2>
+      <p>The Nebraska standard deduction is a subtraction on Form 1040N. Federal adjusted gross income comes onto the return, Nebraska adjustments are applied, and the deduction comes off before Nebraska taxable income is left for the rate schedule. Paycheck withholding never prints a line called "standard deduction." Circular EN subtracts W-4N allowances from the wage and looks up a table. Those are different subtractions, in different documents, and they are not sized to match.</p>
+      <p>That is why a worker can look at a full year of stubs, add up Nebraska withholding, and still see a refund or a balance due that the stubs cannot explain by themselves. The deduction is one of the return items the stubs do not apply. The timing story, prepayment versus the bill, is <a href="/blog/nebraska-1040n-vs-withholding">Nebraska Form 1040N vs paycheck withholding</a>. The rates that apply after the deduction are <a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a>. This page stops at the deduction.</p>
+    </section>
+    <section class="section">
+      <h2>The amounts on the 2025 return and the 2026 worksheet</h2>
+      <p>The 2025 Form 1040N instructions print these standard deductions when no age or blindness boxes are checked. A 2027 indexed amount is not in this site's withholding tables, and it is not printed here. The 2026 Form 1040N-ES worksheet is the later set of base amounts: $8,850 single, $17,700 married filing jointly or qualifying surviving spouse, $8,850 married filing separately, and $12,950 head of household.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>Filing status</th><th>2025 Form 1040N</th><th>2026 estimated-tax worksheet</th></tr></thead>
+        <tbody>
+          <tr><td>Single</td><td>$8,600</td><td>$8,850</td></tr>
+          <tr><td>Married filing jointly</td><td>$17,200</td><td>$17,700</td></tr>
+          <tr><td>Married filing separately</td><td>$8,600</td><td>$8,850</td></tr>
+          <tr><td>Head of household</td><td>$12,600</td><td>$12,950</td></tr>
+          <tr><td>Qualifying surviving spouse</td><td>$17,200</td><td>$17,700</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Use the form for the year you are filing. A paycheck dated in 2027 still will not subtract whichever of these numbers is current. The withholding tables do not look the deduction up. If you are sizing a 2027 return before that year's instruction booklet is the one in your hand, the honest statement is that the deduction will be the indexed amount on that booklet, and the check in your account will have ignored it either way.</p>
+      <p>Someone who can be claimed on another person's return for the federal child tax credit or the dependent credit uses a smaller figure: the federal standard deduction actually allowed, or the chart amount, whichever is less. A teenager with a part-time Nebraska job does not automatically get the full single amount. The paycheck still will not show the deduction. It will show whatever the W-4N told the employer to do.</p>
+    </section>
+    <section class="section">
+      <h2>Age and blindness add to the chart</h2>
+      <p>The 2025 instructions add $2,000 for each age or blindness box checked by a single filer or a head of household, and $1,650 for each box on a married filing jointly return. That is why the 2025 single column runs $8,600, $10,600, and $12,600, and the joint column runs $17,200, $18,850, $20,500, $22,150, and $23,800. Married filing separately uses the spouse's boxes only when a personal exemption is allowed for the spouse. The 2025 separate column runs $8,600, $10,250, $11,900, $13,550, and $15,200.</p>
+      <p>The 2026 estimated-tax worksheet raises those add-ons. At the end of 2026, an unmarried person, single or head of household, adds $2,050 if 65 or older or blind, and $4,100 if both. A qualifying surviving spouse adds $1,700 or $3,400 on that same split. A married person adds $1,700 if 65 or older or blind, and $3,400 if both. When both spouses qualify, the worksheet stacks further amounts. Married filing separately uses the spouse amounts only if a personal exemption is allowed for the spouse. The worksheet for the year is the list to follow once both spouses are in the picture. This page does not reprint every combination.</p>
+      <p>None of those add-ons are a W-4N allowance. Claiming an extra allowance because someone turned 65 is a withholding choice. The return still adds the standard-deduction amount if the boxes apply, whether or not the allowance was claimed. The allowance guide is <a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a>. It owns the count. This page owns the deduction.</p>
+    </section>
+    <section class="section">
+      <h2>$60,000 of wages and an $8,850 subtraction</h2>
+      <p>Take the reference wage this site uses everywhere: $60,000, no other income, no Nebraska adjustment. Using the 2026 single standard deduction of $8,850 as an illustration, Nebraska income before adjustments is $60,000 minus $8,850, or $51,150. That sentence is arithmetic on a published deduction. It is not a 2027 filed return, and it is not the tax. The rate schedule that applies to taxable income after this point lives on the brackets guide. Quoting a percentage here would turn this page into a second rate sheet.</p>
+      <p>The same worker's 2027 biweekly stub does not subtract $8,850. Gross is $2,307.69. One W-4N allowance removes $96.54. The Circular EN table then withholds $73.80 of Nebraska tax. Across 26 checks that is $1,918.80, which is 3.20% of gross wages. The rate guide calls a figure like that a withholding share, and it points out that a single worker near this wage often lands nearer an effective rate around 3% once the return's deduction and the progressive schedule have done their work. The effective-rate sentence stays on <a href="/blog/nebraska-state-tax-rate">Nebraska state tax rate</a>. The $96.54 allowance stays on <a href="/blog/nebraska-circular-en">Nebraska Circular EN</a>.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>What is being subtracted</th><th>Where</th><th>Amount in this example</th></tr></thead>
+        <tbody>
+          <tr><td>2026 single standard deduction</td><td>Form 1040N</td><td>$8,850 for the year</td></tr>
+          <tr><td>One 2027 W-4N allowance</td><td>The paycheck</td><td>$96.54 this check, $2,510 for the year</td></tr>
+          <tr><td>Federal withholding adjustment in this tool</td><td>Publication 15-T, 2026 worksheets</td><td>$8,600 for a single filer</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The $8,600 federal figure is the adjustment in the percentage-method worksheets this calculator still uses for a 2027 pay date. It is a federal withholding mechanic. It is not the Nebraska standard deduction, even though the two numbers sit near each other. People who "see" a standard deduction in the federal line and expect the Nebraska line to mirror it are looking at the wrong document. Nebraska withholding uses the allowance. The Nebraska return uses the deduction.</p>
+    </section>
+    <section class="section">
+      <h2>Itemizing federally, and the state tax that comes back out</h2>
+      <p>If you take the standard deduction on the federal return, you take the Nebraska standard deduction on the Nebraska return. If you itemize on the federal return, Nebraska lets you take the larger of the Nebraska standard deduction or your federal itemized deductions minus state and local income taxes. The Nebraska tax withheld on the stub is the kind of state income tax that subtraction removes. A year of Nebraska withholding does not become a Nebraska itemized deduction.</p>
+      <p>That rule surprises people who paid a lot of state tax through the year and expect the state tax to lower the state tax. The form pulls state and local income taxes out of the itemized figure, including the amount reported on the federal schedule even when a federal cap already limited the deduction that reached the federal total. Motor vehicle tax based on the value of the vehicle, the amount paid at registration, is the personal-property piece Nebraska's instructions allow. Sales tax at the store is not a payroll deduction and it is not this standard deduction.</p>
+      <p>After the larger of the two Nebraska figures is taken, the return computes tax, and then a personal exemption credit comes off the tax. The 2025 instructions use $171 per Nebraska personal exemption. The 2026 Form 1040N prints $176. That credit is not part of the standard deduction. A child care credit is a later line still, and it is <a href="/blog/nebraska-child-care-tax-credit-paycheck">Nebraska child care tax credit</a>. Stacking those credits into the deduction double-counts them.</p>
+    </section>
+    <section class="section">
+      <h2>Why the deduction can show up as a refund</h2>
+      <p>Withholding on the $60,000 example sends $1,918.80 to Nebraska over the year. The return starts from adjusted gross income, subtracts the standard deduction or the Nebraska itemized amount, and applies credits the paycheck never computed. If the tax after those steps is less than $1,918.80, the difference is a Nebraska refund. The deduction is one reason that can happen. It is not a promise of a refund, and a refund is not a lower bracket. You prepaid more than the return charged.</p>
+      <p>One extra W-4N allowance will not stand in for an $8,850 deduction. On this wage the allowance guide measures one allowance at about four dollars of Nebraska tax per biweekly check, on the order of $99 a year. The deduction removes thousands of dollars of income before any rate is applied. Different object, different scale. Changing allowances to "claim the standard deduction" misnames both. Allowances change the prepayment. The deduction changes the tax base on the return whether you claim one allowance or six.</p>
+      <p>A pre-tax HSA or health FSA lowers the wages in the W-2, so federal adjusted gross income is already smaller before the standard deduction comes off. The deduction still applies. It does not replace the cafeteria reduction, and the cafeteria reduction does not replace the deduction. The paycheck side of those accounts is <a href="/blog/hsa-fsa-nebraska-paycheck">HSA and health FSA on a Nebraska paycheck</a>. Side income that never hits the stub also reaches the return before the deduction. Prepaying that income is <a href="/blog/nebraska-estimated-tax-payments">Nebraska estimated tax payments</a>. The deduction does not withhold itself.</p>
+    </section>
+    <section class="section">
+      <h2>What to type, and what not to type, in the calculator</h2>
+      <p>The <a href="/">Nebraska paycheck calculator</a> estimates withholding. It has no field for the Nebraska standard deduction, because the employer does not ask for one. Leaving every deduction field blank on the $60,000 example is how you get the $73.80 state line. Typing $8,850 into pre-tax benefits would pretend the deduction was a cafeteria plan. FICA would fall, and a real stub would not do that for a standard deduction. Do not do it.</p>
+      <p>The federal worksheets inside the tool already include the Publication 15-T adjustment described above. You do not add the federal standard deduction on top. Adding it again understates federal withholding. <a href="/tax">Nebraska tax withholding</a> is the screen for the Nebraska line alone. It uses allowances, not the Form 1040N chart.</p>
+      <p>Married filing jointly uses the joint deduction on the return and, if that is the household's only wage, often a different allowance count on the W-4N. The stub still will not show $17,700 or $17,200 coming off one check. Two jobs in one household make the mismatch larger, because each employer withholds as if it sees the only wage, and the return applies one deduction to the combined income. Fixing that with allowances or extra withholding is the W-4N guide. The deduction did not cause the two-job problem. The two employers did.</p>
+    </section>
+    <section class="section">
+      <h2>Frequently asked questions</h2>
+      <details><summary>Does Nebraska paycheck withholding subtract the standard deduction?</summary><p>No. Withholding subtracts W-4N allowances and then uses the Circular EN table. The Nebraska standard deduction is subtracted on Form 1040N.</p></details>
+      <details><summary>What is the Nebraska standard deduction?</summary><p>On the 2025 Form 1040N instructions the base amounts are $8,600 single or married filing separately, $17,200 married filing jointly or qualifying surviving spouse, and $12,600 head of household. The 2026 estimated-tax worksheet uses $8,850, $17,700, and $12,950. A 2027 indexed amount is not printed on this page.</p></details>
+      <details><summary>Is a W-4N allowance the same as the standard deduction?</summary><p>No. One allowance in 2027 removes $2,510 from annualized wages, which is $96.54 on a biweekly check. The standard deduction is a larger subtraction on the return, and it applies whether or not you claimed the allowance.</p></details>
+      <details><summary>If I take the federal standard deduction, what does Nebraska use?</summary><p>The Nebraska standard deduction. Nebraska itemized deductions are available only if you itemized on the federal return, and state income taxes are subtracted before Nebraska compares that figure with the standard deduction.</p></details>
+    </section>
+
+
+    <aside class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/">Nebraska paycheck calculator</a> — withholding, with no field for this deduction</li><li><a href="/blog/nebraska-1040n-vs-withholding">Nebraska Form 1040N vs paycheck withholding</a> — why the return and the stub differ</li><li><a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a> — rates after the deduction</li><li><a href="/blog/nebraska-circular-en">Nebraska Circular EN</a> — the allowance the paycheck actually subtracts</li><li><a href="/blog/">Nebraska pay and tax guides</a></li></ul></aside>
+    <footer class="site-footer">
+      <div class="footer-cols">
+        <nav aria-label="Tools"><h2>Tools</h2><ul><li><a href="/">Nebraska paycheck calculator</a></li><li><a href="/hourly">hourly paycheck calculator</a></li><li><a href="/tax">Nebraska tax withholding</a></li></ul></nav>
+        <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="/blog/">Nebraska pay and tax guides</a></li><li><a href="/blog/nebraska-take-home-pay">Nebraska take-home pay</a></li><li><a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a></li><li><a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a></li><li><a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a></li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a></li></ul></nav>
+        <nav aria-label="Company and legal"><h2>Company &amp; Legal</h2><ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Use</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap">Sitemap</a></li></ul></nav>
+      </div>
+      <p class="disclaimer">Independent educational guide · Not tax, legal, or payroll advice · Not affiliated with the IRS, the Nebraska Department of Revenue, or any payroll provider. Figures are estimates; confirm with official sources.</p>
+      <p class="copy">© 2027 Nebraska Paycheck Calculator</p>
+    </footer>
+  </div>
+</body>
+</html>

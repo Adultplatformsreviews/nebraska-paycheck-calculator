@@ -8,7 +8,7 @@ Static site for [nebraskapaycheckcalculator.com](https://nebraskapaycheckcalcula
 - `index.html` — salary paycheck calculator (weekly, biweekly, semi-monthly, monthly)
 - `hourly.html` — hourly wage calculator, including overtime
 - `tax.html` — Nebraska income tax withholding guide
-- `blog/` — guides on take-home pay, brackets, minimum wage, W-4N, FICA, payroll taxes, pay stubs, bonuses, 401(k), Social Security benefits, overtime, Form 1040N, Circular EN, and Nebraska vs Iowa
+- `blog/` — guides on take-home pay, brackets, minimum wage, W-4N, FICA, payroll taxes, pay stubs, bonuses, 401(k), Social Security benefits, overtime, Form 1040N, Circular EN, Nebraska vs Iowa, HSA and health FSA, estimated tax, tipped paychecks, the standard deduction, and child care credits
 - `about.html`, `contact.html`, `privacy.html`, `terms.html`, `disclaimer.html`, `sitemap.html`
 
 `topical-map.md` records which keyword and intent each URL owns so new pages do not compete with the calculator.
