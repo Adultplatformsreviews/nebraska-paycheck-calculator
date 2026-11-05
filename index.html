@@ -9,6 +9,8 @@
   <link rel="canonical" href="https://nebraskapaycheckcalculator.com/" />
   <meta name="robots" content="index,follow" />
   <style>
+    html { scrollbar-gutter: stable; }
+    img { max-width: 100%; height: auto; }
     :root {
       --bg: #f3f6fb;
       --ink: #122033;
@@ -97,6 +99,86 @@
     .site-footer a{color:var(--blue);text-decoration:none}
     .site-footer .disclaimer{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
     .site-footer .copy{margin:6px 0 0;font-size:12px}
+
+    .section { max-width: 100%; overflow-x: auto; }
+    label .hint { display: block; margin-top: 2px; }
+    .pc-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 14px; }
+    .pc-tabs button {
+      border: 1px solid #c7d3e0;
+      background: #fff;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .pc-tabs button[aria-selected="true"] {
+      background: var(--soft);
+      color: var(--blue-dark);
+      border-color: #9bb8e0;
+    }
+    .pc-tabs button:focus-visible,
+    .pc-seg button:focus-visible,
+    .pc-check input:focus-visible,
+    .field:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+    }
+    .pc-check {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+    .pc-check input { margin-top: 3px; }
+    .pc-form [hidden] { display: none !important; }
+    .pc-ot-hint { margin-top: 0; }
+    .pc-assumptions { margin-top: 12px; font-size: 13px; color: var(--muted); }
+    .pc-assumptions summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+    .pc-assumptions ul { margin: 8px 0 0; padding-left: 18px; }
+    .pc-assumptions li { margin: 0 0 6px; }
+    .pc-result-top { display: grid; grid-template-columns: 132px 1fr; gap: 12px; align-items: center; margin-bottom: 8px; }
+    .pc-donut-wrap { position: relative; width: 132px; height: 132px; }
+    .pc-donut { width: 132px; height: 132px; transform: rotate(-90deg); }
+    .pc-donut-label {
+      position: absolute;
+      inset: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.1;
+    }
+    .pc-donut-label b { font-size: 1.05rem; letter-spacing: -.02em; }
+    .pc-donut-label span { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+    .pc-legend { display: flex; flex-wrap: wrap; gap: 8px 12px; margin: 0 0 8px; font-size: 12px; color: var(--muted); font-weight: 700; }
+    .pc-key { display: inline-flex; align-items: center; gap: 6px; }
+    .pc-key i { width: 9px; height: 9px; border-radius: 99px; display: inline-block; }
+    .pc-amt { display: inline-flex; align-items: baseline; gap: 8px; }
+    .pc-pct { min-width: 3.2em; text-align: right; color: var(--muted); font-weight: 700; font-variant-numeric: tabular-nums; font-size: 12px; }
+    .pc-line-strong { font-weight: 800; border-bottom: 0; }
+    .pc-line-strong .pc-pct { color: var(--ink); }
+    .pc-sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    @media (max-width: 860px) {
+      .pc-result-top { grid-template-columns: 1fr; justify-items: center; }
+      .pc-result-top .net { width: 100%; }
+    }
   </style>
 
   <!-- seo-meta -->
@@ -115,7 +197,7 @@
   <meta name="twitter:title" content="Nebraska Paycheck Calculator 2027 – Take-Home Pay After Tax" />
   <meta name="twitter:description" content="Free Nebraska paycheck calculator for 2027: estimate take-home pay after federal, FICA, and NE state tax for salary or hourly pay. Get your net pay now." />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nebraskapaycheckcalculator.com/#org","name":"Nebraska Paycheck Calculator","url":"https://nebraskapaycheckcalculator.com/"},{"@type":"WebSite","@id":"https://nebraskapaycheckcalculator.com/#website","name":"Nebraska Paycheck Calculator","url":"https://nebraskapaycheckcalculator.com/","inLanguage":"en-US","publisher":{"@id":"https://nebraskapaycheckcalculator.com/#org"}},{"@type":"WebApplication","name":"Nebraska Paycheck Calculator 2027: Take-Home Pay After Taxes","url":"https://nebraskapaycheckcalculator.com/","applicationCategory":"FinanceApplication","operatingSystem":"Any (web browser)","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free Nebraska paycheck calculator for 2027: estimate take-home pay after federal, FICA, and NE state tax for salary or hourly pay. Get your net pay now.","publisher":{"@id":"https://nebraskapaycheckcalculator.com/#org"}},{"@type":"WebPage","@id":"https://nebraskapaycheckcalculator.com/#webpage","url":"https://nebraskapaycheckcalculator.com/","name":"Nebraska Paycheck Calculator 2027 – Take-Home Pay After Tax","description":"Free Nebraska paycheck calculator for 2027: estimate take-home pay after federal, FICA, and NE state tax for salary or hourly pay. Get your net pay now.","isPartOf":{"@id":"https://nebraskapaycheckcalculator.com/#website"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".faq summary + p","details p"]}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I estimate taxes out of my paycheck in Nebraska?","acceptedAnswer":{"@type":"Answer","text":"Take gross pay, subtract pre-tax deductions, then withhold federal income tax, Social Security (6.2%), Medicare (1.45%), and Nebraska income tax based on your W-4N. The calculator above does all of these steps at once."}},{"@type":"Question","name":"What taxes come out of a Nebraska paycheck?","acceptedAnswer":{"@type":"Answer","text":"Federal income tax, Social Security, Medicare, and Nebraska state income tax. There is no local or city income tax in Nebraska."}},{"@type":"Question","name":"How much is $60,000 a year after taxes in Nebraska?","acceptedAnswer":{"@type":"Answer","text":"For a single filer paid biweekly with one W-4N allowance and no deductions, a 2026 pay date is about $1,856 per check. The calculator opens on a 2027 pay date, which is about $1,864 per check because Circular EN 2027 withholds less Nebraska tax. Federal income tax still follows the 2026 Publication 15-T schedules."}},{"@type":"Question","name":"How much is $63,000 a year after taxes in Nebraska?","acceptedAnswer":{"@type":"Answer","text":"For a single filer paid biweekly with one W-4N allowance and no deductions, a 2027 pay date is about $1,952 per check, or about $50,764 a year. Gross on that check is about $2,423 before federal income tax, FICA, and Nebraska withholding."}},{"@type":"Question","name":"Does Nebraska have a city or local income tax?","acceptedAnswer":{"@type":"Answer","text":"No. Omaha, Lincoln, and other Nebraska cities do not withhold a local wage tax from employee paychecks."}},{"@type":"Question","name":"What is the Nebraska state income tax rate on paychecks?","acceptedAnswer":{"@type":"Answer","text":"Withholding follows graduated Circular EN rates, about 2.26% to 4.60% for a 2026 pay date and about 2.26% to 4.03% for a 2027 pay date, after W-4N allowances. See the withholding guide for the bracket walkthrough."}},{"@type":"Question","name":"Is this a Nebraska paycheck calculator with taxes and deductions?","acceptedAnswer":{"@type":"Answer","text":"Yes. It includes federal, FICA, and state taxes plus fields for pre-tax and post-tax deductions, so the net figure reflects both."}},{"@type":"Question","name":"How is a biweekly paycheck calculated?","acceptedAnswer":{"@type":"Answer","text":"Annual pay is divided by 26. Annual tax estimates are divided the same way, so each biweekly check carries 1/26 of the year's withholding."}},{"@type":"Question","name":"Can I calculate an hourly paycheck here?","acceptedAnswer":{"@type":"Answer","text":"Yes, switch to Hourly. For hourly-specific examples and overtime tips, use the Nebraska hourly paycheck calculator."}},{"@type":"Question","name":"How does a 401(k) change my Nebraska take-home pay?","acceptedAnswer":{"@type":"Answer","text":"Traditional 401(k) contributions lower federal and Nebraska taxable wages, so net pay drops by less than the amount you contribute. Roth contributions do not lower current taxes. The line-by-line effect is in how a 401(k) changes Nebraska take-home pay."}},{"@type":"Question","name":"How does this compare with an ADP or SmartAsset paycheck calculator?","acceptedAnswer":{"@type":"Answer","text":"People compare Nebraska salary and hourly estimates with ADP and SmartAsset. This 2027 tool is independent and is not affiliated with either company, the IRS, or the Nebraska Department of Revenue. Small differences usually come from rounding, the pay date, and which Circular EN edition the other tool uses."}},{"@type":"Question","name":"Why is my real paycheck different from the estimate?","acceptedAnswer":{"@type":"Answer","text":"Employer payroll uses exact IRS and Nebraska tables, year-to-date wages, benefit timing, and your precise forms. Treat this as a planning guide, not a pay stub. How to read a Nebraska pay stub walks through the columns on the real check."}},{"@type":"Question","name":"Is this calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no sign-up and no data stored. Calculations run in your browser."}}]}]}</script>  <!-- /seo-meta -->
-  <link rel="stylesheet" href="/paycheck.css" />
+  <link rel="preload" href="/paycheck.js" as="script" />
 </head>
 <body>
   <div class="note-bar">Educational paycheck estimates only. Not tax, legal, or payroll advice.</div>
@@ -131,6 +213,9 @@
     </header>
 
     <div id="paycheck-app"></div>
+    <!-- Mount before the sections below are parsed so they are not laid out and then pushed down. -->
+    <script src="/paycheck.js"></script>
+    <script>NebraskaPaycheck.mount(document.getElementById('paycheck-app'), { payType: 'salary' });</script>
 
     <section class="section">
       <h2>Free Nebraska paycheck calculator for take-home pay</h2>
@@ -319,6 +404,5 @@
     </footer>
   </div>
 
-  <script src="/paycheck.js"></script>
-  <script>NebraskaPaycheck.mount(document.getElementById('paycheck-app'), { payType: 'salary' });</script></body>
+</body>
 </html>

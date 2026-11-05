@@ -9,6 +9,8 @@
   <link rel="canonical" href="https://nebraskapaycheckcalculator.com/hourly" />
   <meta name="robots" content="index,follow" />
   <style>
+    html { scrollbar-gutter: stable; }
+    img { max-width: 100%; height: auto; }
     :root {
       --bg: #f3f6fb;
       --ink: #122033;
@@ -97,6 +99,86 @@
     .site-footer a{color:var(--blue);text-decoration:none}
     .site-footer .disclaimer{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
     .site-footer .copy{margin:6px 0 0;font-size:12px}
+
+    .section { max-width: 100%; overflow-x: auto; }
+    label .hint { display: block; margin-top: 2px; }
+    .pc-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 14px; }
+    .pc-tabs button {
+      border: 1px solid #c7d3e0;
+      background: #fff;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .pc-tabs button[aria-selected="true"] {
+      background: var(--soft);
+      color: var(--blue-dark);
+      border-color: #9bb8e0;
+    }
+    .pc-tabs button:focus-visible,
+    .pc-seg button:focus-visible,
+    .pc-check input:focus-visible,
+    .field:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
+    }
+    .pc-check {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      font-size: 13px;
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+    .pc-check input { margin-top: 3px; }
+    .pc-form [hidden] { display: none !important; }
+    .pc-ot-hint { margin-top: 0; }
+    .pc-assumptions { margin-top: 12px; font-size: 13px; color: var(--muted); }
+    .pc-assumptions summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+    .pc-assumptions ul { margin: 8px 0 0; padding-left: 18px; }
+    .pc-assumptions li { margin: 0 0 6px; }
+    .pc-result-top { display: grid; grid-template-columns: 132px 1fr; gap: 12px; align-items: center; margin-bottom: 8px; }
+    .pc-donut-wrap { position: relative; width: 132px; height: 132px; }
+    .pc-donut { width: 132px; height: 132px; transform: rotate(-90deg); }
+    .pc-donut-label {
+      position: absolute;
+      inset: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.1;
+    }
+    .pc-donut-label b { font-size: 1.05rem; letter-spacing: -.02em; }
+    .pc-donut-label span { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+    .pc-legend { display: flex; flex-wrap: wrap; gap: 8px 12px; margin: 0 0 8px; font-size: 12px; color: var(--muted); font-weight: 700; }
+    .pc-key { display: inline-flex; align-items: center; gap: 6px; }
+    .pc-key i { width: 9px; height: 9px; border-radius: 99px; display: inline-block; }
+    .pc-amt { display: inline-flex; align-items: baseline; gap: 8px; }
+    .pc-pct { min-width: 3.2em; text-align: right; color: var(--muted); font-weight: 700; font-variant-numeric: tabular-nums; font-size: 12px; }
+    .pc-line-strong { font-weight: 800; border-bottom: 0; }
+    .pc-line-strong .pc-pct { color: var(--ink); }
+    .pc-sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    @media (max-width: 860px) {
+      .pc-result-top { grid-template-columns: 1fr; justify-items: center; }
+      .pc-result-top .net { width: 100%; }
+    }
   </style>
 
   <!-- seo-meta -->
@@ -116,7 +198,7 @@
   <meta name="twitter:description" content="Nebraska hourly paycheck calculator for 2027: enter your hourly wage, hours, and overtime to see take-home pay after federal, FICA, and NE tax. Try it free." />
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://nebraskapaycheckcalculator.com/#org", "name": "Nebraska Paycheck Calculator", "url": "https://nebraskapaycheckcalculator.com/"}, {"@type": "WebApplication", "name": "Nebraska Hourly Paycheck Calculator: Hourly Wage After Taxes", "url": "https://nebraskapaycheckcalculator.com/hourly", "applicationCategory": "FinanceApplication", "operatingSystem": "Any (web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Nebraska hourly paycheck calculator for 2027: enter your hourly wage, hours, and overtime to see take-home pay after federal, FICA, and NE tax. Try it free.", "publisher": {"@id": "https://nebraskapaycheckcalculator.com/#org"}}, {"@type": "WebPage", "@id": "https://nebraskapaycheckcalculator.com/hourly#webpage", "url": "https://nebraskapaycheckcalculator.com/hourly", "name": "Nebraska Hourly Paycheck Calculator 2027 – Wage After Taxes", "description": "Nebraska hourly paycheck calculator for 2027: enter your hourly wage, hours, and overtime to see take-home pay after federal, FICA, and NE tax. Try it free.", "isPartOf": {"@id": "https://nebraskapaycheckcalculator.com/#website"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".faq summary + p", "details p"]}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://nebraskapaycheckcalculator.com/"}, {"@type": "ListItem", "position": 2, "name": "Nebraska Hourly Paycheck Calculator: Hourly Wage After Taxes", "item": "https://nebraskapaycheckcalculator.com/hourly"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much is $20 an hour after taxes in Nebraska?", "acceptedAnswer": {"@type": "Answer", "text": "At 40 hours a week, single, paid weekly with one allowance, this tool estimates about $662 per week, or roughly $34,400 a year."}}, {"@type": "Question", "name": "How do I calculate a biweekly paycheck from an hourly wage?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply rate by weekly hours by 52, then divide by 26 for gross. Switch frequency to Biweekly above to see net."}}, {"@type": "Question", "name": "Are tips and overtime taxed in Nebraska paychecks?", "acceptedAnswer": {"@type": "Answer", "text": "Reported tips and overtime are wages for withholding purposes. Federal deduction rules for tips or overtime are claimed when you file, so they may not change per-check withholding. Check current IRS guidance."}}, {"@type": "Question", "name": "Does working in Omaha or Lincoln change my hourly take-home?", "acceptedAnswer": {"@type": "Answer", "text": "No. Nebraska has no local wage tax, so the same rate nets the same pay statewide."}}]}]}</script>
   <!-- /seo-meta -->
-  <link rel="stylesheet" href="/paycheck.css" />
+  <link rel="preload" href="/paycheck.js" as="script" />
 </head>
 <body>
   <div class="note-bar">Educational paycheck estimates only. Not tax, legal, or payroll advice.</div>
@@ -132,6 +214,9 @@
     </header>
 
     <div id="paycheck-app"></div>
+    <!-- Mount before the sections below are parsed so they are not laid out and then pushed down. -->
+    <script src="/paycheck.js"></script>
+    <script>NebraskaPaycheck.mount(document.getElementById('paycheck-app'), { payType: 'hourly', heading: 'Hourly paycheck' });</script>
 
     <section class="section">
       <h2>Hourly wage to Nebraska take-home pay</h2>
@@ -279,6 +364,5 @@
     </footer>
   </div>
 
-  <script src="/paycheck.js"></script>
-  <script>NebraskaPaycheck.mount(document.getElementById('paycheck-app'), { payType: 'hourly', heading: 'Hourly paycheck' });</script></body>
+</body>
 </html>
