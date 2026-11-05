@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="aT-_To54tuHU7xgf4H4Hu3deLyW_8XjMq0NQvhRLbXE" />
+  <title>Nebraska Circular EN Explained for 2027 Paychecks</title>
+  <meta name="description" content="Nebraska Circular EN explained for 2027 paychecks: the percentage method, W-4N allowances, pay frequency, and which booklet the pay date selects." />
+  <link rel="canonical" href="https://nebraskapaycheckcalculator.com/blog/nebraska-circular-en" />
+  <meta name="robots" content="index,follow" />
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --ink: #122033;
+      --muted: #5b6b7c;
+      --line: #d5deea;
+      --card: #fff;
+      --blue: #1a5fb4;
+      --blue-dark: #134a8c;
+      --soft: #e8f0fb;
+      --red: #b42318;
+      --shadow: 0 8px 24px rgba(18,32,51,.06);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .note-bar { background: #0f2a4a; color: #dcebff; text-align: center; font-size: 13px; padding: 9px 12px; }
+    .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+    header h1 { margin: 0 0 8px; font-size: clamp(1.85rem, 4vw, 2.55rem); letter-spacing: -.02em; line-height: 1.15; }
+    header p { margin: 0 0 22px; color: var(--muted); max-width: 62ch; }
+    .calc { display: grid; grid-template-columns: 1.05fr .95fr; gap: 16px; margin-bottom: 34px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 20px; }
+    .card h2 { margin: 0 0 14px; font-size: 1.15rem; }
+    label { display: block; font-size: 13px; font-weight: 700; margin: 0 0 6px; }
+    .hint { font-weight: 500; color: var(--muted); font-size: 12px; }
+    .field, select { width: 100%; border: 1px solid #c7d3e0; border-radius: 10px; padding: 11px 12px; font: inherit; margin-bottom: 12px; background: #fff; }
+    .seg { display: flex; gap: 8px; margin-bottom: 12px; }
+    .seg button { flex: 1; border: 1px solid #c7d3e0; background: #fff; border-radius: 999px; padding: 9px 10px; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .seg button.active { background: var(--soft); color: var(--blue-dark); border-color: #9bb8e0; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn { width: 100%; border: 0; border-radius: 10px; padding: 12px 14px; background: var(--blue); color: #fff; font-weight: 800; cursor: pointer; }
+    .btn:hover { background: var(--blue-dark); }
+    .net { background: var(--soft); border: 1px solid #b7cceb; border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+    .net .k { font-size: 13px; font-weight: 700; color: var(--blue-dark); }
+    .net .v { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin-top: 2px; }
+    .net .s { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .line { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #edf1f6; font-size: 14px; }
+    .line:last-child { border-bottom: 0; font-weight: 800; }
+    .neg { color: var(--red); font-weight: 700; }
+    .zero { color: var(--blue-dark); font-weight: 700; }
+    .tiny { margin-top: 10px; font-size: 12px; color: var(--muted); }
+    .section { margin-top: 28px; }
+    .section h2 { margin: 0 0 10px; font-size: 1.45rem; }
+    .section p, .section li { color: var(--muted); }
+    .steps { display: grid; gap: 10px; }
+    .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; grid-template-columns: 42px 1fr; gap: 10px; align-items: start; }
+    .step b { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--soft); color: var(--blue-dark); }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tile { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+    .tile strong { display: block; margin-bottom: 4px; }
+    .tile span { color: var(--muted); font-size: 13px; }
+    .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq p { margin: 8px 0 0; }
+    footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;table-layout:fixed;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:12px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line);overflow-wrap:break-word}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:2px solid #c5d0de}
+    .table th:first-child,.table td:first-child{text-align:left}
+    .table th:not(:first-child):not(:last-child),.table td:not(:first-child):not(:last-child){text-align:right;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+    .table th:last-child,.table td:last-child{text-align:right}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
+    .table tr > :nth-child(1):nth-last-child(2){width:62%}
+    .table tr > :nth-child(2):nth-last-child(1){width:38%}
+    .table tr > :nth-child(1):nth-last-child(3){width:42%}
+    .table tr > :nth-child(2):nth-last-child(2){width:22%}
+    .table tr > :nth-child(3):nth-last-child(1){width:36%}
+    .table.num-3 tr > :nth-child(1):nth-last-child(3){width:34%}
+    .table.num-3 tr > :nth-child(2):nth-last-child(2){width:33%}
+    .table.num-3 tr > :nth-child(3):nth-last-child(1){width:33%}
+    .table tr > :nth-child(1):nth-last-child(4){width:28%}
+    .table tr > :nth-child(2):nth-last-child(3){width:14%}
+    .table tr > :nth-child(3):nth-last-child(2){width:14%}
+    .table tr > :nth-child(4):nth-last-child(1){width:44%}
+    @media (max-width:700px){
+      .table th,.table td{padding:10px 8px}
+      .table tr > :nth-child(1):nth-last-child(3){width:40%}
+      .table tr > :nth-child(2):nth-last-child(2){width:28%}
+      .table tr > :nth-child(3):nth-last-child(1){width:32%}
+    }
+    .section h3{margin:16px 0 6px;font-size:1.1rem}
+    .links a{margin-right:14px}
+
+    .site-nav{display:flex;gap:18px;flex-wrap:wrap;padding:12px 0;margin-bottom:14px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+    .site-nav a[aria-current]{color:var(--ink)}
+    .related{margin-top:30px;background:var(--soft);border:1px solid #b7cceb;border-radius:14px;padding:16px 18px}
+    .related h2{margin:0 0 8px;font-size:1.15rem}.related ul{margin:0;padding-left:18px}.related li{color:var(--muted);margin:4px 0}
+    footer nav{margin-top:8px}
+    .site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:14px 0;margin-bottom:10px;border-bottom:1px solid var(--line)}
+    .site-header .brand{font-weight:800;font-size:17px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+    .site-header .brand span{color:var(--blue)}
+    .site-header .site-nav{border:0;margin:0;padding:0}
+    .site-nav a{text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
+    .site-nav a[aria-current]{border-bottom-color:var(--blue)}
+    .breadcrumbs{font-size:13px;color:var(--muted);margin:0 0 16px}
+    .breadcrumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+    .breadcrumbs li+li::before{content:"\203A";margin-right:6px;color:var(--muted)}
+    .breadcrumbs a{color:var(--blue);text-decoration:none}
+    .site-footer{text-align:left;margin-top:40px;padding:24px 0 12px}
+    .site-footer .footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:18px}
+    .site-footer h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:0 0 8px}
+    .site-footer ul{list-style:none;margin:0;padding:0}
+    .site-footer li{margin:4px 0}
+    .site-footer a{color:var(--blue);text-decoration:none}
+    .site-footer .disclaimer{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
+    .site-footer .copy{margin:6px 0 0;font-size:12px}
+  </style>
+
+
+  <!-- seo-meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nebraska Paycheck Calculator" />
+  <meta property="og:title" content="Nebraska Circular EN Explained for 2027 Paychecks" />
+  <meta property="og:description" content="Nebraska Circular EN explained for 2027 paychecks: the percentage method, W-4N allowances, pay frequency, and which booklet the pay date selects." />
+  <meta property="og:url" content="https://nebraskapaycheckcalculator.com/blog/nebraska-circular-en" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Nebraska Paycheck Calculator — 2027 take-home pay after federal, FICA, and Nebraska tax" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta name="twitter:title" content="Nebraska Circular EN Explained for 2027 Paychecks" />
+  <meta name="twitter:description" content="Nebraska Circular EN explained for 2027 paychecks: the percentage method, W-4N allowances, pay frequency, and which booklet the pay date selects." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nebraskapaycheckcalculator.com/#org","name":"Nebraska Paycheck Calculator","url":"https://nebraskapaycheckcalculator.com/"},{"@type":"BlogPosting","headline":"Nebraska Circular EN Explained","description":"Nebraska Circular EN explained for 2027 paychecks: the percentage method, W-4N allowances, pay frequency, and which booklet the pay date selects.","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-circular-en","mainEntityOfPage":"https://nebraskapaycheckcalculator.com/blog/nebraska-circular-en","inLanguage":"en-US","dateModified":"2026-11-05","author":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"publisher":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"about":"nebraska circular en"},{"@type":"WebPage","@id":"https://nebraskapaycheckcalculator.com/blog/nebraska-circular-en#webpage","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-circular-en","name":"Nebraska Circular EN Explained for 2027 Paychecks","description":"Nebraska Circular EN explained for 2027 paychecks: the percentage method, W-4N allowances, pay frequency, and which booklet the pay date selects.","isPartOf":{"@id":"https://nebraskapaycheckcalculator.com/#website"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".faq summary + p","details p"]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nebraskapaycheckcalculator.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://nebraskapaycheckcalculator.com/blog/"},{"@type":"ListItem","position":3,"name":"Nebraska Circular EN Explained","item":"https://nebraskapaycheckcalculator.com/blog/nebraska-circular-en"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Nebraska Circular EN?","acceptedAnswer":{"@type":"Answer","text":"Circular EN is the Nebraska withholding booklet employers use to compute income tax to hold back from wages. It is not Form 1040N, and it is not the filing-bracket schedule."}},{"@type":"Question","name":"Does the percentage method annualize Nebraska tax?","acceptedAnswer":{"@type":"Answer","text":"The Nebraska percentage-method tables are already built by pay period. The employer picks the weekly, biweekly, semi-monthly, monthly, or annual table, subtracts allowances, and applies that period's rows. Federal income tax is the calculation that annualizes."}},{"@type":"Question","name":"Which Circular EN year does a paycheck use?","acceptedAnswer":{"@type":"Answer","text":"The pay date's year. A 2027 pay date uses the 2027 tables, including a $2,510 annual allowance and withholding steps from 2.26% through 4.03%. A 2026 pay date still uses the 2026 booklet."}},{"@type":"Question","name":"Why is my withholding a few dollars off the percentage method?","acceptedAnswer":{"@type":"Answer","text":"Employers may use the wage-bracket tables in the same booklet, and they round. A few dollars is normal. A difference the size of another tax usually means a different allowance count, filing status, or pay date."}}]}]}</script>
+  <!-- /seo-meta -->
+</head>
+<body>
+  <div class="note-bar">Educational guide only. Not tax, legal, or payroll advice.</div>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="/">Nebraska <span>Paycheck</span> Calculator</a>
+      <nav class="site-nav" aria-label="Main"><a href="/">Home</a><a href="/hourly">Hourly</a><a href="/tax">Tax</a><a href="/blog/">Guides</a></nav>
+    </header>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li aria-current="page">Nebraska Circular EN Explained</li></ol></nav>
+    <header>
+      <h1>Nebraska Circular EN Explained</h1>
+      <p>What the withholding booklet is, and how a 2027 paycheck uses the percentage method</p>
+    </header>
+
+    <section class="section">
+      <h2>The booklet payroll uses</h2>
+      <p>Circular EN is the Nebraska Department of Revenue withholding booklet. Employers use it to decide how much Nebraska income tax to take out of wages and send in during the year. Employees do not attach it to Form 1040N. You will not find a line on your return that says "enter the Circular EN result." The return computes the tax. The booklet computes the prepayment.</p>
+      <p>The booklet covers ordinary wages, and it also covers supplemental wages such as bonuses, plus a handful of other payments that are not a Friday paycheck. This page stays with the percentage method on a regular wage. The supplemental election, including the flat 3.5% rate when a bonus is paid separately, is <a href="/blog/nebraska-bonus-tax">Nebraska bonus tax</a>. The reason the prepayment and the return diverge is <a href="/blog/nebraska-1040n-vs-withholding">Nebraska Form 1040N vs paycheck withholding</a>.</p>
+      <p>Filing brackets are a different schedule. Payroll does not look them up. For a 2027 paycheck the percentage-method rows step through 2.26%, 3.22%, 3.69%, 3.81%, 3.93%, and 4.03% after allowances come off. A 2026 pay date still uses rows that run from 2.26% up to 4.60%. The filing tiers people quote for the return are on <a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a>. Quoting those filing tiers as the percent on a stub will not match the booklet.</p>
+    </section>
+    <section class="section">
+      <h2>Percentage method, in the order the math runs</h2>
+      <p>This site's calculator uses the percentage method, which is the method payroll systems automate and the method that still works when wages sit above a printed wage-bracket grid. The steps are short.</p>
+      <p>Pick the year from the pay date. A check dated in 2027 uses the 2027 tables. A check dated in 2026 does not borrow the 2027 rows just because you are reading it later.</p>
+      <p>Pick the table for the pay frequency. The booklet has tables for weekly, biweekly, semi-monthly, monthly, and a full-year period. Using the monthly rows on a biweekly gross will invent a tax. The frequency is how often this employer pays, not how often you wish it paid.</p>
+      <p>Subtract allowances. The W-4N count times the allowance value for that period comes off the wage first. What remains is the amount the rows see. Head of household uses the single table in this method, which is how the published percentage-method tables group that status. Married uses the married rows. Single uses the single rows.</p>
+      <p>Find the row the remaining wage has passed, and compute base tax plus the row's rate times the amount over that row's threshold. Add any extra withholding the W-4N asked for, as a flat dollar amount on the check. Extra withholding does not change which row you landed in. If the employee is exempt from Nebraska withholding under the form's rules, the table result is zero. Exempt is a claim about tax liability, renewed on a calendar the W-4N guide explains. It is not a trick for a larger net.</p>
+    </section>
+    <section class="section">
+      <h2>One biweekly check, walked through</h2>
+      <p>The reference wage on this site is $60,000 a year, single, one allowance, biweekly, no pre-tax deductions, pay date in 2027. Gross for the period is $60,000 divided by 26, or $2,307.69. One 2027 biweekly allowance is $96.54. The wage the table sees is $2,307.69 minus $96.54, or $2,211.15. The 2027 biweekly single table produces $73.80 of Nebraska tax on that amount. That is the figure the calculator prints, and it is the figure the rest of this site uses.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>2027 biweekly step, single, one allowance</th><th>Amount</th></tr></thead>
+        <tbody>
+          <tr><td>Gross pay</td><td>$2,307.69</td></tr>
+          <tr><td>One allowance, subtracted first</td><td>$96.54</td></tr>
+          <tr><td>Wage the percentage-method row sees</td><td>$2,211.15</td></tr>
+          <tr><td>Nebraska withholding</td><td>$73.80</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Nothing in that walkthrough looked up a filing bracket. The $73.80 is withholding. Across 26 identical checks it is $1,918.80, or 3.20% of gross. That share is not the effective rate on the return. Federal income tax on the same check is a different worksheet, Publication 15-T, and this calculator still uses the 2026 federal worksheets for a 2027 pay date. FICA is not in Circular EN at all.</p>
+      <p>Run a different wage, a different frequency, or a different allowance count on <a href="/tax">Nebraska tax withholding</a>. This page stops at one worked check so the booklet and the calculator stay the same story.</p>
+    </section>
+    <section class="section">
+      <h2>What one allowance is worth, by year and by payday</h2>
+      <p>The allowance is a subtraction from wages, not a tax credit of the same dollars. In 2027 the annual figure is $2,510. In 2026 it was $2,440. The per-check amounts are the annual figure spread across that frequency, rounded to the cent. They will not multiply back to the annual figure with zero rounding error, and they do not need to. The calculator uses the per-check amounts below.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>Pay frequency</th><th>2026 allowance</th><th>2027 allowance</th></tr></thead>
+        <tbody>
+          <tr><td>Weekly</td><td>$46.92</td><td>$48.27</td></tr>
+          <tr><td>Biweekly</td><td>$93.85</td><td>$96.54</td></tr>
+          <tr><td>Semi-monthly</td><td>$101.67</td><td>$104.58</td></tr>
+          <tr><td>Monthly</td><td>$203.33</td><td>$209.17</td></tr>
+          <tr><td>Annual figure</td><td>$2,440</td><td>$2,510</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>How many of those allowances to claim, and when exempt status has to be renewed, is <a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a>. Circular EN does not decide your household. It only prices the count you put on the form. At the $60,000 example, a second allowance lowers the Nebraska line by only a few dollars a check. People who expect one allowance to move the deposit by hundreds are thinking of a credit the booklet does not give.</p>
+    </section>
+    <section class="section">
+      <h2>Wage-bracket tables are the other method in the same book</h2>
+      <p>Circular EN also prints wage-bracket grids: columns for allowance counts and rows for wage ranges, with a tax amount in the cell. An employer who uses the grids is still using Circular EN. The result can differ by a few dollars from the percentage method on the same wage, because a grid cell covers a range and the percentage method uses the exact dollars.</p>
+      <p>The grids have a practical edge. They stop at a printed allowance count. Above that count, the employer adjusts wages and then reads the last column. The percentage method does not need that workaround. It subtracts every allowance, then applies the row. A stub that misses this calculator by a dollar or two, with the same gross and the same allowances, is often a grid-versus-percentage difference or ordinary rounding. A stub that misses by a large, stable amount is usually a different count, a different filing status, extra withholding, a pre-tax deduction, or the wrong year.</p>
+      <p>Compare the stub's current column with the estimate before you blame the booklet. How those columns are labeled is <a href="/blog/nebraska-pay-stub">how to read a Nebraska pay stub</a>.</p>
+    </section>
+    <section class="section">
+      <h2>What comes off the wage before the allowance</h2>
+      <p>Traditional 401(k) and 403(b) deferrals reduce the wage Circular EN sees. So do Section 125 benefits such as pre-tax medical premiums, a health FSA, and an HSA taken through payroll. The calculator removes those before it divides the wage into a period and before it subtracts allowances. Roth deferrals and other post-tax deductions do not reduce the Nebraska wage. Putting a Roth amount in the pre-tax retirement field will understate Nebraska withholding.</p>
+      <p>FICA is independent of this booklet. A traditional deferral that lowers the Circular EN wage does not lower Social Security or Medicare. If your test of the stub is "Nebraska went down, so FICA should have gone down too," the test is wrong. The FICA rules are on their own page.</p>
+    </section>
+    <section class="section">
+      <h2>A spike is not a new annual wage</h2>
+      <p>The percentage method looks at the wage for the period being paid. A steady salary divided into equal checks is why $60,000 biweekly is always $2,307.69 in the example. A one-time bonus folded into one check makes that period's wage much larger. Circular EN then treats the combined amount as one payment for that period. It does not mean you earned the bonus every period. Typing the bonus into an annual-salary field is a different, and misleading, operation.</p>
+      <p>Overtime inside a regular hourly check raises that period's wage the same way. A tool that annualizes one heavy week into a year-long schedule is answering a different question: "what if this week were every week?" <a href="/blog/nebraska-overtime-pay">Nebraska overtime pay</a> separates those questions. Circular EN itself is not confused. It only sees the payment the employer is making now.</p>
+    </section>
+    <section class="section">
+      <h2>What the booklet will not do</h2>
+      <p>It will not tax a city. Nebraska has no local wage tax, so Circular EN has no Omaha table and no Lincoln table. It will not compute Form 1040N, a credit for tax paid to Iowa, or the subtraction for Social Security benefits. It will not withhold FICA. It will not decide whether you are exempt from overtime. Those are other systems that happen to touch the same worker.</p>
+      <p>Nonresidents who perform only part of their work in Nebraska can give the employer a form that limits the percentage of wages subject to Nebraska withholding. The booklet describes that case. This calculator does not apply it. It treats the wages you enter as fully subject to Nebraska tax. Someone working in Nebraska full time does not use that form to erase the line.</p>
+      <p>If you want the Nebraska number for a full-time Nebraska wage, use <a href="/tax">Nebraska tax withholding</a> or the <a href="/">Nebraska paycheck calculator</a> when you also want federal tax and FICA in the same estimate. Hourly hours, including a frequency the booklet actually publishes, go on the <a href="/hourly">hourly paycheck calculator</a>. Bring the pay date. The year on that date is the edition of Circular EN you are in.</p>
+    </section>
+
+    <section class="section">
+      <h2>Frequently asked questions</h2>
+      <details><summary>What is Nebraska Circular EN?</summary><p>Circular EN is the Nebraska withholding booklet employers use to compute income tax to hold back from wages. It is not Form 1040N, and it is not the filing-bracket schedule.</p></details>
+      <details><summary>Does the percentage method annualize Nebraska tax?</summary><p>The Nebraska percentage-method tables are already built by pay period. The employer picks the weekly, biweekly, semi-monthly, monthly, or annual table, subtracts allowances, and applies that period's rows. Federal income tax is the calculation that annualizes.</p></details>
+      <details><summary>Which Circular EN year does a paycheck use?</summary><p>The pay date's year. A 2027 pay date uses the 2027 tables, including a $2,510 annual allowance and withholding steps from 2.26% through 4.03%. A 2026 pay date still uses the 2026 booklet.</p></details>
+      <details><summary>Why is my withholding a few dollars off the percentage method?</summary><p>Employers may use the wage-bracket tables in the same booklet, and they round. A few dollars is normal. A difference the size of another tax usually means a different allowance count, filing status, or pay date.</p></details>
+    </section>
+
+    
+<aside class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/tax">Nebraska tax withholding</a> — run the method on your own wage</li><li><a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a> — the allowance count the booklet subtracts</li><li><a href="/blog/nebraska-1040n-vs-withholding">Nebraska Form 1040N vs paycheck withholding</a> — booklet versus the return</li><li><a href="/blog/nebraska-bonus-tax">Nebraska bonus tax</a> — the 3.5% supplemental election</li><li><a href="/blog/">Nebraska pay and tax guides</a></li></ul></aside>
+    <footer class="site-footer">
+      <div class="footer-cols">
+        <nav aria-label="Tools"><h2>Tools</h2><ul><li><a href="/">Nebraska paycheck calculator</a></li><li><a href="/hourly">hourly paycheck calculator</a></li><li><a href="/tax">Nebraska tax withholding</a></li></ul></nav>
+        <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="/blog/">Nebraska pay and tax guides</a></li><li><a href="/blog/nebraska-take-home-pay">Nebraska take-home pay</a></li><li><a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a></li><li><a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a></li><li><a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a></li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a></li></ul></nav>
+        <nav aria-label="Company and legal"><h2>Company &amp; Legal</h2><ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Use</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap">Sitemap</a></li></ul></nav>
+      </div>
+      <p class="disclaimer">Independent educational guide · Not tax, legal, or payroll advice · Not affiliated with the IRS, the Nebraska Department of Revenue, or any payroll provider. Figures are estimates; confirm with official sources.</p>
+      <p class="copy">© 2027 Nebraska Paycheck Calculator</p>
+    </footer>
+  </div>
+</body>
+</html>

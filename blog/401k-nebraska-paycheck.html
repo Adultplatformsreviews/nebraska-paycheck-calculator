@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="aT-_To54tuHU7xgf4H4Hu3deLyW_8XjMq0NQvhRLbXE" />
+  <title>How a 401(k) Changes Nebraska Take-Home Pay in 2027</title>
+  <meta name="description" content="How a traditional or Roth 401(k) changes a Nebraska paycheck in 2027: which tax lines fall, which stay put, and what remains as take-home pay." />
+  <link rel="canonical" href="https://nebraskapaycheckcalculator.com/blog/401k-nebraska-paycheck" />
+  <meta name="robots" content="index,follow" />
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --ink: #122033;
+      --muted: #5b6b7c;
+      --line: #d5deea;
+      --card: #fff;
+      --blue: #1a5fb4;
+      --blue-dark: #134a8c;
+      --soft: #e8f0fb;
+      --red: #b42318;
+      --shadow: 0 8px 24px rgba(18,32,51,.06);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .note-bar { background: #0f2a4a; color: #dcebff; text-align: center; font-size: 13px; padding: 9px 12px; }
+    .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+    header h1 { margin: 0 0 8px; font-size: clamp(1.85rem, 4vw, 2.55rem); letter-spacing: -.02em; line-height: 1.15; }
+    header p { margin: 0 0 22px; color: var(--muted); max-width: 62ch; }
+    .calc { display: grid; grid-template-columns: 1.05fr .95fr; gap: 16px; margin-bottom: 34px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 20px; }
+    .card h2 { margin: 0 0 14px; font-size: 1.15rem; }
+    label { display: block; font-size: 13px; font-weight: 700; margin: 0 0 6px; }
+    .hint { font-weight: 500; color: var(--muted); font-size: 12px; }
+    .field, select { width: 100%; border: 1px solid #c7d3e0; border-radius: 10px; padding: 11px 12px; font: inherit; margin-bottom: 12px; background: #fff; }
+    .seg { display: flex; gap: 8px; margin-bottom: 12px; }
+    .seg button { flex: 1; border: 1px solid #c7d3e0; background: #fff; border-radius: 999px; padding: 9px 10px; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .seg button.active { background: var(--soft); color: var(--blue-dark); border-color: #9bb8e0; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn { width: 100%; border: 0; border-radius: 10px; padding: 12px 14px; background: var(--blue); color: #fff; font-weight: 800; cursor: pointer; }
+    .btn:hover { background: var(--blue-dark); }
+    .net { background: var(--soft); border: 1px solid #b7cceb; border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+    .net .k { font-size: 13px; font-weight: 700; color: var(--blue-dark); }
+    .net .v { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin-top: 2px; }
+    .net .s { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .line { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #edf1f6; font-size: 14px; }
+    .line:last-child { border-bottom: 0; font-weight: 800; }
+    .neg { color: var(--red); font-weight: 700; }
+    .zero { color: var(--blue-dark); font-weight: 700; }
+    .tiny { margin-top: 10px; font-size: 12px; color: var(--muted); }
+    .section { margin-top: 28px; }
+    .section h2 { margin: 0 0 10px; font-size: 1.45rem; }
+    .section p, .section li { color: var(--muted); }
+    .steps { display: grid; gap: 10px; }
+    .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; grid-template-columns: 42px 1fr; gap: 10px; align-items: start; }
+    .step b { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--soft); color: var(--blue-dark); }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tile { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+    .tile strong { display: block; margin-bottom: 4px; }
+    .tile span { color: var(--muted); font-size: 13px; }
+    .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq p { margin: 8px 0 0; }
+    footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;table-layout:fixed;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:12px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line);overflow-wrap:break-word}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:2px solid #c5d0de}
+    .table th:first-child,.table td:first-child{text-align:left}
+    .table th:not(:first-child):not(:last-child),.table td:not(:first-child):not(:last-child){text-align:right;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+    .table th:last-child,.table td:last-child{text-align:right}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
+    .table tr > :nth-child(1):nth-last-child(2){width:62%}
+    .table tr > :nth-child(2):nth-last-child(1){width:38%}
+    .table tr > :nth-child(1):nth-last-child(3){width:42%}
+    .table tr > :nth-child(2):nth-last-child(2){width:22%}
+    .table tr > :nth-child(3):nth-last-child(1){width:36%}
+    .table.num-3 tr > :nth-child(1):nth-last-child(3){width:34%}
+    .table.num-3 tr > :nth-child(2):nth-last-child(2){width:33%}
+    .table.num-3 tr > :nth-child(3):nth-last-child(1){width:33%}
+    .table tr > :nth-child(1):nth-last-child(4){width:28%}
+    .table tr > :nth-child(2):nth-last-child(3){width:14%}
+    .table tr > :nth-child(3):nth-last-child(2){width:14%}
+    .table tr > :nth-child(4):nth-last-child(1){width:44%}
+    @media (max-width:700px){
+      .table th,.table td{padding:10px 8px}
+      .table tr > :nth-child(1):nth-last-child(3){width:40%}
+      .table tr > :nth-child(2):nth-last-child(2){width:28%}
+      .table tr > :nth-child(3):nth-last-child(1){width:32%}
+    }
+    .section h3{margin:16px 0 6px;font-size:1.1rem}
+    .links a{margin-right:14px}
+
+    .site-nav{display:flex;gap:18px;flex-wrap:wrap;padding:12px 0;margin-bottom:14px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+    .site-nav a[aria-current]{color:var(--ink)}
+    .related{margin-top:30px;background:var(--soft);border:1px solid #b7cceb;border-radius:14px;padding:16px 18px}
+    .related h2{margin:0 0 8px;font-size:1.15rem}.related ul{margin:0;padding-left:18px}.related li{color:var(--muted);margin:4px 0}
+    footer nav{margin-top:8px}
+    .site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:14px 0;margin-bottom:10px;border-bottom:1px solid var(--line)}
+    .site-header .brand{font-weight:800;font-size:17px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+    .site-header .brand span{color:var(--blue)}
+    .site-header .site-nav{border:0;margin:0;padding:0}
+    .site-nav a{text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
+    .site-nav a[aria-current]{border-bottom-color:var(--blue)}
+    .breadcrumbs{font-size:13px;color:var(--muted);margin:0 0 16px}
+    .breadcrumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+    .breadcrumbs li+li::before{content:"\203A";margin-right:6px;color:var(--muted)}
+    .breadcrumbs a{color:var(--blue);text-decoration:none}
+    .site-footer{text-align:left;margin-top:40px;padding:24px 0 12px}
+    .site-footer .footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:18px}
+    .site-footer h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:0 0 8px}
+    .site-footer ul{list-style:none;margin:0;padding:0}
+    .site-footer li{margin:4px 0}
+    .site-footer a{color:var(--blue);text-decoration:none}
+    .site-footer .disclaimer{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
+    .site-footer .copy{margin:6px 0 0;font-size:12px}
+  </style>
+
+
+  <!-- seo-meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nebraska Paycheck Calculator" />
+  <meta property="og:title" content="How a 401(k) Changes Nebraska Take-Home Pay in 2027" />
+  <meta property="og:description" content="How a traditional or Roth 401(k) changes a Nebraska paycheck in 2027: which tax lines fall, which stay put, and what remains as take-home pay." />
+  <meta property="og:url" content="https://nebraskapaycheckcalculator.com/blog/401k-nebraska-paycheck" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Nebraska Paycheck Calculator — 2027 take-home pay after federal, FICA, and Nebraska tax" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta name="twitter:title" content="How a 401(k) Changes Nebraska Take-Home Pay in 2027" />
+  <meta name="twitter:description" content="How a traditional or Roth 401(k) changes a Nebraska paycheck in 2027: which tax lines fall, which stay put, and what remains as take-home pay." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nebraskapaycheckcalculator.com/#org","name":"Nebraska Paycheck Calculator","url":"https://nebraskapaycheckcalculator.com/"},{"@type":"BlogPosting","headline":"How a 401(k) Changes Nebraska Take-Home Pay","description":"How a traditional or Roth 401(k) changes a Nebraska paycheck in 2027: which tax lines fall, which stay put, and what remains as take-home pay.","url":"https://nebraskapaycheckcalculator.com/blog/401k-nebraska-paycheck","mainEntityOfPage":"https://nebraskapaycheckcalculator.com/blog/401k-nebraska-paycheck","inLanguage":"en-US","dateModified":"2026-11-05","author":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"publisher":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"about":"401k nebraska paycheck"},{"@type":"WebPage","@id":"https://nebraskapaycheckcalculator.com/blog/401k-nebraska-paycheck#webpage","url":"https://nebraskapaycheckcalculator.com/blog/401k-nebraska-paycheck","name":"How a 401(k) Changes Nebraska Take-Home Pay in 2027","description":"How a traditional or Roth 401(k) changes a Nebraska paycheck in 2027: which tax lines fall, which stay put, and what remains as take-home pay.","isPartOf":{"@id":"https://nebraskapaycheckcalculator.com/#website"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".faq summary + p","details p"]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nebraskapaycheckcalculator.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://nebraskapaycheckcalculator.com/blog/"},{"@type":"ListItem","position":3,"name":"How a 401(k) Changes Nebraska Take-Home Pay","item":"https://nebraskapaycheckcalculator.com/blog/401k-nebraska-paycheck"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does a traditional 401(k) lower Nebraska tax on the paycheck?","acceptedAnswer":{"@type":"Answer","text":"Yes. The deferral reduces Nebraska taxable wages, so Circular EN withholding falls. The return later uses that lower wage as well."}},{"@type":"Question","name":"Does a 401(k) lower Social Security tax?","acceptedAnswer":{"@type":"Answer","text":"No. Traditional and Roth deferrals are still FICA wages. Social Security and Medicare stay at 6.2% and 1.45% of those wages until the Social Security wage base applies."}},{"@type":"Question","name":"Why did take-home pay fall by less than my contribution?","acceptedAnswer":{"@type":"Answer","text":"The contribution left the check, and federal and Nebraska withholding fell. The difference stayed in the plan. The deposit only shows what remained after the deferral and the smaller tax."}},{"@type":"Question","name":"Is a Roth 401(k) taken out before Nebraska tax?","acceptedAnswer":{"@type":"Answer","text":"No. A Roth deferral is taken after tax. Federal, FICA, and Nebraska withholding are figured as if that contribution were still in the wage. Only the deposit shrinks by the full amount."}}]}]}</script>
+  <!-- /seo-meta -->
+</head>
+<body>
+  <div class="note-bar">Educational guide only. Not tax, legal, or payroll advice.</div>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="/">Nebraska <span>Paycheck</span> Calculator</a>
+      <nav class="site-nav" aria-label="Main"><a href="/">Home</a><a href="/hourly">Hourly</a><a href="/tax">Tax</a><a href="/blog/">Guides</a></nav>
+    </header>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li aria-current="page">How a 401(k) Changes Nebraska Take-Home Pay</li></ol></nav>
+    <header>
+      <h1>How a 401(k) Changes Nebraska Take-Home Pay</h1>
+      <p>Traditional and Roth deferrals, and the 2027 tax lines that actually move</p>
+    </header>
+
+    <section class="section">
+      <h2>The deposit falls by less than a traditional deferral</h2>
+      <p>A traditional 401(k) contribution is still your money. It leaves the paycheck and goes to the plan. Federal income tax and Nebraska income tax are figured on a smaller wage, so those two lines fall. Social Security and Medicare do not fall. The net deposit falls by the deferral minus the income tax that was not withheld.</p>
+      <p>A Roth 401(k) contribution is post-tax. The tax lines stay where they were. The deposit falls by the whole contribution. The account type does not change gross pay. It changes which taxes see the dollar.</p>
+      <p>The order of a normal check, from gross through post-tax items, is explained in <a href="/blog/nebraska-take-home-pay">Nebraska take-home pay</a>. This page stays on the retirement line. The reason FICA ignores the deferral is in <a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a>.</p>
+    </section>
+    <section class="section">
+      <h2>The same $60,000 check at three deferrals</h2>
+      <p>Every figure in this table is this site's calculator for a 2027 pay date. The person is single, claims one W-4N allowance, is paid biweekly, and has no other deductions. The retirement amount is for the year. $3,600 is 6% of $60,000. $6,000 is 10%. Federal dollars use the 2026 Publication 15-T percentage method, which is what the tool uses until a 2027 federal edition is the one loaded. Nebraska dollars use the 2027 Circular EN table.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>Biweekly line</th><th>No deferral</th><th>$3,600 traditional</th><th>$6,000 traditional</th></tr></thead>
+        <tbody>
+          <tr><td>Gross pay</td><td>$2,307.69</td><td>$2,307.69</td><td>$2,307.69</td></tr>
+          <tr><td>Deferral this check</td><td>$0.00</td><td>$138.46</td><td>$230.77</td></tr>
+          <tr><td>Federal income tax</td><td>$193.08</td><td>$176.46</td><td>$165.38</td></tr>
+          <tr><td>FICA</td><td>$176.54</td><td>$176.54</td><td>$176.54</td></tr>
+          <tr><td>Nebraska income tax</td><td>$73.80</td><td>$68.36</td><td>$64.73</td></tr>
+          <tr><td>Net pay</td><td>$1,864.28</td><td>$1,747.87</td><td>$1,670.27</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>At 10%, federal withholding falls from $193.08 to $165.38. Nebraska falls from $73.80 to $64.73. FICA stays $176.54, because the deferred dollars are still FICA wages. Net falls from $1,864.28 to $1,670.27. The $230.77 that left for the plan is not a tax. Most of the smaller deposit is the contribution itself. One allowance still removes $96.54 from the biweekly Nebraska wage before the table runs, and the deferral comes off the wage before that allowance step.</p>
+      <p>Across 26 checks, the calculator's annual net goes from $48,471.18 with no deferral to $43,426.98 with the $6,000 traditional deferral. You did not lose $6,000 of spending money to tax. You moved $6,000 into the account and kept a smaller tax prepayment.</p>
+    </section>
+    <section class="section">
+      <h2>Roth on the same $6,000</h2>
+      <p>Put the same $6,000 in as a Roth contribution and the calculator's post-tax field takes $230.77 from each biweekly check. Federal stays $193.08. FICA stays $176.54. Nebraska stays $73.80. Net is $1,633.51. Annual net is $42,471.18, which is the no-deferral year minus $6,000. The taxes did not share the cost.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>Same $6,000 a year</th><th>Traditional</th><th>Roth</th></tr></thead>
+        <tbody>
+          <tr><td>Taken this check</td><td>$230.77</td><td>$230.77</td></tr>
+          <tr><td>Federal income tax</td><td>$165.38</td><td>$193.08</td></tr>
+          <tr><td>FICA</td><td>$176.54</td><td>$176.54</td></tr>
+          <tr><td>Nebraska income tax</td><td>$64.73</td><td>$73.80</td></tr>
+          <tr><td>Net pay</td><td>$1,670.27</td><td>$1,633.51</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The traditional check nets $36.76 more than the Roth check in this example. That gap is income-tax withholding the traditional deferral reduced. It is not an employer match, and it is not investment return. The Roth dollars were taxed before they left. Which account fits a career is not a paycheck question. The paycheck question is only which lines move this year.</p>
+    </section>
+    <section class="section">
+      <h2>A higher salary moves the federal line more</h2>
+      <p>The same 10% traditional deferral on $90,000 is $9,000 a year, or $346.15 on each biweekly check. Same filing setup, same 2027 pay date, still one allowance and no other deductions.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>Biweekly line on $90,000</th><th>No deferral</th><th>Traditional $9,000</th></tr></thead>
+        <tbody>
+          <tr><td>Gross pay</td><td>$3,461.54</td><td>$3,461.54</td></tr>
+          <tr><td>Deferral this check</td><td>$0.00</td><td>$346.15</td></tr>
+          <tr><td>Federal income tax</td><td>$421.92</td><td>$345.77</td></tr>
+          <tr><td>FICA</td><td>$264.81</td><td>$264.81</td></tr>
+          <tr><td>Nebraska income tax</td><td>$119.52</td><td>$105.57</td></tr>
+          <tr><td>Net pay</td><td>$2,655.28</td><td>$2,399.23</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Federal withholding drops by $76.15. Nebraska drops by $13.95. FICA stays $264.81, still 7.65% of the $3,461.54 gross. Net drops by $256.05, which is the $346.15 deferral minus those two tax reductions. The pattern is the same as at $60,000. The federal line gives back more per deferred dollar because the withholding on the higher wage was higher to begin with.</p>
+    </section>
+    <section class="section">
+      <h2>Married withholding gives back less per dollar</h2>
+      <p>The take-home guide's married example is the same $60,000, biweekly, in 2027, with married filing status, two W-4N allowances, and no deferral: $109.23 federal, $176.54 FICA, $59.88 Nebraska, and net of $1,962.04. FICA does not change because someone is married.</p>
+      <p>Add a $6,000 traditional deferral under those same settings and the calculator withholds $83.85 federal and $51.22 Nebraska. FICA stays $176.54. Net is $1,765.32. The income-tax lines fall, and they fall by less than they did for the single filer with one allowance, because the married check was already withholding less. The deferral rule did not change. The starting tax did.</p>
+      <p>Two jobs in one household are a form problem. Each employer withholds from the W-4 and W-4N it received. This page does not retell how many allowances to claim. The <a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a> does.</p>
+    </section>
+    <section class="section">
+      <h2>The match is not a deduction</h2>
+      <p>An employer match credited to the 401(k) does not reduce gross, tax, or net. If the stub shows the match, it is usually a memo of what the employer added to the account. Subtracting it again when you read the check double-counts a contribution you never paid from this deposit.</p>
+      <p>A match can vest on a schedule. Vesting changes what you keep if you leave. It does not change this Friday's net. A 401(k) loan repayment is different. Repayments are usually post-tax deductions. They shrink the deposit, they do not shrink Nebraska withholding, and they are not a new deferral. Read the label. "Loan" and "deferral" are not the same line.</p>
+    </section>
+    <section class="section">
+      <h2>Where it sits on the stub, and on a bonus</h2>
+      <p>Traditional deferrals are pre-tax. Roth deferrals are post-tax. The current column shows this check's contribution. Year-to-date shows how much of the annual election has already been taken. Neither column is a tax. Labels and the year-to-date test are in <a href="/blog/nebraska-pay-stub">how to read a Nebraska pay stub</a>.</p>
+      <p>A deferral taken from a separate bonus, if the plan allows it, reduces the wages subject to the flat 22% federal supplemental rate and the flat 3.5% Nebraska rate. It still does not reduce FICA on that bonus. The bonus check itself is in <a href="/blog/nebraska-bonus-tax">Nebraska bonus tax</a>. Do not assume every plan defers from bonuses. The plan document decides. The tax rule only describes what happens if the deferral is actually taken.</p>
+    </section>
+    <section class="section">
+      <h2>Which calculator field to use</h2>
+      <p>The retirement field is a yearly traditional deferral. It lowers federal and Nebraska taxable wages and leaves FICA wages alone. The pre-tax benefits field is the other pile: medical premiums, a health FSA, an HSA through payroll. That pile can lower FICA too. Putting a 401(k) in the benefits field makes Social Security fall when a real stub will not.</p>
+      <p>Roth 401(k) contributions go in post-tax deductions, and that field is per paycheck, not per year. A $6,000 Roth on a biweekly calendar is $230.77 a check. Enter $6,000 there and you will have deducted $6,000 from every check.</p>
+      <p>The IRS sets a yearly cap on elective deferrals, including a higher catch-up for older workers. This page does not print a 2027 dollar cap. The withholding rule is the same on either side of the cap: traditional reduces income-tax wages, Roth does not, and neither reduces FICA. Enter the amount the plan will actually take. A percent change in March does not rewrite January's checks. It changes the checks after the payroll cutoff.</p>
+      <p>A larger traditional deferral moves the same three lines further and still leaves FICA alone. On this $60,000 biweekly example, $12,000 a year is $461.54 a check. The calculator then withholds $137.69 federal and $55.66 Nebraska. FICA stays $176.54. Net is $1,476.26. That is not a recommendation to defer 20% of pay. It is the same engine as the 6% and 10% rows, run at a bigger number, so you can see the income-tax lines keep falling and the Social Security line does not.</p>
+      <p>Health insurance is the deduction people mix up with this one. A pre-tax medical premium belongs in the benefits field because it can lower FICA as well as income tax. A 401(k) does not. If you are comparing an open-enrollment premium change with a retirement-percent change, run them as different fields. Combining them into one number hides which line actually moved.</p>
+      <p>Run a salary through the <a href="/">Nebraska paycheck calculator</a> and edit the retirement field. Hourly pay, including a deferral, belongs on the <a href="/hourly">hourly paycheck calculator</a>. If you only want the Nebraska line, use <a href="/tax">Nebraska tax withholding</a>. The year's prepayment versus the return is <a href="/blog/nebraska-1040n-vs-withholding">Nebraska Form 1040N vs paycheck withholding</a>. A traditional deferral lowers both the checks and the wages the return starts from. It does not, by itself, create a refund.</p>
+    </section>
+
+    <section class="section">
+      <h2>Frequently asked questions</h2>
+      <details><summary>Does a traditional 401(k) lower Nebraska tax on the paycheck?</summary><p>Yes. The deferral reduces Nebraska taxable wages, so Circular EN withholding falls. The return later uses that lower wage as well.</p></details>
+      <details><summary>Does a 401(k) lower Social Security tax?</summary><p>No. Traditional and Roth deferrals are still FICA wages. Social Security and Medicare stay at 6.2% and 1.45% of those wages until the Social Security wage base applies.</p></details>
+      <details><summary>Why did take-home pay fall by less than my contribution?</summary><p>The contribution left the check, and federal and Nebraska withholding fell. The difference stayed in the plan. The deposit only shows what remained after the deferral and the smaller tax.</p></details>
+      <details><summary>Is a Roth 401(k) taken out before Nebraska tax?</summary><p>No. A Roth deferral is taken after tax. Federal, FICA, and Nebraska withholding are figured as if that contribution were still in the wage. Only the deposit shrinks by the full amount.</p></details>
+    </section>
+
+    
+<aside class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/">Nebraska paycheck calculator</a> — change the retirement field and rerun</li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a> — why the 7.65% stays</li><li><a href="/blog/nebraska-take-home-pay">Nebraska take-home pay</a> — the order of every line</li><li><a href="/blog/nebraska-pay-stub">How to read a Nebraska pay stub</a> — where the deferral is printed</li><li><a href="/blog/">Nebraska pay and tax guides</a></li></ul></aside>
+    <footer class="site-footer">
+      <div class="footer-cols">
+        <nav aria-label="Tools"><h2>Tools</h2><ul><li><a href="/">Nebraska paycheck calculator</a></li><li><a href="/hourly">hourly paycheck calculator</a></li><li><a href="/tax">Nebraska tax withholding</a></li></ul></nav>
+        <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="/blog/">Nebraska pay and tax guides</a></li><li><a href="/blog/nebraska-take-home-pay">Nebraska take-home pay</a></li><li><a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a></li><li><a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a></li><li><a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a></li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a></li></ul></nav>
+        <nav aria-label="Company and legal"><h2>Company &amp; Legal</h2><ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Use</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap">Sitemap</a></li></ul></nav>
+      </div>
+      <p class="disclaimer">Independent educational guide · Not tax, legal, or payroll advice · Not affiliated with the IRS, the Nebraska Department of Revenue, or any payroll provider. Figures are estimates; confirm with official sources.</p>
+      <p class="copy">© 2027 Nebraska Paycheck Calculator</p>
+    </footer>
+  </div>
+</body>
+</html>

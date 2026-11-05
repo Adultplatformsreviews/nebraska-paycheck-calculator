@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="aT-_To54tuHU7xgf4H4Hu3deLyW_8XjMq0NQvhRLbXE" />
+  <title>Nebraska Bonus Tax: Supplemental Wage Withholding</title>
+  <meta name="description" content="Nebraska bonus tax on supplemental wages in 2027: the flat 3.5% state option, federal 22% withholding, and FICA still due on a separate bonus check." />
+  <link rel="canonical" href="https://nebraskapaycheckcalculator.com/blog/nebraska-bonus-tax" />
+  <meta name="robots" content="index,follow" />
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --ink: #122033;
+      --muted: #5b6b7c;
+      --line: #d5deea;
+      --card: #fff;
+      --blue: #1a5fb4;
+      --blue-dark: #134a8c;
+      --soft: #e8f0fb;
+      --red: #b42318;
+      --shadow: 0 8px 24px rgba(18,32,51,.06);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .note-bar { background: #0f2a4a; color: #dcebff; text-align: center; font-size: 13px; padding: 9px 12px; }
+    .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+    header h1 { margin: 0 0 8px; font-size: clamp(1.85rem, 4vw, 2.55rem); letter-spacing: -.02em; line-height: 1.15; }
+    header p { margin: 0 0 22px; color: var(--muted); max-width: 62ch; }
+    .calc { display: grid; grid-template-columns: 1.05fr .95fr; gap: 16px; margin-bottom: 34px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 20px; }
+    .card h2 { margin: 0 0 14px; font-size: 1.15rem; }
+    label { display: block; font-size: 13px; font-weight: 700; margin: 0 0 6px; }
+    .hint { font-weight: 500; color: var(--muted); font-size: 12px; }
+    .field, select { width: 100%; border: 1px solid #c7d3e0; border-radius: 10px; padding: 11px 12px; font: inherit; margin-bottom: 12px; background: #fff; }
+    .seg { display: flex; gap: 8px; margin-bottom: 12px; }
+    .seg button { flex: 1; border: 1px solid #c7d3e0; background: #fff; border-radius: 999px; padding: 9px 10px; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .seg button.active { background: var(--soft); color: var(--blue-dark); border-color: #9bb8e0; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn { width: 100%; border: 0; border-radius: 10px; padding: 12px 14px; background: var(--blue); color: #fff; font-weight: 800; cursor: pointer; }
+    .btn:hover { background: var(--blue-dark); }
+    .net { background: var(--soft); border: 1px solid #b7cceb; border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+    .net .k { font-size: 13px; font-weight: 700; color: var(--blue-dark); }
+    .net .v { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin-top: 2px; }
+    .net .s { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .line { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #edf1f6; font-size: 14px; }
+    .line:last-child { border-bottom: 0; font-weight: 800; }
+    .neg { color: var(--red); font-weight: 700; }
+    .zero { color: var(--blue-dark); font-weight: 700; }
+    .tiny { margin-top: 10px; font-size: 12px; color: var(--muted); }
+    .section { margin-top: 28px; }
+    .section h2 { margin: 0 0 10px; font-size: 1.45rem; }
+    .section p, .section li { color: var(--muted); }
+    .steps { display: grid; gap: 10px; }
+    .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; grid-template-columns: 42px 1fr; gap: 10px; align-items: start; }
+    .step b { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--soft); color: var(--blue-dark); }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tile { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+    .tile strong { display: block; margin-bottom: 4px; }
+    .tile span { color: var(--muted); font-size: 13px; }
+    .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq p { margin: 8px 0 0; }
+    footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;table-layout:fixed;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:12px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line);overflow-wrap:break-word}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:2px solid #c5d0de}
+    .table th:first-child,.table td:first-child{text-align:left}
+    .table th:not(:first-child):not(:last-child),.table td:not(:first-child):not(:last-child){text-align:right;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+    .table th:last-child,.table td:last-child{text-align:right}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
+    .table tr > :nth-child(1):nth-last-child(2){width:62%}
+    .table tr > :nth-child(2):nth-last-child(1){width:38%}
+    .table tr > :nth-child(1):nth-last-child(3){width:42%}
+    .table tr > :nth-child(2):nth-last-child(2){width:22%}
+    .table tr > :nth-child(3):nth-last-child(1){width:36%}
+    .table.num-3 tr > :nth-child(1):nth-last-child(3){width:34%}
+    .table.num-3 tr > :nth-child(2):nth-last-child(2){width:33%}
+    .table.num-3 tr > :nth-child(3):nth-last-child(1){width:33%}
+    .table tr > :nth-child(1):nth-last-child(4){width:28%}
+    .table tr > :nth-child(2):nth-last-child(3){width:14%}
+    .table tr > :nth-child(3):nth-last-child(2){width:14%}
+    .table tr > :nth-child(4):nth-last-child(1){width:44%}
+    @media (max-width:700px){
+      .table th,.table td{padding:10px 8px}
+      .table tr > :nth-child(1):nth-last-child(3){width:40%}
+      .table tr > :nth-child(2):nth-last-child(2){width:28%}
+      .table tr > :nth-child(3):nth-last-child(1){width:32%}
+    }
+    .section h3{margin:16px 0 6px;font-size:1.1rem}
+    .links a{margin-right:14px}
+
+    .site-nav{display:flex;gap:18px;flex-wrap:wrap;padding:12px 0;margin-bottom:14px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+    .site-nav a[aria-current]{color:var(--ink)}
+    .related{margin-top:30px;background:var(--soft);border:1px solid #b7cceb;border-radius:14px;padding:16px 18px}
+    .related h2{margin:0 0 8px;font-size:1.15rem}.related ul{margin:0;padding-left:18px}.related li{color:var(--muted);margin:4px 0}
+    footer nav{margin-top:8px}
+    .site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:14px 0;margin-bottom:10px;border-bottom:1px solid var(--line)}
+    .site-header .brand{font-weight:800;font-size:17px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+    .site-header .brand span{color:var(--blue)}
+    .site-header .site-nav{border:0;margin:0;padding:0}
+    .site-nav a{text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
+    .site-nav a[aria-current]{border-bottom-color:var(--blue)}
+    .breadcrumbs{font-size:13px;color:var(--muted);margin:0 0 16px}
+    .breadcrumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+    .breadcrumbs li+li::before{content:"\203A";margin-right:6px;color:var(--muted)}
+    .breadcrumbs a{color:var(--blue);text-decoration:none}
+    .site-footer{text-align:left;margin-top:40px;padding:24px 0 12px}
+    .site-footer .footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:18px}
+    .site-footer h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:0 0 8px}
+    .site-footer ul{list-style:none;margin:0;padding:0}
+    .site-footer li{margin:4px 0}
+    .site-footer a{color:var(--blue);text-decoration:none}
+    .site-footer .disclaimer{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
+    .site-footer .copy{margin:6px 0 0;font-size:12px}
+  </style>
+
+
+  <!-- seo-meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nebraska Paycheck Calculator" />
+  <meta property="og:title" content="Nebraska Bonus Tax: Supplemental Wage Withholding" />
+  <meta property="og:description" content="Nebraska bonus tax on supplemental wages in 2027: the flat 3.5% state option, federal 22% withholding, and FICA still due on a separate bonus check." />
+  <meta property="og:url" content="https://nebraskapaycheckcalculator.com/blog/nebraska-bonus-tax" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Nebraska Paycheck Calculator — 2027 take-home pay after federal, FICA, and Nebraska tax" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta name="twitter:title" content="Nebraska Bonus Tax: Supplemental Wage Withholding" />
+  <meta name="twitter:description" content="Nebraska bonus tax on supplemental wages in 2027: the flat 3.5% state option, federal 22% withholding, and FICA still due on a separate bonus check." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nebraskapaycheckcalculator.com/#org","name":"Nebraska Paycheck Calculator","url":"https://nebraskapaycheckcalculator.com/"},{"@type":"BlogPosting","headline":"Nebraska Bonus Paycheck Tax: Supplemental Wages and Withholding","description":"Nebraska bonus tax on supplemental wages in 2027: the flat 3.5% state option, federal 22% withholding, and FICA still due on a separate bonus check.","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-bonus-tax","mainEntityOfPage":"https://nebraskapaycheckcalculator.com/blog/nebraska-bonus-tax","inLanguage":"en-US","dateModified":"2026-11-05","author":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"publisher":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"about":"nebraska bonus tax supplemental wages"},{"@type":"WebPage","@id":"https://nebraskapaycheckcalculator.com/blog/nebraska-bonus-tax#webpage","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-bonus-tax","name":"Nebraska Bonus Tax: Supplemental Wage Withholding","description":"Nebraska bonus tax on supplemental wages in 2027: the flat 3.5% state option, federal 22% withholding, and FICA still due on a separate bonus check.","isPartOf":{"@id":"https://nebraskapaycheckcalculator.com/#website"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".faq summary + p","details p"]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nebraskapaycheckcalculator.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://nebraskapaycheckcalculator.com/blog/"},{"@type":"ListItem","position":3,"name":"Nebraska Bonus Paycheck Tax: Supplemental Wages and Withholding","item":"https://nebraskapaycheckcalculator.com/blog/nebraska-bonus-tax"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a Nebraska bonus taxed at 3.5%?","acceptedAnswer":{"@type":"Answer","text":"Not on the return. An employer may withhold 3.5% on supplemental wages paid separately from regular wages. The return taxes the bonus with the rest of your income."}},{"@type":"Question","name":"Why was 22% withheld from my bonus?","acceptedAnswer":{"@type":"Answer","text":"That is the federal flat rate for supplemental wages of $1 million or less when the employer uses that method. It is a prepayment. It is reconciled on the federal return."}},{"@type":"Question","name":"Does a bonus skip Social Security tax?","acceptedAnswer":{"@type":"Answer","text":"No. A bonus is FICA wages. Social Security is 6.2% until you reach the wage base, and Medicare is 1.45% with no wage-base cap."}},{"@type":"Question","name":"Can I type a bonus into the annual salary field?","acceptedAnswer":{"@type":"Answer","text":"That spreads the bonus across every paycheck. A one-time bonus needs the supplemental method, or a single combined period, rather than a higher annual salary."}}]}]}</script>
+  <!-- /seo-meta -->
+</head>
+<body>
+  <div class="note-bar">Educational guide only. Not tax, legal, or payroll advice.</div>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="/">Nebraska <span>Paycheck</span> Calculator</a>
+      <nav class="site-nav" aria-label="Main"><a href="/">Home</a><a href="/hourly">Hourly</a><a href="/tax">Tax</a><a href="/blog/">Guides</a></nav>
+    </header>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li aria-current="page">Nebraska Bonus Paycheck Tax</li></ol></nav>
+    <header>
+      <h1>Nebraska Bonus Paycheck Tax: Supplemental Wages and Withholding</h1>
+      <p>How a separate bonus is withheld in 2027, and why that withholding is not the tax on your return</p>
+    </header>
+
+    <section class="section">
+      <h2>A bonus is supplemental wages</h2>
+      <p>For wages paid in 2027, Nebraska Circular EN treats bonuses, commissions, overtime paid as supplemental wages, severance pay tied to Nebraska employment, and taxable awards as supplemental wages. The same paycheck rules cover them. There is no separate Nebraska bonus tax on the return, and there is no extra Nebraska bracket that applies only because the payment was called a bonus.</p>
+      <p>The check can still look harsh. Withholding on a separate bonus is often a flat percent of the whole payment, taken on top of FICA, while your regular checks withhold Nebraska tax at a smaller share of gross. People read 22% federal and 3.5% Nebraska and conclude the bonus was taxed twice as hard as salary. What they are looking at is a prepayment method. The return later taxes the bonus with everything else.</p>
+      <p>The withholding booklet, and how a normal check uses it, is <a href="/blog/nebraska-circular-en">Nebraska Circular EN</a>. This page stays with the payment that is not a normal check.</p>
+    </section>
+    <section class="section">
+      <h2>Paid with the regular check, or paid alone</h2>
+      <p>If the bonus is paid at the same time as regular wages, Circular EN says to withhold Nebraska income tax as if the bonus and the regular wages were one wage payment for that payroll period. The percentage-method table for that frequency runs on the combined wage, after allowances.</p>
+      <p>If the bonus is paid at a different time, the employer has a choice. It can add the bonus to regular wages for the current period, or to the last period in the same calendar year, and withhold as if that total were one payment. Or it can withhold a flat 3.5% on the supplemental wages. The 3.5% figure is the rate Circular EN publishes for that election. It is withholding. It is not the rate on Form 1040N. Filing rates live on <a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a>.</p>
+      <p>Federal income tax has its own supplemental rule. When the employer has already withheld federal income tax from your regular wages, it may withhold a flat 22% on supplemental wages of $1 million or less during the year. Supplemental wages above $1 million are withheld at 37% for the amount over that line. The employer can instead use the aggregate method: add the bonus to regular wages for a period, figure withholding on the total as one payment, subtract the tax already withheld on the regular wages, and withhold the difference from the bonus.</p>
+      <p>FICA does not switch to a bonus rate. Social Security is 6.2% and Medicare is 1.45% until the wage base stops the Social Security piece. A separate bonus is still FICA wages. That machinery is in <a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a>.</p>
+    </section>
+    <section class="section">
+      <h2>A $5,000 bonus paid on its own</h2>
+      <p>This example uses the flat rates. Federal withholding is 22% of $5,000, which is $1,100. Social Security is 6.2%, or $310. Medicare is 1.45%, or $72.50. Nebraska at 3.5% is $175. Nothing else is deducted. The bonus check nets $3,342.50.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>Line on a separate $5,000 bonus</th><th>Amount</th></tr></thead>
+        <tbody>
+          <tr><td>Gross bonus</td><td>$5,000.00</td></tr>
+          <tr><td>Federal withholding at 22%</td><td>$1,100.00</td></tr>
+          <tr><td>Social Security at 6.2%</td><td>$310.00</td></tr>
+          <tr><td>Medicare at 1.45%</td><td>$72.50</td></tr>
+          <tr><td>Nebraska withholding at 3.5%</td><td>$175.00</td></tr>
+          <tr><td>Net</td><td>$3,342.50</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The 22% and the 3.5% leave the check before you see them. They are not added again in April on top of ordinary tax. If the prepayment was higher than the tax on the return, the difference comes back as a refund. If it was lower, you pay the gap. A large bonus withheld at a flat rate often produces a refund, which feels like the bonus was "overtaxed" only because the prepayment arrived in December and the refund arrived later.</p>
+      <p>This site's calculator estimates a regular paycheck. It does not have a bonus switch. Typing $5,000 into the annual salary field adds $5,000 to every year's pay and spreads a few dollars of tax across 26 checks. That is the wrong picture of a one-time payment. Use the table above for a separate flat-rate bonus. Use the <a href="/">Nebraska paycheck calculator</a> for the regular check the bonus sits beside.</p>
+    </section>
+    <section class="section">
+      <h2>The same $5,000 added to one regular check</h2>
+      <p>Take the reference employee this site already uses: $60,000 a year, single, one W-4N allowance, biweekly, no pre-tax deductions, pay date in 2027. The regular check is $2,307.69 gross, with $193.08 of federal income tax, $176.54 of FICA, and $73.80 of Nebraska tax.</p>
+      <p>Add the $5,000 bonus to that one check and the period gross is $7,307.69. Nebraska's combined method runs that period's wage through the biweekly percentage-method table after the $96.54 allowance. Nebraska withholding on the combined check is $274.52. The regular check was $73.80, so the bonus accounts for $200.72 of state withholding. The flat 3.5% method would have withheld $175 of state tax from the same $5,000. On this wage, the combined method holds back $25.72 more.</p>
+      <p>Federal withholding on a single biweekly payment of $7,307.69, using the same Publication 15-T percentage method this calculator uses, is $1,320.54. The regular check was $193.08, so the aggregate method withholds $1,127.46 of federal tax because of the bonus. That is a bit more than the flat $1,100. The percentage method annualizes the fat period. A much larger one-time bonus can be withheld well above 22% for that reason, even though the return will not tax the bonus as if it repeated all year. Federal figures here use the 2026 worksheets. A 2027 pay date in this tool still uses those worksheets.</p>
+      <p>FICA on the combined check is 7.65% of $7,307.69, or $559.04, because this amount is still under the 2027 Social Security wage base of $192,300. The regular check's FICA was $176.54. The bonus's FICA is the other $382.50, the same $310 plus $72.50 as on the separate check. The method you pick for income-tax withholding does not change FICA.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>Withholding on the $5,000</th><th>Flat, paid alone</th><th>Combined with regular wages</th></tr></thead>
+        <tbody>
+          <tr><td>Federal income tax</td><td>$1,100.00</td><td>$1,127.46</td></tr>
+          <tr><td>Nebraska income tax</td><td>$175.00</td><td>$200.72</td></tr>
+          <tr><td>Social Security and Medicare</td><td>$382.50</td><td>$382.50</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+    <section class="section">
+      <h2>Commissions, awards, and severance</h2>
+      <p>A commission paid on the regular payday, inside the regular check, is part of that period's wage. The employer withholds as it would on any other dollar in the check. A commission paid on its own can use the supplemental choice: combine it with a regular period, or withhold 3.5% for Nebraska and, if the employer elects the flat federal rate, 22%.</p>
+      <p>A taxable award is the same kind of payment. If you never receive cash because the award was a gift card or a trip, the employer may still have to withhold, and it may do that by taking the tax from your regular wages. The stub should show the taxable value and the tax. A line that only shows a smaller net, with no earnings entry, is incomplete.</p>
+      <p>Severance tied to Nebraska work is on Circular EN's supplemental list. A lump-sum severance check is often withheld with the flat rates because it is paid after regular wages have stopped. FICA still applies until the wage base is met. Treat a severance estimate as a bonus estimate, then read the stub. Do not annualize the lump sum as if it were a new salary.</p>
+    </section>
+    <section class="section">
+      <h2>Overtime is not automatically a bonus</h2>
+      <p>Overtime hours paid in the regular hourly check are wages for that period. They are not withheld at 3.5% just because the rate was time-and-a-half. Nebraska has no separate overtime tax. The <a href="/hourly">hourly paycheck calculator</a> is where a steady overtime week goes, and <a href="/blog/nebraska-overtime-pay">Nebraska overtime pay</a> explains what the tool assumes.</p>
+      <p>Overtime paid in a separate payment can be supplemental wages. Then the employer may use the same choice it uses for a bonus. If your overtime check shows 3.5% Nebraska tax and your regular check does not, the employer paid it separately and elected the flat rate. The hours were not taxed under a special overtime statute.</p>
+    </section>
+    <section class="section">
+      <h2>What the stub should show</h2>
+      <p>The current column should show the bonus gross, each tax withheld from it, and the net. Year-to-date gross and year-to-date tax should rise by those same amounts. A flat 3.5% Nebraska line on a separate bonus is allowed. It does not mean your bracket changed. Column reading is in <a href="/blog/nebraska-pay-stub">how to read a Nebraska pay stub</a>.</p>
+      <p>If the bonus pushes year-to-date wages over $192,300 in 2027, Social Security stops on the dollars above the cap at that employer. Medicare does not stop. A bonus late in the year for a high earner can be the check that crosses the line, so the FICA percentage on that one payment is less than 7.65%. Check the year-to-date Social Security wages before you call the line short.</p>
+      <p>A traditional 401(k) deferral taken from the bonus, if the plan allows a deferral on that payment, reduces the wages the 22% and the 3.5% apply to. It does not reduce FICA. The deposit math for deferrals is in <a href="/blog/401k-nebraska-paycheck">how a 401(k) changes Nebraska take-home pay</a>.</p>
+    </section>
+    <section class="section">
+      <h2>April is the reconciliation</h2>
+      <p>The W-2 adds the bonus into wages. Federal wages, Social Security wages, and Nebraska wages each follow their own definition, so a 401(k) deferral can make those boxes differ. Nebraska tax withheld, including the 3.5% taken from a separate bonus, is one number in the state withholding box. Form 1040N does not keep a "bonus" line. It taxes Nebraska income under the ordinary computation, then compares that tax with everything withheld.</p>
+      <p>That comparison is the subject of <a href="/blog/nebraska-1040n-vs-withholding">Nebraska Form 1040N vs paycheck withholding</a>. Changing your W-4N after the bonus has already been paid does not rewrite the bonus check. It changes later regular checks. If the bonus was withheld more heavily than the return will charge, the refund is the fix. If you would rather have had the money in December, the flat rate is still what the employer was allowed to use on a separate payment.</p>
+    </section>
+
+    <section class="section">
+      <h2>Frequently asked questions</h2>
+      <details><summary>Is a Nebraska bonus taxed at 3.5%?</summary><p>Not on the return. An employer may withhold 3.5% on supplemental wages paid separately from regular wages. The return taxes the bonus with the rest of your income.</p></details>
+      <details><summary>Why was 22% withheld from my bonus?</summary><p>That is the federal flat rate for supplemental wages of $1 million or less when the employer uses that method. It is a prepayment. It is reconciled on the federal return.</p></details>
+      <details><summary>Does a bonus skip Social Security tax?</summary><p>No. A bonus is FICA wages. Social Security is 6.2% until you reach the wage base, and Medicare is 1.45% with no wage-base cap.</p></details>
+      <details><summary>Can I type a bonus into the annual salary field?</summary><p>That spreads the bonus across every paycheck. A one-time bonus needs the supplemental method, or a single combined period, rather than a higher annual salary.</p></details>
+    </section>
+
+    
+<aside class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/">Nebraska paycheck calculator</a> — the regular check beside the bonus</li><li><a href="/blog/nebraska-pay-stub">How to read a Nebraska pay stub</a> — where the bonus shows up</li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a> — FICA still applies</li><li><a href="/tax">Nebraska tax withholding</a> — Circular EN on ordinary wages</li><li><a href="/blog/">Nebraska pay and tax guides</a></li></ul></aside>
+    <footer class="site-footer">
+      <div class="footer-cols">
+        <nav aria-label="Tools"><h2>Tools</h2><ul><li><a href="/">Nebraska paycheck calculator</a></li><li><a href="/hourly">hourly paycheck calculator</a></li><li><a href="/tax">Nebraska tax withholding</a></li></ul></nav>
+        <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="/blog/">Nebraska pay and tax guides</a></li><li><a href="/blog/nebraska-take-home-pay">Nebraska take-home pay</a></li><li><a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a></li><li><a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a></li><li><a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a></li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a></li></ul></nav>
+        <nav aria-label="Company and legal"><h2>Company &amp; Legal</h2><ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Use</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap">Sitemap</a></li></ul></nav>
+      </div>
+      <p class="disclaimer">Independent educational guide · Not tax, legal, or payroll advice · Not affiliated with the IRS, the Nebraska Department of Revenue, or any payroll provider. Figures are estimates; confirm with official sources.</p>
+      <p class="copy">© 2027 Nebraska Paycheck Calculator</p>
+    </footer>
+  </div>
+</body>
+</html>

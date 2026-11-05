@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="aT-_To54tuHU7xgf4H4Hu3deLyW_8XjMq0NQvhRLbXE" />
+  <title>Nebraska 1040N vs Paycheck Withholding, Explained</title>
+  <meta name="description" content="Nebraska Form 1040N versus paycheck withholding in 2027: why the W-2 and the return differ, and what your Nebraska refund actually tells you." />
+  <link rel="canonical" href="https://nebraskapaycheckcalculator.com/blog/nebraska-1040n-vs-withholding" />
+  <meta name="robots" content="index,follow" />
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --ink: #122033;
+      --muted: #5b6b7c;
+      --line: #d5deea;
+      --card: #fff;
+      --blue: #1a5fb4;
+      --blue-dark: #134a8c;
+      --soft: #e8f0fb;
+      --red: #b42318;
+      --shadow: 0 8px 24px rgba(18,32,51,.06);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .note-bar { background: #0f2a4a; color: #dcebff; text-align: center; font-size: 13px; padding: 9px 12px; }
+    .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+    header h1 { margin: 0 0 8px; font-size: clamp(1.85rem, 4vw, 2.55rem); letter-spacing: -.02em; line-height: 1.15; }
+    header p { margin: 0 0 22px; color: var(--muted); max-width: 62ch; }
+    .calc { display: grid; grid-template-columns: 1.05fr .95fr; gap: 16px; margin-bottom: 34px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 20px; }
+    .card h2 { margin: 0 0 14px; font-size: 1.15rem; }
+    label { display: block; font-size: 13px; font-weight: 700; margin: 0 0 6px; }
+    .hint { font-weight: 500; color: var(--muted); font-size: 12px; }
+    .field, select { width: 100%; border: 1px solid #c7d3e0; border-radius: 10px; padding: 11px 12px; font: inherit; margin-bottom: 12px; background: #fff; }
+    .seg { display: flex; gap: 8px; margin-bottom: 12px; }
+    .seg button { flex: 1; border: 1px solid #c7d3e0; background: #fff; border-radius: 999px; padding: 9px 10px; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .seg button.active { background: var(--soft); color: var(--blue-dark); border-color: #9bb8e0; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn { width: 100%; border: 0; border-radius: 10px; padding: 12px 14px; background: var(--blue); color: #fff; font-weight: 800; cursor: pointer; }
+    .btn:hover { background: var(--blue-dark); }
+    .net { background: var(--soft); border: 1px solid #b7cceb; border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+    .net .k { font-size: 13px; font-weight: 700; color: var(--blue-dark); }
+    .net .v { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin-top: 2px; }
+    .net .s { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .line { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #edf1f6; font-size: 14px; }
+    .line:last-child { border-bottom: 0; font-weight: 800; }
+    .neg { color: var(--red); font-weight: 700; }
+    .zero { color: var(--blue-dark); font-weight: 700; }
+    .tiny { margin-top: 10px; font-size: 12px; color: var(--muted); }
+    .section { margin-top: 28px; }
+    .section h2 { margin: 0 0 10px; font-size: 1.45rem; }
+    .section p, .section li { color: var(--muted); }
+    .steps { display: grid; gap: 10px; }
+    .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; grid-template-columns: 42px 1fr; gap: 10px; align-items: start; }
+    .step b { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--soft); color: var(--blue-dark); }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tile { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+    .tile strong { display: block; margin-bottom: 4px; }
+    .tile span { color: var(--muted); font-size: 13px; }
+    .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq p { margin: 8px 0 0; }
+    footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;table-layout:fixed;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:12px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line);overflow-wrap:break-word}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:2px solid #c5d0de}
+    .table th:first-child,.table td:first-child{text-align:left}
+    .table th:not(:first-child):not(:last-child),.table td:not(:first-child):not(:last-child){text-align:right;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+    .table th:last-child,.table td:last-child{text-align:right}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
+    .table tr > :nth-child(1):nth-last-child(2){width:62%}
+    .table tr > :nth-child(2):nth-last-child(1){width:38%}
+    .table tr > :nth-child(1):nth-last-child(3){width:42%}
+    .table tr > :nth-child(2):nth-last-child(2){width:22%}
+    .table tr > :nth-child(3):nth-last-child(1){width:36%}
+    .table.num-3 tr > :nth-child(1):nth-last-child(3){width:34%}
+    .table.num-3 tr > :nth-child(2):nth-last-child(2){width:33%}
+    .table.num-3 tr > :nth-child(3):nth-last-child(1){width:33%}
+    .table tr > :nth-child(1):nth-last-child(4){width:28%}
+    .table tr > :nth-child(2):nth-last-child(3){width:14%}
+    .table tr > :nth-child(3):nth-last-child(2){width:14%}
+    .table tr > :nth-child(4):nth-last-child(1){width:44%}
+    @media (max-width:700px){
+      .table th,.table td{padding:10px 8px}
+      .table tr > :nth-child(1):nth-last-child(3){width:40%}
+      .table tr > :nth-child(2):nth-last-child(2){width:28%}
+      .table tr > :nth-child(3):nth-last-child(1){width:32%}
+    }
+    .section h3{margin:16px 0 6px;font-size:1.1rem}
+    .links a{margin-right:14px}
+
+    .site-nav{display:flex;gap:18px;flex-wrap:wrap;padding:12px 0;margin-bottom:14px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+    .site-nav a[aria-current]{color:var(--ink)}
+    .related{margin-top:30px;background:var(--soft);border:1px solid #b7cceb;border-radius:14px;padding:16px 18px}
+    .related h2{margin:0 0 8px;font-size:1.15rem}.related ul{margin:0;padding-left:18px}.related li{color:var(--muted);margin:4px 0}
+    footer nav{margin-top:8px}
+    .site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:14px 0;margin-bottom:10px;border-bottom:1px solid var(--line)}
+    .site-header .brand{font-weight:800;font-size:17px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+    .site-header .brand span{color:var(--blue)}
+    .site-header .site-nav{border:0;margin:0;padding:0}
+    .site-nav a{text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
+    .site-nav a[aria-current]{border-bottom-color:var(--blue)}
+    .breadcrumbs{font-size:13px;color:var(--muted);margin:0 0 16px}
+    .breadcrumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+    .breadcrumbs li+li::before{content:"\203A";margin-right:6px;color:var(--muted)}
+    .breadcrumbs a{color:var(--blue);text-decoration:none}
+    .site-footer{text-align:left;margin-top:40px;padding:24px 0 12px}
+    .site-footer .footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:18px}
+    .site-footer h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:0 0 8px}
+    .site-footer ul{list-style:none;margin:0;padding:0}
+    .site-footer li{margin:4px 0}
+    .site-footer a{color:var(--blue);text-decoration:none}
+    .site-footer .disclaimer{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
+    .site-footer .copy{margin:6px 0 0;font-size:12px}
+  </style>
+
+
+  <!-- seo-meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nebraska Paycheck Calculator" />
+  <meta property="og:title" content="Nebraska 1040N vs Paycheck Withholding, Explained" />
+  <meta property="og:description" content="Nebraska Form 1040N versus paycheck withholding in 2027: why the W-2 and the return differ, and what your Nebraska refund actually tells you." />
+  <meta property="og:url" content="https://nebraskapaycheckcalculator.com/blog/nebraska-1040n-vs-withholding" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Nebraska Paycheck Calculator — 2027 take-home pay after federal, FICA, and Nebraska tax" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta name="twitter:title" content="Nebraska 1040N vs Paycheck Withholding, Explained" />
+  <meta name="twitter:description" content="Nebraska Form 1040N versus paycheck withholding in 2027: why the W-2 and the return differ, and what your Nebraska refund actually tells you." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nebraskapaycheckcalculator.com/#org","name":"Nebraska Paycheck Calculator","url":"https://nebraskapaycheckcalculator.com/"},{"@type":"BlogPosting","headline":"Nebraska Form 1040N vs Paycheck Withholding","description":"Nebraska Form 1040N versus paycheck withholding in 2027: why the W-2 and the return differ, and what your Nebraska refund actually tells you.","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-1040n-vs-withholding","mainEntityOfPage":"https://nebraskapaycheckcalculator.com/blog/nebraska-1040n-vs-withholding","inLanguage":"en-US","dateModified":"2026-11-05","author":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"publisher":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"about":"nebraska 1040n vs paycheck withholding"},{"@type":"WebPage","@id":"https://nebraskapaycheckcalculator.com/blog/nebraska-1040n-vs-withholding#webpage","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-1040n-vs-withholding","name":"Nebraska 1040N vs Paycheck Withholding, Explained","description":"Nebraska Form 1040N versus paycheck withholding in 2027: why the W-2 and the return differ, and what your Nebraska refund actually tells you.","isPartOf":{"@id":"https://nebraskapaycheckcalculator.com/#website"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".faq summary + p","details p"]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nebraskapaycheckcalculator.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://nebraskapaycheckcalculator.com/blog/"},{"@type":"ListItem","position":3,"name":"Nebraska Form 1040N vs Paycheck Withholding","item":"https://nebraskapaycheckcalculator.com/blog/nebraska-1040n-vs-withholding"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Nebraska withholding the same as the tax on Form 1040N?","acceptedAnswer":{"@type":"Answer","text":"No. Withholding is a prepayment taken from paychecks. Form 1040N computes the year's Nebraska tax. A refund or a balance due is the difference between those two numbers."}},{"@type":"Question","name":"Does a big Nebraska refund mean my rate was high?","acceptedAnswer":{"@type":"Answer","text":"It means the prepayment was larger than the tax on the return. The brackets did not change because you withheld more. Allowances and extra withholding change the prepayment, not the tax on the same income."}},{"@type":"Question","name":"Why do W-2 box 1 and box 16 sometimes differ?","acceptedAnswer":{"@type":"Answer","text":"Federal wages and Nebraska wages start from the same paycheck but follow their own adjustments. A traditional 401(k) reduces both. Items that are taxable in one system and not the other can pull the boxes apart."}},{"@type":"Question","name":"Will changing my W-4N change last year's 1040N?","acceptedAnswer":{"@type":"Answer","text":"No. A new W-4N changes withholding on later checks. The return for a year that already ended uses the withholding that was actually taken, which is what the W-2 reports."}}]}]}</script>
+  <!-- /seo-meta -->
+</head>
+<body>
+  <div class="note-bar">Educational guide only. Not tax, legal, or payroll advice.</div>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="/">Nebraska <span>Paycheck</span> Calculator</a>
+      <nav class="site-nav" aria-label="Main"><a href="/">Home</a><a href="/hourly">Hourly</a><a href="/tax">Tax</a><a href="/blog/">Guides</a></nav>
+    </header>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li aria-current="page">Nebraska Form 1040N vs Paycheck Withholding</li></ol></nav>
+    <header>
+      <h1>Nebraska Form 1040N vs Paycheck Withholding</h1>
+      <p>Why the tax on the return and the tax on the stub are different numbers</p>
+    </header>
+
+    <section class="section">
+      <h2>One is a prepayment, the other is the tax</h2>
+      <p>Paycheck withholding is money your employer holds back and sends in during the year. Form 1040N is the Nebraska return that computes the tax after the year is over. They are supposed to be in the same neighborhood. They are not the same calculation, and they are not meant to match on every stub.</p>
+      <p>A refund means withholding and any other Nebraska prepayments were higher than the tax on the return. A balance due means they were lower. Neither result changes the fact that the income was taxed under the return. People treat a refund as proof the state “took too high a rate,” and a bill as proof the employer used the wrong table. Often both numbers were doing what they were designed to do.</p>
+      <p>The rates on the return are the subject of <a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a>. The amount coming out of a check is <a href="/tax">Nebraska tax withholding</a>. This page is the gap between them.</p>
+    </section>
+    <section class="section">
+      <h2>What the W-2 is adding up</h2>
+      <p>At the end of the year the employer reports wages and withholding on Form W-2. Box 1 is federal wages. Box 2 is federal income tax withheld. Box 3 is Social Security wages. Box 4 is Social Security tax withheld. Box 5 is Medicare wages. Box 6 is Medicare tax withheld. Box 16 is Nebraska wages. Box 17 is Nebraska income tax withheld. Those box numbers are the standard W-2 layout. Your PDF may print the state lines in a row labeled NE.</p>
+      <p>Box 17 should equal the Nebraska tax taken from your checks, including any flat 3.5% withheld from a separate bonus. It is the prepayment. It is not the tax Form 1040N will charge. You do not copy box 17 onto the return as “tax.” You copy it as withholding, and the return computes tax somewhere else.</p>
+      <p>Gross pay on the stubs and box 1 are allowed to differ. A traditional 401(k) deferral is left out of federal wages and out of Nebraska wages, and it stays in Social Security wages and Medicare wages. That is why box 3 can be higher than box 1. A cafeteria-plan premium often comes out of all of them. Reading those boxes backward, as if every box should match gross, creates false errors. How the deferral behaves on the way into the box is <a href="/blog/401k-nebraska-paycheck">how a 401(k) changes Nebraska take-home pay</a>.</p>
+    </section>
+    <section class="section">
+      <h2>The $60,000 checks, added up</h2>
+      <p>This site's reference employee earns $60,000, files single, claims one W-4N allowance, is paid biweekly, has no pre-tax deductions, and has a pay date in 2027. Each check withholds $193.08 federal, $176.54 FICA, and $73.80 Nebraska, and nets $1,864.28.</p>
+      <p>Twenty-six of the printed Nebraska lines are 26 times $73.80, or $1,918.80. That is 3.20% of the $60,000 gross. Twenty-six federal lines are 26 times $193.08, or $5,020.08. FICA across those checks is about $4,590, which is 7.65% of gross, because this wage is under the Social Security cap and nothing reduced FICA wages.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>What 26 identical checks add to</th><th>Year</th></tr></thead>
+        <tbody>
+          <tr><td>Gross wages</td><td>$60,000.00</td></tr>
+          <tr><td>Federal income tax withheld</td><td>$5,020.08</td></tr>
+          <tr><td>FICA withheld</td><td>About $4,590</td></tr>
+          <tr><td>Nebraska income tax withheld</td><td>$1,918.80</td></tr>
+          <tr><td>Nebraska withholding as a share of gross</td><td>3.20%</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The 3.20% is a withholding share of gross wages. It is not the effective rate on Form 1040N. The return does not start from gross wages. It starts from federal adjusted gross income, then applies Nebraska adjustments and credits the paycheck never saw. Calling 3.20% “my Nebraska tax rate” skips that step. The one-line rate question, which is a different page, is <a href="/blog/nebraska-state-tax-rate">Nebraska state tax rate</a>.</p>
+    </section>
+    <section class="section">
+      <h2>Why the return uses a different schedule</h2>
+      <p>Payroll does not look up the filing brackets. It uses Circular EN. For a 2027 pay date the percentage-method rows step from 2.26% through 4.03% after allowances. The return's tiers are a separate schedule. Both can be right. <a href="/blog/nebraska-circular-en">Nebraska Circular EN</a> is the booklet. The filing tiers stay on the brackets guide so this page does not become a second rate sheet.</p>
+      <p>An allowance is not the same object as a deduction on the return. In 2027, one W-4N allowance removes $2,510 from annualized wages before the withholding table, which is $96.54 on a biweekly check. The return has its own personal exemption credit and its own deductions. Matching the allowance count to “what I deducted last year” is a rough habit, not an identity. The form that sets the count is <a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a>.</p>
+      <p>Social Security benefits can be partly included in federal income and then subtracted on the Nebraska return. A wage table cannot apply that subtraction to a Friday check, because the benefit is not in the check. That exemption is <a href="/blog/nebraska-social-security-tax">does Nebraska tax Social Security</a>. A slice of military retirement can be excluded on the return as well. Withholding will not guess either adjustment from a W-4N allowance.</p>
+    </section>
+    <section class="section">
+      <h2>Income the stub will never see</h2>
+      <p>A second job is withheld as if it were the only job. Each stub can be perfect and the household can still owe, because each employer applied the forms it was given. Adding extra Nebraska withholding, or lowering allowances, is how people close that gap during the year. Doing nothing until April is also legal. It just moves the payment to the return.</p>
+      <p>Interest, a side business, a pension, and a spouse's wages are invisible to this employer's Circular EN table. Allowances cannot see them. The extra-withholding line on the W-4N is a flat dollar amount added after the table. It exists for income the table cannot see. Self-employment tax is federal and is not a line on a W-2 at all. Quarterly estimates cover that kind of income when no employer is withholding.</p>
+      <p>A bonus withheld at 22% federal and 3.5% Nebraska is another prepayment sitting in the same W-2 boxes. It is not taxed on its own line of Form 1040N. If the flat rates withheld more than the return charges on that income, the extra is part of the refund. The check itself is <a href="/blog/nebraska-bonus-tax">Nebraska bonus tax</a>.</p>
+    </section>
+    <section class="section">
+      <h2>A refund is a timing result</h2>
+      <p>Withholding $1,918.80 and owing less than that on Form 1040N produces a Nebraska refund of the difference. You lent the state the difference from each payday until the return was processed. The bracket on the income did not improve because you prepaid more. Claiming fewer allowances, or stopping an extra dollar amount you no longer want, raises the deposit and shrinks the refund. Claiming more than your situation supports can create a bill and, in some cases, an underpayment consequence. The calculator shows the deposit. It does not file the return.</p>
+      <p>On this $60,000 example, moving from one allowance to two drops the state line from $73.80 to about $70, roughly four dollars a check. That is the scale of one allowance at this wage. It will not manufacture a $1,000 refund by itself. A refund of that size usually means the year's prepayment was off by about that much, from allowances, extra withholding, a bonus, or income that was smaller than the forms assumed.</p>
+      <p>Changing the W-4N in November does not rewrite January through October. Box 17 will include whatever was actually withheld. The new form changes the checks after payroll updates it. People who “fix” a refund by filing a new W-4N should look at the next stub, not at last year's W-2. Stub reading is <a href="/blog/nebraska-pay-stub">how to read a Nebraska pay stub</a>.</p>
+    </section>
+    <section class="section">
+      <h2>Two states, one W-2, one resident return</h2>
+      <p>If you live in Nebraska and the wages were earned in Nebraska, one state line on the W-2 is the usual case. If you live in one state and work in another, the work state may withhold and the resident state may tax the same wages, with a credit so the same dollar is not fully taxed twice. Nebraska and Iowa do not have wage reciprocity. A Council Bluffs commute is <a href="/blog/nebraska-iowa-paycheck">Nebraska vs Iowa paycheck</a>.</p>
+      <p>The credit is claimed on the resident return. It is not a lower rate on the stub. The stub shows whatever the employer withheld for the work state. If an Omaha employer withheld Nebraska tax and you lived in Iowa all year, box 17 is still Nebraska withholding. Iowa's credit, if you qualify, is an Iowa return item. Do not expect the Nebraska calculator to compute that credit. It estimates a Nebraska paycheck.</p>
+    </section>
+    <section class="section">
+      <h2>How to use the tools without confusing them with the return</h2>
+      <p>Use the <a href="/">Nebraska paycheck calculator</a> when you want the deposit under a given salary, filing status, allowance count, and set of deductions. Use the hourly tool when the wage is an hourly rate. Use <a href="/tax">Nebraska tax withholding</a> when the only number you want is the Nebraska line. All three estimate withholding. None of them fills out Form 1040N, applies a credit, or subtracts Social Security benefits.</p>
+      <p>When the return and the W-2 disagree by a lot, list the things the stub could not see: another job, a spouse's income, a business, a large bonus withheld flat, a benefit exclusion, or a move between states. Then list the things that change the prepayment only: allowances, extra withholding, and the pay date's Circular EN year. The first list changes the tax. The second list changes when you pay it.</p>
+    </section>
+
+    <section class="section">
+      <h2>Frequently asked questions</h2>
+      <details><summary>Is Nebraska withholding the same as the tax on Form 1040N?</summary><p>No. Withholding is a prepayment taken from paychecks. Form 1040N computes the year's Nebraska tax. A refund or a balance due is the difference between those two numbers.</p></details>
+      <details><summary>Does a big Nebraska refund mean my rate was high?</summary><p>It means the prepayment was larger than the tax on the return. The brackets did not change because you withheld more. Allowances and extra withholding change the prepayment, not the tax on the same income.</p></details>
+      <details><summary>Why do W-2 box 1 and box 16 sometimes differ?</summary><p>Federal wages and Nebraska wages start from the same paycheck but follow their own adjustments. A traditional 401(k) reduces both. Items that are taxable in one system and not the other can pull the boxes apart.</p></details>
+      <details><summary>Will changing my W-4N change last year's 1040N?</summary><p>No. A new W-4N changes withholding on later checks. The return for a year that already ended uses the withholding that was actually taken, which is what the W-2 reports.</p></details>
+    </section>
+
+    
+<aside class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/tax">Nebraska tax withholding</a> — the amount taken from the check</li><li><a href="/blog/nebraska-circular-en">Nebraska Circular EN</a> — the booklet payroll uses</li><li><a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a> — the form that sets the prepayment</li><li><a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a> — rates on the return</li><li><a href="/blog/">Nebraska pay and tax guides</a></li></ul></aside>
+    <footer class="site-footer">
+      <div class="footer-cols">
+        <nav aria-label="Tools"><h2>Tools</h2><ul><li><a href="/">Nebraska paycheck calculator</a></li><li><a href="/hourly">hourly paycheck calculator</a></li><li><a href="/tax">Nebraska tax withholding</a></li></ul></nav>
+        <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="/blog/">Nebraska pay and tax guides</a></li><li><a href="/blog/nebraska-take-home-pay">Nebraska take-home pay</a></li><li><a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a></li><li><a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a></li><li><a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a></li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a></li></ul></nav>
+        <nav aria-label="Company and legal"><h2>Company &amp; Legal</h2><ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Use</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap">Sitemap</a></li></ul></nav>
+      </div>
+      <p class="disclaimer">Independent educational guide · Not tax, legal, or payroll advice · Not affiliated with the IRS, the Nebraska Department of Revenue, or any payroll provider. Figures are estimates; confirm with official sources.</p>
+      <p class="copy">© 2027 Nebraska Paycheck Calculator</p>
+    </footer>
+  </div>
+</body>
+</html>
