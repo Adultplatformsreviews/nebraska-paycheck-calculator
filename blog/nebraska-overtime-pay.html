@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="aT-_To54tuHU7xgf4H4Hu3deLyW_8XjMq0NQvhRLbXE" />
+  <title>Nebraska Overtime Pay and Take-Home Withholding</title>
+  <meta name="description" content="Nebraska overtime pay in 2027: time-and-a-half after 40 hours in the workweek, how withholding hits that premium, and what a steady week nets." />
+  <link rel="canonical" href="https://nebraskapaycheckcalculator.com/blog/nebraska-overtime-pay" />
+  <meta name="robots" content="index,follow" />
+  <style>
+    html { scrollbar-gutter: stable; }
+    img { max-width: 100%; height: auto; }
+    :root {
+      --bg: #f3f6fb;
+      --ink: #122033;
+      --muted: #5b6b7c;
+      --line: #d5deea;
+      --card: #fff;
+      --blue: #1a5fb4;
+      --blue-dark: #134a8c;
+      --soft: #e8f0fb;
+      --red: #b42318;
+      --shadow: 0 8px 24px rgba(18,32,51,.06);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .note-bar { background: #0f2a4a; color: #dcebff; text-align: center; font-size: 13px; padding: 9px 12px; }
+    .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+    header h1 { margin: 0 0 8px; font-size: clamp(1.85rem, 4vw, 2.55rem); letter-spacing: -.02em; line-height: 1.15; }
+    header p { margin: 0 0 22px; color: var(--muted); max-width: 62ch; }
+    .calc { display: grid; grid-template-columns: 1.05fr .95fr; gap: 16px; margin-bottom: 34px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 20px; }
+    .card h2 { margin: 0 0 14px; font-size: 1.15rem; }
+    label { display: block; font-size: 13px; font-weight: 700; margin: 0 0 6px; }
+    .hint { font-weight: 500; color: var(--muted); font-size: 12px; }
+    .field, select { width: 100%; border: 1px solid #c7d3e0; border-radius: 10px; padding: 11px 12px; font: inherit; margin-bottom: 12px; background: #fff; }
+    .seg { display: flex; gap: 8px; margin-bottom: 12px; }
+    .seg button { flex: 1; border: 1px solid #c7d3e0; background: #fff; border-radius: 999px; padding: 9px 10px; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .seg button.active { background: var(--soft); color: var(--blue-dark); border-color: #9bb8e0; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn { width: 100%; border: 0; border-radius: 10px; padding: 12px 14px; background: var(--blue); color: #fff; font-weight: 800; cursor: pointer; }
+    .btn:hover { background: var(--blue-dark); }
+    .net { background: var(--soft); border: 1px solid #b7cceb; border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+    .net .k { font-size: 13px; font-weight: 700; color: var(--blue-dark); }
+    .net .v { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin-top: 2px; }
+    .net .s { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .line { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #edf1f6; font-size: 14px; }
+    .line:last-child { border-bottom: 0; font-weight: 800; }
+    .neg { color: var(--red); font-weight: 700; }
+    .zero { color: var(--blue-dark); font-weight: 700; }
+    .tiny { margin-top: 10px; font-size: 12px; color: var(--muted); }
+    .section { margin-top: 28px; }
+    .section h2 { margin: 0 0 10px; font-size: 1.45rem; }
+    .section p, .section li { color: var(--muted); }
+    .steps { display: grid; gap: 10px; }
+    .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; grid-template-columns: 42px 1fr; gap: 10px; align-items: start; }
+    .step b { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--soft); color: var(--blue-dark); }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tile { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+    .tile strong { display: block; margin-bottom: 4px; }
+    .tile span { color: var(--muted); font-size: 13px; }
+    .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq p { margin: 8px 0 0; }
+    footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;table-layout:fixed;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:12px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line);overflow-wrap:break-word}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:2px solid #c5d0de}
+    .table th:first-child,.table td:first-child{text-align:left}
+    .table th:not(:first-child):not(:last-child),.table td:not(:first-child):not(:last-child){text-align:right;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+    .table th:last-child,.table td:last-child{text-align:right}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
+    .table tr > :nth-child(1):nth-last-child(2){width:62%}
+    .table tr > :nth-child(2):nth-last-child(1){width:38%}
+    .table tr > :nth-child(1):nth-last-child(3){width:42%}
+    .table tr > :nth-child(2):nth-last-child(2){width:22%}
+    .table tr > :nth-child(3):nth-last-child(1){width:36%}
+    .table.num-3 tr > :nth-child(1):nth-last-child(3){width:34%}
+    .table.num-3 tr > :nth-child(2):nth-last-child(2){width:33%}
+    .table.num-3 tr > :nth-child(3):nth-last-child(1){width:33%}
+    .table tr > :nth-child(1):nth-last-child(4){width:28%}
+    .table tr > :nth-child(2):nth-last-child(3){width:14%}
+    .table tr > :nth-child(3):nth-last-child(2){width:14%}
+    .table tr > :nth-child(4):nth-last-child(1){width:44%}
+    @media (max-width:700px){
+      .table th,.table td{padding:10px 8px}
+      .table tr > :nth-child(1):nth-last-child(3){width:40%}
+      .table tr > :nth-child(2):nth-last-child(2){width:28%}
+      .table tr > :nth-child(3):nth-last-child(1){width:32%}
+    }
+    .section h3{margin:16px 0 6px;font-size:1.1rem}
+    .links a{margin-right:14px}
+
+    .site-nav{display:flex;gap:18px;flex-wrap:wrap;padding:12px 0;margin-bottom:14px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+    .site-nav a[aria-current]{color:var(--ink)}
+    .related{margin-top:30px;background:var(--soft);border:1px solid #b7cceb;border-radius:14px;padding:16px 18px}
+    .related h2{margin:0 0 8px;font-size:1.15rem}.related ul{margin:0;padding-left:18px}.related li{color:var(--muted);margin:4px 0}
+    footer nav{margin-top:8px}
+    .site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:14px 0;margin-bottom:10px;border-bottom:1px solid var(--line)}
+    .site-header .brand{font-weight:800;font-size:17px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+    .site-header .brand span{color:var(--blue)}
+    .site-header .site-nav{border:0;margin:0;padding:0}
+    .site-nav a{text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
+    .site-nav a[aria-current]{border-bottom-color:var(--blue)}
+    .breadcrumbs{font-size:13px;color:var(--muted);margin:0 0 16px}
+    .breadcrumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+    .breadcrumbs li+li::before{content:"\203A";margin-right:6px;color:var(--muted)}
+    .breadcrumbs a{color:var(--blue);text-decoration:none}
+    .site-footer{text-align:left;margin-top:40px;padding:24px 0 12px}
+    .site-footer .footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:18px}
+    .site-footer h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:0 0 8px}
+    .site-footer ul{list-style:none;margin:0;padding:0}
+    .site-footer li{margin:4px 0}
+    .site-footer a{color:var(--blue);text-decoration:none}
+    .site-footer .disclaimer{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
+    .site-footer .copy{margin:6px 0 0;font-size:12px}
+  </style>
+
+
+  <!-- seo-meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nebraska Paycheck Calculator" />
+  <meta property="og:title" content="Nebraska Overtime Pay and Take-Home Withholding" />
+  <meta property="og:description" content="Nebraska overtime pay in 2027: time-and-a-half after 40 hours in the workweek, how withholding hits that premium, and what a steady week nets." />
+  <meta property="og:url" content="https://nebraskapaycheckcalculator.com/blog/nebraska-overtime-pay" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Nebraska Paycheck Calculator — 2027 take-home pay after federal, FICA, and Nebraska tax" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta name="twitter:title" content="Nebraska Overtime Pay and Take-Home Withholding" />
+  <meta name="twitter:description" content="Nebraska overtime pay in 2027: time-and-a-half after 40 hours in the workweek, how withholding hits that premium, and what a steady week nets." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nebraskapaycheckcalculator.com/#org","name":"Nebraska Paycheck Calculator","url":"https://nebraskapaycheckcalculator.com/"},{"@type":"BlogPosting","headline":"Nebraska Overtime Pay and Take-Home","description":"Nebraska overtime pay in 2027: time-and-a-half after 40 hours in the workweek, how withholding hits that premium, and what a steady week nets.","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-overtime-pay","mainEntityOfPage":"https://nebraskapaycheckcalculator.com/blog/nebraska-overtime-pay","inLanguage":"en-US","dateModified":"2026-11-05","author":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"publisher":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"about":"nebraska overtime pay"},{"@type":"WebPage","@id":"https://nebraskapaycheckcalculator.com/blog/nebraska-overtime-pay#webpage","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-overtime-pay","name":"Nebraska Overtime Pay and Take-Home Withholding","description":"Nebraska overtime pay in 2027: time-and-a-half after 40 hours in the workweek, how withholding hits that premium, and what a steady week nets.","isPartOf":{"@id":"https://nebraskapaycheckcalculator.com/#website"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".faq summary + p","details p"]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nebraskapaycheckcalculator.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://nebraskapaycheckcalculator.com/blog/"},{"@type":"ListItem","position":3,"name":"Nebraska Overtime Pay and Take-Home","item":"https://nebraskapaycheckcalculator.com/blog/nebraska-overtime-pay"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Nebraska tax overtime at a higher rate?","acceptedAnswer":{"@type":"Answer","text":"No. Overtime pay is wages. Federal income tax, FICA, and Nebraska income tax apply to it the same way they apply to other wages. There is no extra Nebraska overtime tax."}},{"@type":"Question","name":"When is overtime time-and-a-half in Nebraska?","acceptedAnswer":{"@type":"Answer","text":"For most non-exempt workers, Nebraska follows the federal rule: 1.5 times the regular rate after 40 hours in the workweek. Nebraska does not add a daily overtime rule on top of that."}},{"@type":"Question","name":"Why does the calculator treat overtime as every week?","acceptedAnswer":{"@type":"Answer","text":"Hourly overtime is annualized as a weekly amount times 52, then split across paychecks. That matches a steady schedule. One unusual week is not the same as typing those hours as the new normal."}},{"@type":"Question","name":"Is overtime withheld at the 3.5% bonus rate?","acceptedAnswer":{"@type":"Answer","text":"Only if it is paid as separate supplemental wages and the employer elects that Nebraska method. Overtime inside the regular check is part of that check's ordinary withholding."}}]}]}</script>
+  <!-- /seo-meta -->
+</head>
+<body>
+  <div class="note-bar">Educational guide only. Not tax, legal, or payroll advice.</div>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="/">Nebraska <span>Paycheck</span> Calculator</a>
+      <nav class="site-nav" aria-label="Main"><a href="/">Home</a><a href="/hourly">Hourly</a><a href="/tax">Tax</a><a href="/blog/">Guides</a></nav>
+    </header>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li aria-current="page">Nebraska Overtime Pay and Take-Home</li></ol></nav>
+    <header>
+      <h1>Nebraska Overtime Pay and Take-Home</h1>
+      <p>How the overtime premium is withheld in 2027, and what a steady overtime week actually nets</p>
+    </header>
+
+    <section class="section">
+      <h2>Overtime is wages, not a special Nebraska tax</h2>
+      <p>Nebraska does not add an overtime surtax. For most non-exempt workers the premium itself comes from the federal overtime rule, which the state follows: after 40 hours in a workweek, the overtime hours are paid at 1.5 times the regular rate. Hours past eight in a day are not automatically overtime in Nebraska. The week is the test, unless a contract or a policy pays more than the legal floor.</p>
+      <p>Once the premium is paid, it is ordinary wages for withholding. Federal income tax, Social Security, Medicare, and Nebraska income tax all see it. FICA is 7.65% of those dollars until Social Security wages at that employer pass the 2027 wage base of $192,300. There is no overtime exemption from the 6.2% or the 1.45%.</p>
+      <p>Who must be paid at least $15.26 in 2027, and what time-and-a-half is at that floor, is the <a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a> guide. This page uses other rates so it does not repeat that example. The place to type your own hours is the <a href="/hourly">hourly paycheck calculator</a>.</p>
+    </section>
+    <section class="section">
+      <h2>What the regular rate includes</h2>
+      <p>The regular rate is not always the number printed as your base wage. A non-discretionary bonus earned across the week, and a shift differential paid for the hours worked, can raise the regular rate that time-and-a-half multiplies. A gift that is truly discretionary, and payments that the overtime rules exclude, do not. This page does not blend a mixed week for you. If the stub shows an overtime rate, use that rate. If you are estimating before the week happens, 1.5 times the base wage is the right starting point only when no other pay belongs in the regular rate.</p>
+      <p>Salaried workers are not automatically exempt from overtime. Exemption depends on the job and on pay rules, not on the word "salary" in an offer letter. A non-exempt salaried employee who works past 40 hours is still owed the premium. The salary calculator on the home page can add an overtime amount on top of annual pay. It is still an estimate of a steady pattern, which is the next section.</p>
+    </section>
+    <section class="section">
+      <h2>A steady week at $22, with and without overtime</h2>
+      <p>These rows are the calculator for a 2027 pay date. Single, one W-4N allowance, no pre-tax deductions. The wage is $22 an hour. Forty hours is the straight week. The overtime row adds five hours at $33, which is 1.5 times $22. The tool treats that overtime as the weekly pattern for the whole year: five hours times $33 times 52 is $8,580 of annual overtime pay, on top of $45,760 of straight time.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>2027 weekly check</th><th>40 hours</th><th>40 hours plus 5 at $33</th></tr></thead>
+        <tbody>
+          <tr><td>Gross pay</td><td>$880.00</td><td>$1,045.00</td></tr>
+          <tr><td>Federal income tax</td><td>$63.68</td><td>$83.48</td></tr>
+          <tr><td>FICA</td><td>$67.32</td><td>$79.94</td></tr>
+          <tr><td>Nebraska income tax</td><td>$26.14</td><td>$32.63</td></tr>
+          <tr><td>Net pay</td><td>$722.86</td><td>$848.95</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The extra gross is $165. The extra net is $126.09. The $38.91 in between is tax: federal withholding rises by $19.80, FICA by $12.62, and Nebraska by $6.49. The FICA piece is 7.65% of the $165. None of the premium escaped Social Security or Medicare. Nebraska's extra $6.49 is withholding on the higher period wage, not a special overtime percentage.</p>
+      <p>Paid every two weeks, with the same steady hours, the calculator's biweekly checks are double these weekly figures: $1,760 and $722.86 becomes a straight biweekly gross of $1,760 and net of $1,445.73, and the overtime pattern becomes gross of $2,090 and net of $1,697.92. Doubling is the steady-schedule result. It is not what happens if only one of the two weeks had overtime.</p>
+    </section>
+    <section class="section">
+      <h2>Six overtime hours at $28</h2>
+      <p>A second steady pattern: $28 an hour, 40 hours, and six overtime hours at $42. Annual straight time is $58,240. The six hours every week add $13,104. Same 2027 assumptions as the table above.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>2027 weekly check</th><th>40 hours at $28</th><th>Plus 6 hours at $42</th></tr></thead>
+        <tbody>
+          <tr><td>Gross pay</td><td>$1,120.00</td><td>$1,372.00</td></tr>
+          <tr><td>Federal income tax</td><td>$92.48</td><td>$132.03</td></tr>
+          <tr><td>FICA</td><td>$85.68</td><td>$104.96</td></tr>
+          <tr><td>Nebraska income tax</td><td>$35.57</td><td>$45.48</td></tr>
+          <tr><td>Net pay</td><td>$906.27</td><td>$1,089.53</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Extra gross is $252. Extra net is $183.26. Federal withholding takes $39.55 of the premium, FICA takes $19.28, and Nebraska takes $9.91. You keep most of the premium and you do not keep all of it. Quoting the overtime rate as if it were take-home pay is the mistake these two tables are for.</p>
+      <p>Federal dollars in both tables use the 2026 Publication 15-T worksheets that this calculator applies to a 2027 pay date. Nebraska dollars use the 2027 Circular EN weekly table after one allowance of $48.27.</p>
+    </section>
+    <section class="section">
+      <h2>One heavy week is not a new salary</h2>
+      <p>The hourly tool annualizes whatever you type. Five overtime hours means "this week, all year," because the tax calculation needs a yearly wage to run the federal percentage method and then divides by the number of checks. That is the right model for someone who always works 45 hours. It is the wrong model for someone who worked 45 hours once.</p>
+      <p>A single $165 premium is $165 of wages, once. It is not $8,580. If you type the heavy week and then multiply the net by 52, you have invented a job that does not exist. For one unusual week, read the stub after it is paid. Gross should include the premium. FICA should include 7.65% of it if you are under the wage base and no cafeteria-plan benefit reduced FICA wages. Nebraska withholding will move because the period wage moved. The size of that move depends on whether the overtime was inside the regular check or paid alone.</p>
+      <p>Inside the regular check, the whole period is one wage payment. Paid as its own payment, overtime can be supplemental wages. The employer may then withhold Nebraska tax at a flat 3.5%, and may withhold federal tax at a flat 22%, instead of running the combined period through the ordinary table. Both are withholding methods. Neither is an overtime tax. The worked bonus numbers, which use the same rules, are in <a href="/blog/nebraska-bonus-tax">Nebraska bonus tax</a>.</p>
+    </section>
+    <section class="section">
+      <h2>How to read the overtime lines</h2>
+      <p>On the stub, match hours and rates before you match tax. Regular hours times the regular rate, plus overtime hours times the overtime rate, should equal the earnings that feed gross. A missing hour is a missing wage. It looks like a tax problem only after someone divides the wrong gross.</p>
+      <p>Current overtime and year-to-date overtime are different columns. A year-to-date overtime total that looks enormous in March is the sum of the weeks already worked, not the rate for this week. Column habits are in <a href="/blog/nebraska-pay-stub">how to read a Nebraska pay stub</a>.</p>
+      <p>A traditional 401(k) percent taken from overtime pay reduces income-tax wages and does not reduce FICA on those dollars. Whether the plan defers from overtime is a plan question. The tax result, if the deferral happens, is the same result as on any other wage, described in <a href="/blog/401k-nebraska-paycheck">how a 401(k) changes Nebraska take-home pay</a>.</p>
+    </section>
+    <section class="section">
+      <h2>Comp time, a second rate, and two jobs</h2>
+      <p>Public employers sometimes provide compensatory time instead of an overtime check, under rules that do not apply to a typical private employer. Private-sector workers are generally paid the premium in money. A stub that shows "comp hours" and no premium, at a private job, is worth a question before you assume the tax lines ate the overtime.</p>
+      <p>Two hourly rates in one week, such as a day rate and a night differential, produce one regular rate for the overtime math. This calculator has one wage and one overtime rate. It will not blend the week. Average the regular rate yourself, or type the overtime rate the employer already computed. Leaving the night differential out understates both gross and tax.</p>
+      <p>A second job has its own 40-hour week only at that employer. Hours at two employers do not automatically combine into overtime at either one. Each stub withholds as if it is the only job. The combined income can still owe more at filing than the two checks prepaid. That gap is a withholding issue, not an overtime-rate issue. Extra Nebraska withholding is handled on the W-4N, which is a different guide.</p>
+    </section>
+    <section class="section">
+      <h2>What to type, and what not to multiply</h2>
+      <p>For a schedule you actually work most weeks, enter the regular rate, the regular hours, the overtime hours, and the overtime rate on the <a href="/hourly">hourly paycheck calculator</a>. Set the pay date in 2027 if you want the 2027 Nebraska table. Pick the frequency your employer pays, not the number of weeks you wish the year had.</p>
+      <p>Read the result as one check under that steady pattern. If you are comparing a job that never has overtime with a job that always has five hours, the two nets in the $22 table are the comparison. If you are looking at last Thursday's extra shift, wait for the stub or use the supplemental rules, and do not multiply a one-week estimate by 52.</p>
+      <p>Salary plus an occasional extra is the same caution on the <a href="/">Nebraska paycheck calculator</a>. An overtime amount entered there is annualized too. Nebraska tax on the ordinary wage, without the hours, is <a href="/tax">Nebraska tax withholding</a>. None of these tools invent a daily overtime rule Nebraska does not have.</p>
+    </section>
+
+    <section class="section">
+      <h2>Frequently asked questions</h2>
+      <details><summary>Does Nebraska tax overtime at a higher rate?</summary><p>No. Overtime pay is wages. Federal income tax, FICA, and Nebraska income tax apply to it the same way they apply to other wages. There is no extra Nebraska overtime tax.</p></details>
+      <details><summary>When is overtime time-and-a-half in Nebraska?</summary><p>For most non-exempt workers, Nebraska follows the federal rule: 1.5 times the regular rate after 40 hours in the workweek. Nebraska does not add a daily overtime rule on top of that.</p></details>
+      <details><summary>Why does the calculator treat overtime as every week?</summary><p>Hourly overtime is annualized as a weekly amount times 52, then split across paychecks. That matches a steady schedule. One unusual week is not the same as typing those hours as the new normal.</p></details>
+      <details><summary>Is overtime withheld at the 3.5% bonus rate?</summary><p>Only if it is paid as separate supplemental wages and the employer elects that Nebraska method. Overtime inside the regular check is part of that check's ordinary withholding.</p></details>
+    </section>
+
+    
+<aside class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/hourly">hourly paycheck calculator</a> — enter regular hours and overtime hours</li><li><a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a> — the floor the premium sits on</li><li><a href="/blog/nebraska-bonus-tax">Nebraska bonus tax</a> — when a separate payment uses the flat rate</li><li><a href="/blog/nebraska-pay-stub">How to read a Nebraska pay stub</a> — hours before tax lines</li><li><a href="/blog/">Nebraska pay and tax guides</a></li></ul></aside>
+    <footer class="site-footer">
+      <div class="footer-cols">
+        <nav aria-label="Tools"><h2>Tools</h2><ul><li><a href="/">Nebraska paycheck calculator</a></li><li><a href="/hourly">hourly paycheck calculator</a></li><li><a href="/tax">Nebraska tax withholding</a></li></ul></nav>
+        <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="/blog/">Nebraska pay and tax guides</a></li><li><a href="/blog/nebraska-take-home-pay">Nebraska take-home pay</a></li><li><a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a></li><li><a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a></li><li><a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a></li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a></li></ul></nav>
+        <nav aria-label="Company and legal"><h2>Company &amp; Legal</h2><ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Use</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap">Sitemap</a></li></ul></nav>
+      </div>
+      <p class="disclaimer">Independent educational guide · Not tax, legal, or payroll advice · Not affiliated with the IRS, the Nebraska Department of Revenue, or any payroll provider. Figures are estimates; confirm with official sources.</p>
+      <p class="copy">© 2027 Nebraska Paycheck Calculator</p>
+    </footer>
+  </div>
+</body>
+</html>

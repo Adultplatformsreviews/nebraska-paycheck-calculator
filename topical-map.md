@@ -11,7 +11,7 @@
 - Each page has a self-referencing canonical, a unique H1, title, and meta. Child pages link up to `/` with the anchor "Nebraska paycheck calculator". The pillar links down with "Nebraska hourly paycheck calculator" and "Nebraska income tax withholding guide".
 - Only the pillar uses the phrase "Nebraska paycheck calculator" in its H1 or title. hourly.html and tax.html mention it only as a link back.
 - The footer links all three pages.
-- Future additions are allowed only for a distinct intent, such as a "Nebraska vs Iowa paycheck" comparison or a bonus/supplemental-wage page. Add the row here first.
+- Future additions are allowed only for a distinct intent. Bonus withholding, a pay-stub reading guide, 401(k) deposit math, Social Security benefits, overtime withholding, Form 1040N versus withholding, Circular EN as a booklet, and a Nebraska vs Iowa paycheck comparison are separate rows below. Add any further row here first.
 
 ## Link graph (internal linking v2, Nov 2026)
 
@@ -33,7 +33,7 @@
 | payroll | index, fica, w4n, hub |
 | fica | index, payroll, take-home, hub |
 | omaha-lincoln | index, hourly, min-wage, hub |
-| blog hub | lists all 8 posts + index, hourly, tax |
+| blog hub | lists all 16 posts + index, hourly, tax |
 
 **Clusters:**
 - Tax: brackets ⇄ state-tax-rate ⇄ w4n ⇄ tax.html, a full triangle with tax.html at the centre
@@ -56,6 +56,14 @@ Note: the canonical URLs use the placeholder https://nebraskapaycheckcalculator.
 | `/blog/nebraska-payroll-taxes.html` | nebraska payroll taxes | /, /tax.html | Employer vs employee |
 | `/blog/nebraska-w4n-allowances.html` | nebraska w-4n allowances | /tax.html, / | Form how-to |
 | `/blog/fica-social-security-medicare-paycheck.html` | fica on nebraska paycheck | / | SS/Medicare explainer |
+| `/blog/nebraska-pay-stub.html` | how to read a nebraska pay stub | /, /tax, fica, payroll, overtime, bonus, 401k | Stub columns and labels |
+| `/blog/nebraska-bonus-tax.html` | nebraska bonus tax / supplemental wages | /, /tax, pay stub, fica, overtime, 1040n | Separate bonus withholding |
+| `/blog/401k-nebraska-paycheck.html` | 401(k) on a nebraska paycheck | /, /hourly, /tax, fica, take-home, pay stub | Traditional vs Roth deposit |
+| `/blog/nebraska-social-security-tax.html` | does nebraska tax social security benefits | fica, 1040n, brackets | Benefits, not the 6.2% wage tax |
+| `/blog/nebraska-overtime-pay.html` | nebraska overtime pay | /hourly, min-wage, bonus, pay stub | Overtime premium withholding |
+| `/blog/nebraska-1040n-vs-withholding.html` | nebraska 1040n vs paycheck withholding | /tax, circular en, w4n, brackets | Prepayment vs the return |
+| `/blog/nebraska-circular-en.html` | nebraska circular en | /tax, w4n, 1040n, bonus | Withholding booklet, not the return |
+| `/blog/nebraska-iowa-paycheck.html` | nebraska vs iowa paycheck (Omaha–Council Bluffs) | /, /hourly, omaha-lincoln, 1040n | Border commute, no Iowa calculator |
 
 Blog rules: pillar keeps "take-home pay / net pay calculator" (tool intent); the blog take-home post owns the explainer intent only. tax.html keeps W-4N *calculation*; the blog W-4N post owns the form how-to. Every page has exactly one self-referencing canonical. Footer of all pages links /blog/.
 
@@ -71,9 +79,29 @@ Blog rules: pillar keeps "take-home pay / net pay calculator" (tool intent); the
 | `/privacy.html` | Privacy Policy — inputs stay in browser | self |
 | `/terms.html` | Terms of Use | self |
 | `/disclaimer.html` | Tax estimate disclaimer | self |
-| `/sitemap.html` | HTML sitemap of all 18 pages | self |
+| `/sitemap.html` | HTML sitemap of all 26 pages | self |
 
-Rules: these pages never use "paycheck calculator"/"take-home pay" as H1/title keyword (brand name only), so they don't compete with tool or blog pages. Every page footer has 3 columns: Tools · Guides · Company & Legal (About, Contact, Privacy, Terms, Disclaimer, Sitemap). Add new posts to sitemap.html when published.
+Rules: these pages never use "paycheck calculator"/"take-home pay" as H1/title keyword (brand name only), so they don't compete with tool or blog pages. Every page footer has 3 columns: Tools · Guides · Company & Legal (About, Contact, Privacy, Terms, Disclaimer, Sitemap). Add new posts to sitemap.html and sitemap.xml when published.
+
+## New guides (2026-11-05) — distinct intents, no new primary on the pillar keywords
+Owned elsewhere, so these pages only link there: "nebraska paycheck calculator" stays on `/`; filing brackets stay on the brackets guide; the state tax rate answer stays on the rate guide; W-4N how-to stays on the W-4N guide; minimum wage stays on the minimum-wage guide; gross-versus-net order stays on the take-home guide; FICA on wages stays on the FICA guide.
+
+| From (body or Related) | New inbound targets |
+|---|---|
+| index FAQs | 401k, pay stub |
+| hourly | overtime, pay stub |
+| tax.html | bonus, 1040n, circular en, social security benefits |
+| fica | pay stub, bonus, 401k, overtime, social security benefits |
+| take-home | bonus, 401k |
+| payroll | pay stub, 401k |
+| minimum wage | overtime |
+| brackets | social security benefits, circular en, 1040n |
+| w4n | circular en |
+| state tax rate | circular en, 1040n |
+| omaha-lincoln | iowa |
+| each new post | hub, `/` with the anchor "Nebraska paycheck calculator", and 3–4 sibling guides in the Related box |
+
+Footer guide list is unchanged (take-home, brackets, minimum wage, W-4N, FICA). The hub and both sitemaps list all 16 posts.
 
 ## SEO/AEO/GEO meta pass (Nov 5, 2026)
 - Slugs kept (already keyword-rich; renaming would lose equity with no KW gain). No link/sitemap changes needed.

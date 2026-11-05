@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="aT-_To54tuHU7xgf4H4Hu3deLyW_8XjMq0NQvhRLbXE" />
+  <title>Nebraska vs Iowa Paycheck: Omaha and Council Bluffs</title>
+  <meta name="description" content="Nebraska vs Iowa paycheck for an Omaha–Council Bluffs commute: no wage reciprocity, what each state withholds, and what this calculator will not estimate." />
+  <link rel="canonical" href="https://nebraskapaycheckcalculator.com/blog/nebraska-iowa-paycheck" />
+  <meta name="robots" content="index,follow" />
+  <style>
+    html { scrollbar-gutter: stable; }
+    img { max-width: 100%; height: auto; }
+    :root {
+      --bg: #f3f6fb;
+      --ink: #122033;
+      --muted: #5b6b7c;
+      --line: #d5deea;
+      --card: #fff;
+      --blue: #1a5fb4;
+      --blue-dark: #134a8c;
+      --soft: #e8f0fb;
+      --red: #b42318;
+      --shadow: 0 8px 24px rgba(18,32,51,.06);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .note-bar { background: #0f2a4a; color: #dcebff; text-align: center; font-size: 13px; padding: 9px 12px; }
+    .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+    header h1 { margin: 0 0 8px; font-size: clamp(1.85rem, 4vw, 2.55rem); letter-spacing: -.02em; line-height: 1.15; }
+    header p { margin: 0 0 22px; color: var(--muted); max-width: 62ch; }
+    .calc { display: grid; grid-template-columns: 1.05fr .95fr; gap: 16px; margin-bottom: 34px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 20px; }
+    .card h2 { margin: 0 0 14px; font-size: 1.15rem; }
+    label { display: block; font-size: 13px; font-weight: 700; margin: 0 0 6px; }
+    .hint { font-weight: 500; color: var(--muted); font-size: 12px; }
+    .field, select { width: 100%; border: 1px solid #c7d3e0; border-radius: 10px; padding: 11px 12px; font: inherit; margin-bottom: 12px; background: #fff; }
+    .seg { display: flex; gap: 8px; margin-bottom: 12px; }
+    .seg button { flex: 1; border: 1px solid #c7d3e0; background: #fff; border-radius: 999px; padding: 9px 10px; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .seg button.active { background: var(--soft); color: var(--blue-dark); border-color: #9bb8e0; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn { width: 100%; border: 0; border-radius: 10px; padding: 12px 14px; background: var(--blue); color: #fff; font-weight: 800; cursor: pointer; }
+    .btn:hover { background: var(--blue-dark); }
+    .net { background: var(--soft); border: 1px solid #b7cceb; border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+    .net .k { font-size: 13px; font-weight: 700; color: var(--blue-dark); }
+    .net .v { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin-top: 2px; }
+    .net .s { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .line { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #edf1f6; font-size: 14px; }
+    .line:last-child { border-bottom: 0; font-weight: 800; }
+    .neg { color: var(--red); font-weight: 700; }
+    .zero { color: var(--blue-dark); font-weight: 700; }
+    .tiny { margin-top: 10px; font-size: 12px; color: var(--muted); }
+    .section { margin-top: 28px; }
+    .section h2 { margin: 0 0 10px; font-size: 1.45rem; }
+    .section p, .section li { color: var(--muted); }
+    .steps { display: grid; gap: 10px; }
+    .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; grid-template-columns: 42px 1fr; gap: 10px; align-items: start; }
+    .step b { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--soft); color: var(--blue-dark); }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tile { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+    .tile strong { display: block; margin-bottom: 4px; }
+    .tile span { color: var(--muted); font-size: 13px; }
+    .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq p { margin: 8px 0 0; }
+    footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;table-layout:fixed;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:12px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line);overflow-wrap:break-word}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:2px solid #c5d0de}
+    .table th:first-child,.table td:first-child{text-align:left}
+    .table th:not(:first-child):not(:last-child),.table td:not(:first-child):not(:last-child){text-align:right;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+    .table th:last-child,.table td:last-child{text-align:right}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
+    .table tr > :nth-child(1):nth-last-child(2){width:62%}
+    .table tr > :nth-child(2):nth-last-child(1){width:38%}
+    .table tr > :nth-child(1):nth-last-child(3){width:42%}
+    .table tr > :nth-child(2):nth-last-child(2){width:22%}
+    .table tr > :nth-child(3):nth-last-child(1){width:36%}
+    .table.num-3 tr > :nth-child(1):nth-last-child(3){width:34%}
+    .table.num-3 tr > :nth-child(2):nth-last-child(2){width:33%}
+    .table.num-3 tr > :nth-child(3):nth-last-child(1){width:33%}
+    .table tr > :nth-child(1):nth-last-child(4){width:28%}
+    .table tr > :nth-child(2):nth-last-child(3){width:14%}
+    .table tr > :nth-child(3):nth-last-child(2){width:14%}
+    .table tr > :nth-child(4):nth-last-child(1){width:44%}
+    @media (max-width:700px){
+      .table th,.table td{padding:10px 8px}
+      .table tr > :nth-child(1):nth-last-child(3){width:40%}
+      .table tr > :nth-child(2):nth-last-child(2){width:28%}
+      .table tr > :nth-child(3):nth-last-child(1){width:32%}
+    }
+    .section h3{margin:16px 0 6px;font-size:1.1rem}
+    .links a{margin-right:14px}
+
+    .site-nav{display:flex;gap:18px;flex-wrap:wrap;padding:12px 0;margin-bottom:14px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+    .site-nav a[aria-current]{color:var(--ink)}
+    .related{margin-top:30px;background:var(--soft);border:1px solid #b7cceb;border-radius:14px;padding:16px 18px}
+    .related h2{margin:0 0 8px;font-size:1.15rem}.related ul{margin:0;padding-left:18px}.related li{color:var(--muted);margin:4px 0}
+    footer nav{margin-top:8px}
+    .site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:14px 0;margin-bottom:10px;border-bottom:1px solid var(--line)}
+    .site-header .brand{font-weight:800;font-size:17px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+    .site-header .brand span{color:var(--blue)}
+    .site-header .site-nav{border:0;margin:0;padding:0}
+    .site-nav a{text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
+    .site-nav a[aria-current]{border-bottom-color:var(--blue)}
+    .breadcrumbs{font-size:13px;color:var(--muted);margin:0 0 16px}
+    .breadcrumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+    .breadcrumbs li+li::before{content:"\203A";margin-right:6px;color:var(--muted)}
+    .breadcrumbs a{color:var(--blue);text-decoration:none}
+    .site-footer{text-align:left;margin-top:40px;padding:24px 0 12px}
+    .site-footer .footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:18px}
+    .site-footer h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:0 0 8px}
+    .site-footer ul{list-style:none;margin:0;padding:0}
+    .site-footer li{margin:4px 0}
+    .site-footer a{color:var(--blue);text-decoration:none}
+    .site-footer .disclaimer{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
+    .site-footer .copy{margin:6px 0 0;font-size:12px}
+  </style>
+
+
+  <!-- seo-meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nebraska Paycheck Calculator" />
+  <meta property="og:title" content="Nebraska vs Iowa Paycheck: Omaha and Council Bluffs" />
+  <meta property="og:description" content="Nebraska vs Iowa paycheck for an Omaha–Council Bluffs commute: no wage reciprocity, what each state withholds, and what this calculator will not estimate." />
+  <meta property="og:url" content="https://nebraskapaycheckcalculator.com/blog/nebraska-iowa-paycheck" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Nebraska Paycheck Calculator — 2027 take-home pay after federal, FICA, and Nebraska tax" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta name="twitter:title" content="Nebraska vs Iowa Paycheck: Omaha and Council Bluffs" />
+  <meta name="twitter:description" content="Nebraska vs Iowa paycheck for an Omaha–Council Bluffs commute: no wage reciprocity, what each state withholds, and what this calculator will not estimate." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nebraskapaycheckcalculator.com/#org","name":"Nebraska Paycheck Calculator","url":"https://nebraskapaycheckcalculator.com/"},{"@type":"BlogPosting","headline":"Nebraska vs Iowa Paycheck: Omaha and Council Bluffs","description":"Nebraska vs Iowa paycheck for an Omaha–Council Bluffs commute: no wage reciprocity, what each state withholds, and what this calculator will not estimate.","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-iowa-paycheck","mainEntityOfPage":"https://nebraskapaycheckcalculator.com/blog/nebraska-iowa-paycheck","inLanguage":"en-US","dateModified":"2026-11-05","author":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"publisher":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"about":"nebraska vs iowa paycheck omaha council bluffs"},{"@type":"WebPage","@id":"https://nebraskapaycheckcalculator.com/blog/nebraska-iowa-paycheck#webpage","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-iowa-paycheck","name":"Nebraska vs Iowa Paycheck: Omaha and Council Bluffs","description":"Nebraska vs Iowa paycheck for an Omaha–Council Bluffs commute: no wage reciprocity, what each state withholds, and what this calculator will not estimate.","isPartOf":{"@id":"https://nebraskapaycheckcalculator.com/#website"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".faq summary + p","details p"]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nebraskapaycheckcalculator.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://nebraskapaycheckcalculator.com/blog/"},{"@type":"ListItem","position":3,"name":"Nebraska vs Iowa Paycheck: Omaha and Council Bluffs","item":"https://nebraskapaycheckcalculator.com/blog/nebraska-iowa-paycheck"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do Nebraska and Iowa have wage reciprocity?","acceptedAnswer":{"@type":"Answer","text":"No. Iowa's only wage reciprocity agreement is with Illinois. A job in Omaha and a home in Council Bluffs, or the reverse, does not turn withholding off in the state where you work."}},{"@type":"Question","name":"Does Council Bluffs add a city income tax to the paycheck?","acceptedAnswer":{"@type":"Answer","text":"No. Council Bluffs does not add a city wage tax, and neither does Omaha. The state line on the stub is Nebraska tax or Iowa tax, depending on where the wages are earned and how the employer withholds."}},{"@type":"Question","name":"Can this site estimate an Iowa paycheck?","acceptedAnswer":{"@type":"Answer","text":"No. The calculators estimate Nebraska withholding, plus federal tax and FICA. An Iowa state line uses Iowa's own method. Do not read a Nebraska result as a Council Bluffs net pay."}},{"@type":"Question","name":"Is FICA different in Iowa?","acceptedAnswer":{"@type":"Answer","text":"No. Social Security and Medicare are federal. The employee rates and the wage base do not change because you crossed the Missouri River."}}]}]}</script>
+  <!-- /seo-meta -->
+</head>
+<body>
+  <div class="note-bar">Educational guide only. Not tax, legal, or payroll advice.</div>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="/">Nebraska <span>Paycheck</span> Calculator</a>
+      <nav class="site-nav" aria-label="Main"><a href="/">Home</a><a href="/hourly">Hourly</a><a href="/tax">Tax</a><a href="/blog/">Guides</a></nav>
+    </header>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li aria-current="page">Nebraska vs Iowa Paycheck</li></ol></nav>
+    <header>
+      <h1>Nebraska vs Iowa Paycheck: Omaha and Council Bluffs</h1>
+      <p>What changes on a 2027 stub when home and work sit on opposite sides of the river</p>
+    </header>
+
+    <section class="section">
+      <h2>The river changes the state line, not FICA</h2>
+      <p>Omaha and Council Bluffs share a labor market and do not share a tax agency. Federal income tax withholding follows the same W-4 on either bank. Social Security is still 6.2% up to the 2027 wage base of $192,300, and Medicare is still 1.45%, because FICA is federal. What changes on the stub is the state income-tax line, and which state's return you file as a resident.</p>
+      <p>Neither city adds a city wage tax. Omaha's missing local tax is part of the <a href="/blog/omaha-lincoln-paycheck">Omaha and Lincoln paycheck</a> guide, which is about Nebraska cities and the cost of living. This page is the commute that leaves Nebraska. Rent, groceries, and the bridge are not withholding. They also are not estimated here.</p>
+      <p>This site's calculators estimate Nebraska withholding. They will not produce an Iowa net pay, and this page will not invent one. If the employer is withholding Iowa tax, a Nebraska result is the wrong state.</p>
+    </section>
+    <section class="section">
+      <h2>There is no Nebraska–Iowa reciprocity</h2>
+      <p>Iowa's only income-tax reciprocity agreement for wages is with Illinois. There is no matching agreement with Nebraska. Living in Council Bluffs and working in Omaha does not let the employer skip Nebraska withholding. Living in Omaha and working in Council Bluffs does not let the employer skip Iowa withholding. Reciprocity would have assigned the wage tax to the state where you live. That is what Iowa and Illinois do with each other. It is not what Iowa and Nebraska do.</p>
+      <p>Without reciprocity, the work state taxes the wages as income earned there, and the resident state taxes its residents on income from everywhere. The protection against paying both states in full on the same wages is a credit on the resident return, not a blank line on the stub. The credit is computed after the year, when both returns can see the tax that was actually paid. It is not a lower rate on Friday's check.</p>
+    </section>
+    <section class="section">
+      <h2>You work in Omaha and live in Council Bluffs</h2>
+      <p>Nebraska taxes nonresidents on Nebraska-source wages. An Omaha employer generally withholds Nebraska income tax using Circular EN and the W-4N, the same booklet it uses for a coworker who lives in Millard. Your stub can look exactly like a Nebraska resident's stub. The address on the file does not, by itself, switch the table to Iowa.</p>
+      <p>You still have an Iowa resident return, because Iowa taxes residents on all income and then allows a credit for tax paid to another state on the same wages. Iowa's credit for taxes paid to another state is claimed on the Iowa return, on the out-of-state credit schedule. File the work-state side so you know the Nebraska tax on those wages before you claim the credit. The Nebraska withholding in box 17 of the W-2 is the prepayment toward the Nebraska nonresident return. It is not Iowa withholding.</p>
+      <p>A Nebraska estimate from the <a href="/">Nebraska paycheck calculator</a> is useful here only as a picture of the Nebraska line the Omaha employer may withhold. It is not your Iowa balance, and it does not compute the credit. The difference between a stub and a resident return, in one state, is <a href="/blog/nebraska-1040n-vs-withholding">Nebraska Form 1040N vs paycheck withholding</a>. Two states add a second return on top of that idea.</p>
+    </section>
+    <section class="section">
+      <h2>You work in Council Bluffs and live in Omaha</h2>
+      <p>Iowa taxes the wages earned in Iowa. The employer withholds Iowa income tax if the wages are Iowa wages. Nebraska then taxes you as a resident on all income and allows a credit for the Iowa tax paid on those same wages. You are not done when the Iowa stub looks reasonable. The Nebraska return still exists, and the credit is what keeps the overlap from being paid twice in full.</p>
+      <p>Do not paste the Iowa gross into this site's calculator and read the Nebraska line as if Council Bluffs had withheld it. The tool will apply Circular EN. An Iowa employer is not applying Circular EN. If you want a Nebraska comparison for a different offer that really is a Nebraska job, run that offer on its own. Keep the two stubs separate.</p>
+      <p>Nonresidents of Iowa figure Iowa tax with Iowa's nonresident schedule so that Iowa-source income is what Iowa actually taxes. Wages for work performed in Iowa belong in that Iowa column. Interest from a Nebraska bank does not become Iowa wages because you drive across the bridge for work. The stub only ever showed the wages.</p>
+    </section>
+    <section class="section">
+      <h2>What Iowa's rate is, and what it is not</h2>
+      <p>Iowa imposes individual income tax at 3.8% of Iowa taxable income. That flat rate took effect for tax years beginning on or after January 1, 2025, and it is the rate written into Iowa's income-tax statute. It replaced a graduated Iowa schedule. It is not 3.8% of gross pay. Iowa taxable income is what is left after Iowa's own deductions and exclusions. Withholding is an employer's prepayment toward that tax, using Iowa's withholding method, not Nebraska's allowance table.</p>
+      <p>Nebraska, on a 2027 paycheck, does not use a flat 3.8%. Circular EN's percentage-method rows for a 2027 pay date step from 2.26% through 4.03% after W-4N allowances. The return uses a different tier structure, which stays on the brackets guide. Comparing "Iowa is 3.8% and Nebraska is 3.99%" as if both numbers were the percent of gross on a stub is how border offers get misread. One of those styles of number is a flat statutory rate on taxable income. The other, 3.99%, is a top filing rate this site discusses elsewhere, not the withholding share of a typical gross.</p>
+      <p>For a concrete Nebraska side only: the usual $60,000 example, single, one allowance, biweekly, 2027, withholds $73.80 of Nebraska tax per check, or $1,918.80 across 26 checks, which is 3.20% of gross. That is a withholding share under Nebraska rules. It is not an Iowa result, and it is not a prediction of the credit.</p>
+    </section>
+    <section class="section">
+      <h2>School district surtax is not a city wage tax</h2>
+      <p>Iowa school districts may levy a surtax that is a percent of Iowa income tax, not a percent of wages, and not a tax Omaha adds. It is tied to the district where you lived at the end of the year, and it is collected with the Iowa return. On the 2025 district list, Council Bluffs Community School District was 0% and Lewis Central, which covers part of that metro area, was 7% of Iowa income tax. A Council Bluffs street address does not tell you the district. The list is yearly, so a later year can differ. This page does not treat the 2025 list as a 2027 paycheck rate.</p>
+      <p>Because the surtax is a percent of Iowa income tax, a district at 0% adds nothing, and a district at 7% adds seven cents per dollar of Iowa income tax, not seven cents per dollar of wages. It still is not a line you should expect to see labeled "Council Bluffs wage tax." If your Iowa stub has only a state withholding line, that fits a system that settles the surtax on the return.</p>
+    </section>
+    <section class="section">
+      <h2>What is the same on both stubs</h2>
+      <p>FICA is the same. A $2,000 biweekly gross under the wage base is $153 of employee FICA in Omaha or in Council Bluffs, because 7.65% does not stop at the river. The wage base, the additional 0.9% Medicare tax, and the fact that a traditional 401(k) does not reduce FICA are federal rules. They are written up in <a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a>.</p>
+      <p>A traditional 401(k) deferral reduces wages for federal income tax and for the state that is taxing those wages. It does not reduce FICA in either state. The deposit arithmetic, measured on a Nebraska check, is <a href="/blog/401k-nebraska-paycheck">how a 401(k) changes Nebraska take-home pay</a>. An Iowa employer may withhold state tax on a similarly reduced wage. This site does not compute that Iowa line.</p>
+      <p>Social Security benefits are exempt from Nebraska income tax, and Iowa subtracts Social Security benefits that were included in federal income. The benefit is not the paycheck. <a href="/blog/nebraska-social-security-tax">Does Nebraska tax Social Security</a> separates the benefit from the 6.2% wage tax. Moving from Omaha to Council Bluffs does not turn the benefit into wages, and it does not create reciprocity for the job.</p>
+    </section>
+    <section class="section">
+      <h2>Overtime, bonuses, and the wrong form</h2>
+      <p>Overtime on a Nebraska hourly job is still Nebraska wages. The premium is not an Iowa tax and not a city tax. How a steady overtime week withholds in Nebraska is <a href="/blog/nebraska-overtime-pay">Nebraska overtime pay</a>. An Iowa employer's overtime check follows Iowa withholding. The hours can look identical. The state line will not.</p>
+      <p>A bonus paid by an Omaha employer is Nebraska supplemental wages, including the option to withhold a flat 3.5% when the bonus is paid separately. That 3.5% is a Nebraska withholding election. It is not the Iowa rate. <a href="/blog/nebraska-bonus-tax">Nebraska bonus tax</a> works the $5,000 example under Nebraska rules. Do not reuse 3.5% as "what Council Bluffs does." Iowa's flat tax rate on taxable income is 3.8%, and Iowa has its own withholding method for supplemental pay.</p>
+      <p>Giving an Iowa employer a Nebraska W-4N, or a Nebraska employer only a federal W-4, produces the default the form instructions warn about. Nebraska employers who do not receive a W-4N can withhold as single with zero allowances. That default is a Nebraska prepayment problem. It is not how you elect Iowa. The certificate itself is <a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a>.</p>
+    </section>
+    <section class="section">
+      <h2>How to compare two offers without a fake Iowa net</h2>
+      <p>Write down where the work is performed, not where you sleep. If the work is in Nebraska, estimate the Nebraska line with the <a href="/">Nebraska paycheck calculator</a> or, for an hourly rate, the <a href="/hourly">hourly paycheck calculator</a>. Set the pay date in 2027 when you want the 2027 Circular EN tables. Read federal tax, FICA, and Nebraska tax as a Nebraska paycheck.</p>
+      <p>If the work is in Iowa, keep those Nebraska dollars off the comparison, or label them clearly as "what a Nebraska employer would withhold on this gross," not as the Council Bluffs stub. Ask the Iowa employer which state it withholds, and read the first stub's state abbreviation before you budget the net. Then plan on two returns: the work state, and the resident state with a credit for the tax paid on the same wages.</p>
+      <p>A credit of this kind is limited to the tax the resident state would have charged on that same income and to the tax actually paid to the other state. The arithmetic happens on the returns. It does not happen in the Nebraska percentage method. The booklet is <a href="/blog/nebraska-circular-en">Nebraska Circular EN</a>, and the Nebraska line alone is <a href="/tax">Nebraska tax withholding</a>. Sales tax at the store is not on either stub.</p>
+    </section>
+
+    <section class="section">
+      <h2>Frequently asked questions</h2>
+      <details><summary>Do Nebraska and Iowa have wage reciprocity?</summary><p>No. Iowa's only wage reciprocity agreement is with Illinois. A job in Omaha and a home in Council Bluffs, or the reverse, does not turn withholding off in the state where you work.</p></details>
+      <details><summary>Does Council Bluffs add a city income tax to the paycheck?</summary><p>No. Council Bluffs does not add a city wage tax, and neither does Omaha. The state line on the stub is Nebraska tax or Iowa tax, depending on where the wages are earned and how the employer withholds.</p></details>
+      <details><summary>Can this site estimate an Iowa paycheck?</summary><p>No. The calculators estimate Nebraska withholding, plus federal tax and FICA. An Iowa state line uses Iowa's own method. Do not read a Nebraska result as a Council Bluffs net pay.</p></details>
+      <details><summary>Is FICA different in Iowa?</summary><p>No. Social Security and Medicare are federal. The employee rates and the wage base do not change because you crossed the Missouri River.</p></details>
+    </section>
+
+    
+<aside class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/">Nebraska paycheck calculator</a> — Nebraska wages only</li><li><a href="/blog/omaha-lincoln-paycheck">Omaha and Lincoln paycheck</a> — city prices, not a second state</li><li><a href="/blog/nebraska-1040n-vs-withholding">Nebraska Form 1040N vs paycheck withholding</a> — the resident return</li><li><a href="/hourly">hourly paycheck calculator</a> — a Nebraska hourly wage</li><li><a href="/blog/">Nebraska pay and tax guides</a></li></ul></aside>
+    <footer class="site-footer">
+      <div class="footer-cols">
+        <nav aria-label="Tools"><h2>Tools</h2><ul><li><a href="/">Nebraska paycheck calculator</a></li><li><a href="/hourly">hourly paycheck calculator</a></li><li><a href="/tax">Nebraska tax withholding</a></li></ul></nav>
+        <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="/blog/">Nebraska pay and tax guides</a></li><li><a href="/blog/nebraska-take-home-pay">Nebraska take-home pay</a></li><li><a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a></li><li><a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a></li><li><a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a></li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a></li></ul></nav>
+        <nav aria-label="Company and legal"><h2>Company &amp; Legal</h2><ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Use</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap">Sitemap</a></li></ul></nav>
+      </div>
+      <p class="disclaimer">Independent educational guide · Not tax, legal, or payroll advice · Not affiliated with the IRS, the Nebraska Department of Revenue, or any payroll provider. Figures are estimates; confirm with official sources.</p>
+      <p class="copy">© 2027 Nebraska Paycheck Calculator</p>
+    </footer>
+  </div>
+</body>
+</html>

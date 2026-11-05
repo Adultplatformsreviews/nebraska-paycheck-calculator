@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="aT-_To54tuHU7xgf4H4Hu3deLyW_8XjMq0NQvhRLbXE" />
+  <title>How to Read a Nebraska Pay Stub: Taxes and Lines</title>
+  <meta name="description" content="How to read a Nebraska pay stub in 2027: current and year-to-date columns, federal tax, FICA, Nebraska withholding, and lines that are not taxes." />
+  <link rel="canonical" href="https://nebraskapaycheckcalculator.com/blog/nebraska-pay-stub" />
+  <meta name="robots" content="index,follow" />
+  <style>
+    html { scrollbar-gutter: stable; }
+    img { max-width: 100%; height: auto; }
+    :root {
+      --bg: #f3f6fb;
+      --ink: #122033;
+      --muted: #5b6b7c;
+      --line: #d5deea;
+      --card: #fff;
+      --blue: #1a5fb4;
+      --blue-dark: #134a8c;
+      --soft: #e8f0fb;
+      --red: #b42318;
+      --shadow: 0 8px 24px rgba(18,32,51,.06);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .note-bar { background: #0f2a4a; color: #dcebff; text-align: center; font-size: 13px; padding: 9px 12px; }
+    .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+    header h1 { margin: 0 0 8px; font-size: clamp(1.85rem, 4vw, 2.55rem); letter-spacing: -.02em; line-height: 1.15; }
+    header p { margin: 0 0 22px; color: var(--muted); max-width: 62ch; }
+    .calc { display: grid; grid-template-columns: 1.05fr .95fr; gap: 16px; margin-bottom: 34px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 20px; }
+    .card h2 { margin: 0 0 14px; font-size: 1.15rem; }
+    label { display: block; font-size: 13px; font-weight: 700; margin: 0 0 6px; }
+    .hint { font-weight: 500; color: var(--muted); font-size: 12px; }
+    .field, select { width: 100%; border: 1px solid #c7d3e0; border-radius: 10px; padding: 11px 12px; font: inherit; margin-bottom: 12px; background: #fff; }
+    .seg { display: flex; gap: 8px; margin-bottom: 12px; }
+    .seg button { flex: 1; border: 1px solid #c7d3e0; background: #fff; border-radius: 999px; padding: 9px 10px; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .seg button.active { background: var(--soft); color: var(--blue-dark); border-color: #9bb8e0; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn { width: 100%; border: 0; border-radius: 10px; padding: 12px 14px; background: var(--blue); color: #fff; font-weight: 800; cursor: pointer; }
+    .btn:hover { background: var(--blue-dark); }
+    .net { background: var(--soft); border: 1px solid #b7cceb; border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+    .net .k { font-size: 13px; font-weight: 700; color: var(--blue-dark); }
+    .net .v { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin-top: 2px; }
+    .net .s { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .line { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #edf1f6; font-size: 14px; }
+    .line:last-child { border-bottom: 0; font-weight: 800; }
+    .neg { color: var(--red); font-weight: 700; }
+    .zero { color: var(--blue-dark); font-weight: 700; }
+    .tiny { margin-top: 10px; font-size: 12px; color: var(--muted); }
+    .section { margin-top: 28px; }
+    .section h2 { margin: 0 0 10px; font-size: 1.45rem; }
+    .section p, .section li { color: var(--muted); }
+    .steps { display: grid; gap: 10px; }
+    .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; grid-template-columns: 42px 1fr; gap: 10px; align-items: start; }
+    .step b { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--soft); color: var(--blue-dark); }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tile { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+    .tile strong { display: block; margin-bottom: 4px; }
+    .tile span { color: var(--muted); font-size: 13px; }
+    .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq p { margin: 8px 0 0; }
+    footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;table-layout:fixed;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:12px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line);overflow-wrap:break-word}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:2px solid #c5d0de}
+    .table th:first-child,.table td:first-child{text-align:left}
+    .table th:not(:first-child):not(:last-child),.table td:not(:first-child):not(:last-child){text-align:right;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+    .table th:last-child,.table td:last-child{text-align:right}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
+    .table tr > :nth-child(1):nth-last-child(2){width:62%}
+    .table tr > :nth-child(2):nth-last-child(1){width:38%}
+    .table tr > :nth-child(1):nth-last-child(3){width:42%}
+    .table tr > :nth-child(2):nth-last-child(2){width:22%}
+    .table tr > :nth-child(3):nth-last-child(1){width:36%}
+    .table.num-3 tr > :nth-child(1):nth-last-child(3){width:34%}
+    .table.num-3 tr > :nth-child(2):nth-last-child(2){width:33%}
+    .table.num-3 tr > :nth-child(3):nth-last-child(1){width:33%}
+    .table tr > :nth-child(1):nth-last-child(4){width:28%}
+    .table tr > :nth-child(2):nth-last-child(3){width:14%}
+    .table tr > :nth-child(3):nth-last-child(2){width:14%}
+    .table tr > :nth-child(4):nth-last-child(1){width:44%}
+    @media (max-width:700px){
+      .table th,.table td{padding:10px 8px}
+      .table tr > :nth-child(1):nth-last-child(3){width:40%}
+      .table tr > :nth-child(2):nth-last-child(2){width:28%}
+      .table tr > :nth-child(3):nth-last-child(1){width:32%}
+    }
+    .section h3{margin:16px 0 6px;font-size:1.1rem}
+    .links a{margin-right:14px}
+
+    .site-nav{display:flex;gap:18px;flex-wrap:wrap;padding:12px 0;margin-bottom:14px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+    .site-nav a[aria-current]{color:var(--ink)}
+    .related{margin-top:30px;background:var(--soft);border:1px solid #b7cceb;border-radius:14px;padding:16px 18px}
+    .related h2{margin:0 0 8px;font-size:1.15rem}.related ul{margin:0;padding-left:18px}.related li{color:var(--muted);margin:4px 0}
+    footer nav{margin-top:8px}
+    .site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:14px 0;margin-bottom:10px;border-bottom:1px solid var(--line)}
+    .site-header .brand{font-weight:800;font-size:17px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+    .site-header .brand span{color:var(--blue)}
+    .site-header .site-nav{border:0;margin:0;padding:0}
+    .site-nav a{text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
+    .site-nav a[aria-current]{border-bottom-color:var(--blue)}
+    .breadcrumbs{font-size:13px;color:var(--muted);margin:0 0 16px}
+    .breadcrumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+    .breadcrumbs li+li::before{content:"\203A";margin-right:6px;color:var(--muted)}
+    .breadcrumbs a{color:var(--blue);text-decoration:none}
+    .site-footer{text-align:left;margin-top:40px;padding:24px 0 12px}
+    .site-footer .footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:18px}
+    .site-footer h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:0 0 8px}
+    .site-footer ul{list-style:none;margin:0;padding:0}
+    .site-footer li{margin:4px 0}
+    .site-footer a{color:var(--blue);text-decoration:none}
+    .site-footer .disclaimer{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
+    .site-footer .copy{margin:6px 0 0;font-size:12px}
+  </style>
+
+
+  <!-- seo-meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nebraska Paycheck Calculator" />
+  <meta property="og:title" content="How to Read a Nebraska Pay Stub: Taxes and Lines" />
+  <meta property="og:description" content="How to read a Nebraska pay stub in 2027: current and year-to-date columns, federal tax, FICA, Nebraska withholding, and lines that are not taxes." />
+  <meta property="og:url" content="https://nebraskapaycheckcalculator.com/blog/nebraska-pay-stub" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Nebraska Paycheck Calculator — 2027 take-home pay after federal, FICA, and Nebraska tax" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta name="twitter:title" content="How to Read a Nebraska Pay Stub: Taxes and Lines" />
+  <meta name="twitter:description" content="How to read a Nebraska pay stub in 2027: current and year-to-date columns, federal tax, FICA, Nebraska withholding, and lines that are not taxes." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nebraskapaycheckcalculator.com/#org","name":"Nebraska Paycheck Calculator","url":"https://nebraskapaycheckcalculator.com/"},{"@type":"BlogPosting","headline":"How to Read a Nebraska Pay Stub","description":"How to read a Nebraska pay stub in 2027: current and year-to-date columns, federal tax, FICA, Nebraska withholding, and lines that are not taxes.","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-pay-stub","mainEntityOfPage":"https://nebraskapaycheckcalculator.com/blog/nebraska-pay-stub","inLanguage":"en-US","dateModified":"2026-11-05","author":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"publisher":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"about":"how to read a nebraska pay stub"},{"@type":"WebPage","@id":"https://nebraskapaycheckcalculator.com/blog/nebraska-pay-stub#webpage","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-pay-stub","name":"How to Read a Nebraska Pay Stub: Taxes and Lines","description":"How to read a Nebraska pay stub in 2027: current and year-to-date columns, federal tax, FICA, Nebraska withholding, and lines that are not taxes.","isPartOf":{"@id":"https://nebraskapaycheckcalculator.com/#website"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".faq summary + p","details p"]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nebraskapaycheckcalculator.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://nebraskapaycheckcalculator.com/blog/"},{"@type":"ListItem","position":3,"name":"How to Read a Nebraska Pay Stub","item":"https://nebraskapaycheckcalculator.com/blog/nebraska-pay-stub"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is year-to-date on a Nebraska pay stub?","acceptedAnswer":{"@type":"Answer","text":"Year-to-date is the total this employer has already paid you in the calendar year, including the current check. Read it against other year-to-date figures. It is not this week's gross multiplied by a new tax rate."}},{"@type":"Question","name":"Why is there no city tax on my Nebraska pay stub?","acceptedAnswer":{"@type":"Answer","text":"Nebraska does not have a local wage tax. Omaha, Lincoln, and other Nebraska cities do not add a city income tax to the check. Sales tax and property tax are not lines on the stub."}},{"@type":"Question","name":"Which labels mean Social Security and Medicare?","acceptedAnswer":{"@type":"Answer","text":"Social Security is often OASDI or SS. Medicare is often MED or HI. Under the wage base, with no pre-tax benefit reducing FICA wages, the two add to 7.65% of the FICA wage."}},{"@type":"Question","name":"Does a 401(k) line lower every tax on the stub?","acceptedAnswer":{"@type":"Answer","text":"A traditional 401(k) lowers federal and Nebraska income-tax withholding. It does not lower Social Security or Medicare. A Roth 401(k) lowers the deposit and does not lower those taxes."}}]}]}</script>
+  <!-- /seo-meta -->
+</head>
+<body>
+  <div class="note-bar">Educational guide only. Not tax, legal, or payroll advice.</div>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="/">Nebraska <span>Paycheck</span> Calculator</a>
+      <nav class="site-nav" aria-label="Main"><a href="/">Home</a><a href="/hourly">Hourly</a><a href="/tax">Tax</a><a href="/blog/">Guides</a></nav>
+    </header>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li aria-current="page">How to Read a Nebraska Pay Stub</li></ol></nav>
+    <header>
+      <h1>How to Read a Nebraska Pay Stub</h1>
+      <p>Current and year-to-date columns, the tax lines, and the deductions that are not Nebraska tax</p>
+    </header>
+
+    <section class="section">
+      <h2>Start with the two columns</h2>
+      <p>A Nebraska pay stub is two stories on one page. The current column is this pay period only. The year-to-date column is every check this employer has paid you since January 1, including this one. Most arguments about a "wrong rate" start by comparing a year-to-date tax with this week's gross.</p>
+      <p>Read current against current, and year-to-date against year-to-date. A year-to-date Nebraska line that looks huge next to one week of pay is usually the sum of many checks. Divide year-to-date tax by year-to-date gross if you want a share of wages so far. Do not divide year-to-date tax by this check's gross.</p>
+      <p>The pay date printed on the stub chooses the Nebraska table. A check dated in 2027 uses the 2027 withholding tables. A check dated in 2026 still uses the 2026 tables, even if you are looking at the PDF in 2027. Social Security uses a wage base of $192,300 for 2027 wages and $184,500 for 2026 wages. The rate pair, 6.2% and 1.45%, does not change with that date. The cap does.</p>
+    </section>
+    <section class="section">
+      <h2>Whose check this is</h2>
+      <p>Before any dollar, confirm the employer name, your name, the period start, the period end, and how often you are paid. Weekly pay is 52 checks. Biweekly pay is 26. Semi-monthly pay is 24. Monthly pay is 12. A biweekly salary check is annual pay divided by 26. A semi-monthly check is divided by 24 and looks larger. That difference is the calendar, not a raise.</p>
+      <p>If the frequency on the stub is not the frequency you think you have, every later comparison is aimed at the wrong check. People who moved from weekly to biweekly often keep last year's weekly net in their head and decide the new tax is heavier. The deposit is larger because the period is longer. The year's tax is about the same. The <a href="/blog/nebraska-take-home-pay">Nebraska take-home pay</a> guide shows the same salary cut four ways.</p>
+    </section>
+    <section class="section">
+      <h2>Earnings before anything is withheld</h2>
+      <p>Hourly stubs list a rate, regular hours, and sometimes overtime hours at another rate. Salary stubs list a salary amount for the period. Gross pay is those earnings before withholding. Paid time off, holiday hours, and a shift differential belong in that earnings block when they were paid. They are wages. They are not a separate Nebraska tax category.</p>
+      <p>A partial first period is a smaller gross. Compare hours, or the fraction of the salary period, before you compare tax. A short gross with a full insurance premium can make net look broken when the earnings line is the line that changed. Unpaid leave should shrink hours or salary. Tax falls with the wage. It does not stay glued to last check's dollars.</p>
+      <p>This site's reference check is a single filer paid $60,000 a year, biweekly, with one W-4N allowance, no pre-tax deductions, and a pay date in 2027. The calculator prints this current column. Your employer's labels will be shorter. The dollars are an estimate for that setup, not a promise that every payroll system matches to the cent.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>Line on this estimate</th><th>This biweekly check</th></tr></thead>
+        <tbody>
+          <tr><td>Gross pay</td><td>$2,307.69</td></tr>
+          <tr><td>Federal income tax</td><td>$193.08</td></tr>
+          <tr><td>Social Security</td><td>$143.08</td></tr>
+          <tr><td>Medicare</td><td>$33.46</td></tr>
+          <tr><td>Nebraska income tax</td><td>$73.80</td></tr>
+          <tr><td>Net pay</td><td>$1,864.28</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Social Security and Medicare together are $176.54, which is 7.65% of $2,307.69. That pair is the FICA block. Stubs often print the two lines and never print the word FICA.</p>
+    </section>
+    <section class="section">
+      <h2>Names on the tax lines</h2>
+      <p>Federal income tax may be labeled FIT, Federal, or US Withholding. It comes from the federal W-4 and the percentage method in Publication 15-T. This calculator still uses the 2026 federal worksheets for a 2027 pay date, because that is the edition loaded in the tool. Federal tax is not a flat percent of gross. It moves when the W-4 moves. FICA does not.</p>
+      <p>Social Security is often OASDI or SS, at 6.2% of FICA wages up to the wage base. Medicare is often MED or HI, at 1.45% of FICA wages with no wage-base cap. Add those two boxes when you want the 7.65% test. Do not add the federal box into that test. Additional Medicare, an extra 0.9%, shows up only after wages from that employer pass $200,000. Most stubs never have the line. The longer explanation of the cap and the extra 0.9% is <a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a>.</p>
+      <p>Nebraska income tax may be labeled NE, SIT, or State. It comes from Form W-4N and the Circular EN table for the year on the pay date. One allowance on a 2027 biweekly check removes $96.54 from the wage before that table runs. How many allowances to claim is the <a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a> guide. The arithmetic is <a href="/tax">Nebraska tax withholding</a>. What the booklet is, as opposed to the form you file in April, is <a href="/blog/nebraska-circular-en">Nebraska Circular EN</a>.</p>
+    </section>
+    <section class="section">
+      <h2>The local line should be zero</h2>
+      <p>Nebraska has no city or county wage tax. Omaha, Lincoln, Grand Island, Bellevue, and a small town all use the same state calculation. A local-income-tax line on a Nebraska stub should read $0.00. If a city tax is being withheld, the work location or the employer's tax setup needs a question. It is not a new Nebraska rate.</p>
+      <p>Sales tax and property tax never appear as payroll deductions. They show up at the store and on the house, which is a different subject. City prices for Omaha and Lincoln are in the <a href="/blog/omaha-lincoln-paycheck">Omaha and Lincoln paycheck</a> guide. A commute across the river into Council Bluffs is a different state's withholding, covered in <a href="/blog/nebraska-iowa-paycheck">Nebraska vs Iowa paycheck</a>.</p>
+    </section>
+    <section class="section">
+      <h2>Deductions, and which tax they touch</h2>
+      <p>Pre-tax lines sit in their own block or above the taxes. A traditional 401(k) or 403(b) reduces the wage for federal and Nebraska income tax and does not reduce Social Security or Medicare. A Roth 401(k) is post-tax. It lowers the deposit and does not lower those taxes. Health, dental, and vision premiums run through a cafeteria plan, a health FSA, and an HSA taken from payroll usually reduce income tax and FICA. Read the label before you decide the 7.65% test failed.</p>
+      <p>The paycheck effect of the retirement line, traditional against Roth, is in <a href="/blog/401k-nebraska-paycheck">how a 401(k) changes Nebraska take-home pay</a>. Post-tax lines come out after tax: Roth deferrals, union dues, garnishments, and some voluntary insurance. A garnishment is not Nebraska tax. Folding it into the state line invents a rate the table does not have.</p>
+      <p>Employer-paid items do not belong as employee deductions. Nebraska unemployment tax and FUTA are employer costs. The employer's FICA match is not subtracted from your net. If a line labeled unemployment is reducing the deposit, ask. That split is in <a href="/blog/nebraska-payroll-taxes">Nebraska payroll taxes</a>. An employer 401(k) match, when it appears, is usually a memo of what was added to the account. It is not a second subtraction from net.</p>
+    </section>
+    <section class="section">
+      <h2>Year-to-date is a sum</h2>
+      <p>After 10 identical biweekly checks at the $60,000 example, year-to-date gross is 10 times $2,307.69, or $23,076.90. Year-to-date federal tax, Social Security, Medicare, and Nebraska tax are the sums of the amounts already withheld. They are not a fresh calculation on $23,076.90 at a new rate. Pennies follow the employer's rounding on each check. Do not expect the year-to-date net to be a perfectly neat multiple if one check in the stack was a partial period.</p>
+      <p>The Social Security cap is a year-to-date test at that employer. In 2027 the 6.2% stops on later checks once year-to-date Social Security wages pass $192,300. A larger net in the fall is often that cap, not a raise. Medicare continues. A second employer does not see the first employer's counter and starts the 6.2% again. Two stubs can both look "right" and still have withheld too much Social Security for the year. That excess is a federal credit, not a Nebraska refund.</p>
+    </section>
+    <section class="section">
+      <h2>Overtime, a bonus, and paid leave</h2>
+      <p>Overtime hours belong in the earnings block at the rate you were paid. Nebraska does not add a special overtime tax on top of ordinary withholding. Time-and-a-half is still wages for FICA, federal income tax, and Nebraska income tax. A steady overtime schedule and a single heavy week are different problems for any estimator that annualizes a week. The <a href="/blog/nebraska-overtime-pay">Nebraska overtime pay</a> guide is that distinction. The <a href="/hourly">hourly paycheck calculator</a> is where the hours go.</p>
+      <p>A bonus paid inside the regular check is extra gross on that stub. A bonus paid alone can show a flat Nebraska withholding rate of 3.5% and a flat federal rate, often 22%. Those are withholding methods. They are not a separate Nebraska bonus tax. The two methods, with a $5,000 example, are in <a href="/blog/nebraska-bonus-tax">Nebraska bonus tax</a>.</p>
+      <p>Vacation, sick, and holiday pay are wages when they are paid. Hourly workers should see the hours that were actually paid. If those hours are missing, fix the gross before you blame a tax rate.</p>
+    </section>
+    <section class="section">
+      <h2>When the stub and the estimate disagree</h2>
+      <p>Match gross first. Hours times rate, or salary divided by the number of periods, including overtime. If gross is wrong, every tax line will be wrong in a way that looks like a bad rate.</p>
+      <p>Then match FICA. If Social Security plus Medicare is far from 7.65% of the FICA wage, a Section 125 benefit may have reduced the wage, you may be over the Social Security cap, or the wage you divided is not the wage on the stub. Traditional 401(k) deferrals do not explain a smaller FICA line.</p>
+      <p>Then match Nebraska. Filing status, allowance count, extra withholding, and the pay date all move that line. A gap of a few dollars can be wage-bracket tables versus the percentage method, or rounding. A gap the size of a whole other tax usually means a different form, a benefit you did not enter, or a 2026 stub compared with a 2027 estimate.</p>
+      <p>Put your own gross, frequency, allowances, and deductions next to this layout with the <a href="/">Nebraska paycheck calculator</a>. The year's Nebraska prepayment, as opposed to the names on this check, is <a href="/blog/nebraska-1040n-vs-withholding">Nebraska Form 1040N vs paycheck withholding</a>. Social Security benefits deposited by the government are not this stub at all. Whether Nebraska taxes those benefits is a separate question in <a href="/blog/nebraska-social-security-tax">does Nebraska tax Social Security</a>.</p>
+    </section>
+    <section class="section">
+      <h2>Two jobs, two stubs</h2>
+      <p>Each employer withholds from the forms it was given. Two stubs can each be internally consistent and still under-withhold the household, because neither job sees the other wage. Adding the two nets is the right way to see the month's deposits. Adding the two salaries into one calculator run will not reproduce either stub.</p>
+      <p>Year-to-date figures do not combine across employers. Excess Social Security tax from two jobs is reconciled on the federal return. Nebraska does not run a second wage base. When a later check looks strange, compare the current columns and find the line that moved.</p>
+    </section>
+
+    <section class="section">
+      <h2>Frequently asked questions</h2>
+      <details><summary>What is year-to-date on a Nebraska pay stub?</summary><p>Year-to-date is the total this employer has already paid you in the calendar year, including the current check. Read it against other year-to-date figures. It is not this week's gross multiplied by a new tax rate.</p></details>
+      <details><summary>Why is there no city tax on my Nebraska pay stub?</summary><p>Nebraska does not have a local wage tax. Omaha, Lincoln, and other Nebraska cities do not add a city income tax to the check. Sales tax and property tax are not lines on the stub.</p></details>
+      <details><summary>Which labels mean Social Security and Medicare?</summary><p>Social Security is often OASDI or SS. Medicare is often MED or HI. Under the wage base, with no pre-tax benefit reducing FICA wages, the two add to 7.65% of the FICA wage.</p></details>
+      <details><summary>Does a 401(k) line lower every tax on the stub?</summary><p>A traditional 401(k) lowers federal and Nebraska income-tax withholding. It does not lower Social Security or Medicare. A Roth 401(k) lowers the deposit and does not lower those taxes.</p></details>
+    </section>
+
+    
+<aside class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/">Nebraska paycheck calculator</a> — put the same gross next to an estimate</li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a> — the OASDI and Medicare lines</li><li><a href="/blog/nebraska-payroll-taxes">Nebraska payroll taxes</a> — employer taxes that should not be deductions</li><li><a href="/blog/nebraska-overtime-pay">Nebraska overtime pay</a> — hours that change the earnings block</li><li><a href="/blog/">Nebraska pay and tax guides</a></li></ul></aside>
+    <footer class="site-footer">
+      <div class="footer-cols">
+        <nav aria-label="Tools"><h2>Tools</h2><ul><li><a href="/">Nebraska paycheck calculator</a></li><li><a href="/hourly">hourly paycheck calculator</a></li><li><a href="/tax">Nebraska tax withholding</a></li></ul></nav>
+        <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="/blog/">Nebraska pay and tax guides</a></li><li><a href="/blog/nebraska-take-home-pay">Nebraska take-home pay</a></li><li><a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a></li><li><a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a></li><li><a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a></li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a></li></ul></nav>
+        <nav aria-label="Company and legal"><h2>Company &amp; Legal</h2><ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Use</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap">Sitemap</a></li></ul></nav>
+      </div>
+      <p class="disclaimer">Independent educational guide · Not tax, legal, or payroll advice · Not affiliated with the IRS, the Nebraska Department of Revenue, or any payroll provider. Figures are estimates; confirm with official sources.</p>
+      <p class="copy">© 2027 Nebraska Paycheck Calculator</p>
+    </footer>
+  </div>
+</body>
+</html>
