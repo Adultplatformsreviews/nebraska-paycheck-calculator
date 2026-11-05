@@ -1,3 +1,4 @@
+html { scrollbar-gutter: stable; }
 .section { max-width: 100%; overflow-x: auto; }
 label .hint { display: block; margin-top: 2px; }
 .pc-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 14px; }
