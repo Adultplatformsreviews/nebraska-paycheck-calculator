@@ -33,7 +33,7 @@
 | payroll | index, fica, w4n, hub |
 | fica | index, payroll, take-home, hub |
 | omaha-lincoln | index, hourly, min-wage, hub |
-| blog hub | lists all 16 posts + index, hourly, tax |
+| blog hub | lists all 21 posts + index, hourly, tax |
 
 **Clusters:**
 - Tax: brackets ⇄ state-tax-rate ⇄ w4n ⇄ tax.html, a full triangle with tax.html at the centre
@@ -64,6 +64,11 @@ Note: the canonical URLs use the placeholder https://nebraskapaycheckcalculator.
 | `/blog/nebraska-1040n-vs-withholding.html` | nebraska 1040n vs paycheck withholding | /tax, circular en, w4n, brackets | Prepayment vs the return |
 | `/blog/nebraska-circular-en.html` | nebraska circular en | /tax, w4n, 1040n, bonus | Withholding booklet, not the return |
 | `/blog/nebraska-iowa-paycheck.html` | nebraska vs iowa paycheck (Omaha–Council Bluffs) | /, /hourly, omaha-lincoln, 1040n | Border commute, no Iowa calculator |
+| `/blog/hsa-fsa-nebraska-paycheck.html` | hsa and health fsa on a nebraska paycheck | /, 401k, fica, take-home, pay stub, child care | Payroll HSA/FSA vs FICA, not the 401(k) guide |
+| `/blog/nebraska-estimated-tax-payments.html` | nebraska estimated tax payments | /, 1040n, fica, w4n, standard deduction | 1040N-ES for income the W-2 never withholds |
+| `/blog/nebraska-tipped-paycheck.html` | tip withholding on a nebraska paycheck | /, /hourly, min-wage, fica, pay stub | Reported-tip withholding, not the cash-wage floor |
+| `/blog/nebraska-standard-deduction-paycheck.html` | nebraska standard deduction | /, 1040n, brackets, circular en | Return deduction, not brackets or the allowance form |
+| `/blog/nebraska-child-care-tax-credit-paycheck.html` | nebraska child care tax credit | /, w4n, 1040n, hsa-fsa | Credits on the return, not a W-4N how-to |
 
 Blog rules: pillar keeps "take-home pay / net pay calculator" (tool intent); the blog take-home post owns the explainer intent only. tax.html keeps W-4N *calculation*; the blog W-4N post owns the form how-to. Every page has exactly one self-referencing canonical. Footer of all pages links /blog/.
 
@@ -79,7 +84,7 @@ Blog rules: pillar keeps "take-home pay / net pay calculator" (tool intent); the
 | `/privacy.html` | Privacy Policy — inputs stay in browser | self |
 | `/terms.html` | Terms of Use | self |
 | `/disclaimer.html` | Tax estimate disclaimer | self |
-| `/sitemap.html` | HTML sitemap of all 26 pages | self |
+| `/sitemap.html` | HTML sitemap of all 31 pages | self |
 
 Rules: these pages never use "paycheck calculator"/"take-home pay" as H1/title keyword (brand name only), so they don't compete with tool or blog pages. Every page footer has 3 columns: Tools · Guides · Company & Legal (About, Contact, Privacy, Terms, Disclaimer, Sitemap). Add new posts to sitemap.html and sitemap.xml when published.
 
@@ -101,7 +106,27 @@ Owned elsewhere, so these pages only link there: "nebraska paycheck calculator" 
 | omaha-lincoln | iowa |
 | each new post | hub, `/` with the anchor "Nebraska paycheck calculator", and 3–4 sibling guides in the Related box |
 
-Footer guide list is unchanged (take-home, brackets, minimum wage, W-4N, FICA). The hub and both sitemaps list all 16 posts.
+Footer guide list is unchanged (take-home, brackets, minimum wage, W-4N, FICA). The hub and both sitemaps list all 21 posts.
+
+## Five more guides (2026-11-05) — still no shared primary intent
+Each row owns a keyword the earlier 16 posts do not. They link sideways and do not retitle a live page.
+
+| URL | Primary intent | Nearest live sibling, and the line that keeps them apart |
+|---|---|---|
+| `/blog/hsa-fsa-nebraska-paycheck.html` | Payroll HSA and health FSA: taxable wages, FICA, and take-home | 401(k) guide owns the retirement deferral. This page only contrasts FICA. |
+| `/blog/nebraska-estimated-tax-payments.html` | Form 1040N-ES for 1099 and side income | 1040N guide owns withholding versus the return. This page owns the $500 test and the voucher dates. |
+| `/blog/nebraska-tipped-paycheck.html` | Tip withholding, FICA on tips, stub lines | Minimum-wage guide owns the $2.13 cash-wage floor. This page links there and does not restate it. |
+| `/blog/nebraska-standard-deduction-paycheck.html` | Nebraska standard deduction on Form 1040N versus what withholding subtracts | Brackets guide owns the rates. Circular EN owns the allowance. This page owns the deduction amounts. |
+| `/blog/nebraska-child-care-tax-credit-paycheck.html` | Nebraska child care credits, and the federal child tax credit, as return items | W-4N guide owns allowance counts. This page does not say how many to claim. |
+
+| From (body) | New inbound targets |
+|---|---|
+| index deductions | hsa-fsa |
+| 401k, fica, take-home | hsa-fsa |
+| fica, 1040n, payroll | estimated tax |
+| fica, minimum wage, hourly, pay stub | tipped paycheck |
+| brackets, 1040n, state tax rate | standard deduction |
+| 1040n, w4n, brackets | child care credit |
 
 ## SEO/AEO/GEO meta pass (Nov 5, 2026)
 - Slugs kept (already keyword-rich; renaming would lose equity with no KW gain). No link/sitemap changes needed.

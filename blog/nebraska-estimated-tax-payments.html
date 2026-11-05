@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="aT-_To54tuHU7xgf4H4Hu3deLyW_8XjMq0NQvhRLbXE" />
+  <title>Nebraska Estimated Tax Payments vs a W-2 Paycheck</title>
+  <meta name="description" content="Nebraska estimated tax payments for 1099 and side income: the $500 test, Form 1040N-ES due dates, and how vouchers differ from W-2 paycheck withholding." />
+  <link rel="canonical" href="https://nebraskapaycheckcalculator.com/blog/nebraska-estimated-tax-payments" />
+  <meta name="robots" content="index,follow" />
+  <style>
+    html { scrollbar-gutter: stable; }
+    img { max-width: 100%; height: auto; }
+    :root {
+      --bg: #f3f6fb;
+      --ink: #122033;
+      --muted: #5b6b7c;
+      --line: #d5deea;
+      --card: #fff;
+      --blue: #1a5fb4;
+      --blue-dark: #134a8c;
+      --soft: #e8f0fb;
+      --red: #b42318;
+      --shadow: 0 8px 24px rgba(18,32,51,.06);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .note-bar { background: #0f2a4a; color: #dcebff; text-align: center; font-size: 13px; padding: 9px 12px; }
+    .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+    header h1 { margin: 0 0 8px; font-size: clamp(1.85rem, 4vw, 2.55rem); letter-spacing: -.02em; line-height: 1.15; }
+    header p { margin: 0 0 22px; color: var(--muted); max-width: 62ch; }
+    .calc { display: grid; grid-template-columns: 1.05fr .95fr; gap: 16px; margin-bottom: 34px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 20px; }
+    .card h2 { margin: 0 0 14px; font-size: 1.15rem; }
+    label { display: block; font-size: 13px; font-weight: 700; margin: 0 0 6px; }
+    .hint { font-weight: 500; color: var(--muted); font-size: 12px; }
+    .field, select { width: 100%; border: 1px solid #c7d3e0; border-radius: 10px; padding: 11px 12px; font: inherit; margin-bottom: 12px; background: #fff; }
+    .seg { display: flex; gap: 8px; margin-bottom: 12px; }
+    .seg button { flex: 1; border: 1px solid #c7d3e0; background: #fff; border-radius: 999px; padding: 9px 10px; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .seg button.active { background: var(--soft); color: var(--blue-dark); border-color: #9bb8e0; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn { width: 100%; border: 0; border-radius: 10px; padding: 12px 14px; background: var(--blue); color: #fff; font-weight: 800; cursor: pointer; }
+    .btn:hover { background: var(--blue-dark); }
+    .net { background: var(--soft); border: 1px solid #b7cceb; border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+    .net .k { font-size: 13px; font-weight: 700; color: var(--blue-dark); }
+    .net .v { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin-top: 2px; }
+    .net .s { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .line { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #edf1f6; font-size: 14px; }
+    .line:last-child { border-bottom: 0; font-weight: 800; }
+    .neg { color: var(--red); font-weight: 700; }
+    .zero { color: var(--blue-dark); font-weight: 700; }
+    .tiny { margin-top: 10px; font-size: 12px; color: var(--muted); }
+    .section { margin-top: 28px; }
+    .section h2 { margin: 0 0 10px; font-size: 1.45rem; }
+    .section p, .section li { color: var(--muted); }
+    .steps { display: grid; gap: 10px; }
+    .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; grid-template-columns: 42px 1fr; gap: 10px; align-items: start; }
+    .step b { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--soft); color: var(--blue-dark); }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tile { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+    .tile strong { display: block; margin-bottom: 4px; }
+    .tile span { color: var(--muted); font-size: 13px; }
+    .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq p { margin: 8px 0 0; }
+    footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;table-layout:fixed;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:12px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line);overflow-wrap:break-word}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:2px solid #c5d0de}
+    .table th:first-child,.table td:first-child{text-align:left}
+    .table th:not(:first-child):not(:last-child),.table td:not(:first-child):not(:last-child){text-align:right;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+    .table th:last-child,.table td:last-child{text-align:right}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
+    .table tr > :nth-child(1):nth-last-child(2){width:62%}
+    .table tr > :nth-child(2):nth-last-child(1){width:38%}
+    .table tr > :nth-child(1):nth-last-child(3){width:42%}
+    .table tr > :nth-child(2):nth-last-child(2){width:22%}
+    .table tr > :nth-child(3):nth-last-child(1){width:36%}
+    .table.num-3 tr > :nth-child(1):nth-last-child(3){width:34%}
+    .table.num-3 tr > :nth-child(2):nth-last-child(2){width:33%}
+    .table.num-3 tr > :nth-child(3):nth-last-child(1){width:33%}
+    .table tr > :nth-child(1):nth-last-child(4){width:28%}
+    .table tr > :nth-child(2):nth-last-child(3){width:14%}
+    .table tr > :nth-child(3):nth-last-child(2){width:14%}
+    .table tr > :nth-child(4):nth-last-child(1){width:44%}
+    @media (max-width:700px){
+      .table th,.table td{padding:10px 8px}
+      .table tr > :nth-child(1):nth-last-child(3){width:40%}
+      .table tr > :nth-child(2):nth-last-child(2){width:28%}
+      .table tr > :nth-child(3):nth-last-child(1){width:32%}
+    }
+    .section h3{margin:16px 0 6px;font-size:1.1rem}
+    .links a{margin-right:14px}
+
+    .site-nav{display:flex;gap:18px;flex-wrap:wrap;padding:12px 0;margin-bottom:14px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+    .site-nav a[aria-current]{color:var(--ink)}
+    .related{margin-top:30px;background:var(--soft);border:1px solid #b7cceb;border-radius:14px;padding:16px 18px}
+    .related h2{margin:0 0 8px;font-size:1.15rem}.related ul{margin:0;padding-left:18px}.related li{color:var(--muted);margin:4px 0}
+    footer nav{margin-top:8px}
+    .site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:14px 0;margin-bottom:10px;border-bottom:1px solid var(--line)}
+    .site-header .brand{font-weight:800;font-size:17px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+    .site-header .brand span{color:var(--blue)}
+    .site-header .site-nav{border:0;margin:0;padding:0}
+    .site-nav a{text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
+    .site-nav a[aria-current]{border-bottom-color:var(--blue)}
+    .breadcrumbs{font-size:13px;color:var(--muted);margin:0 0 16px}
+    .breadcrumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+    .breadcrumbs li+li::before{content:"\203A";margin-right:6px;color:var(--muted)}
+    .breadcrumbs a{color:var(--blue);text-decoration:none}
+    .site-footer{text-align:left;margin-top:40px;padding:24px 0 12px}
+    .site-footer .footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:18px}
+    .site-footer h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:0 0 8px}
+    .site-footer ul{list-style:none;margin:0;padding:0}
+    .site-footer li{margin:4px 0}
+    .site-footer a{color:var(--blue);text-decoration:none}
+    .site-footer .disclaimer{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
+    .site-footer .copy{margin:6px 0 0;font-size:12px}
+  </style>
+
+
+  <!-- seo-meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nebraska Paycheck Calculator" />
+  <meta property="og:title" content="Nebraska Estimated Tax Payments vs a W-2 Paycheck" />
+  <meta property="og:description" content="Nebraska estimated tax payments for 1099 and side income: the $500 test, Form 1040N-ES due dates, and how vouchers differ from W-2 paycheck withholding." />
+  <meta property="og:url" content="https://nebraskapaycheckcalculator.com/blog/nebraska-estimated-tax-payments" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Nebraska Paycheck Calculator — 2027 take-home pay after federal, FICA, and Nebraska tax" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta name="twitter:title" content="Nebraska Estimated Tax Payments vs a W-2 Paycheck" />
+  <meta name="twitter:description" content="Nebraska estimated tax payments for 1099 and side income: the $500 test, Form 1040N-ES due dates, and how vouchers differ from W-2 paycheck withholding." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nebraskapaycheckcalculator.com/#org","name":"Nebraska Paycheck Calculator","url":"https://nebraskapaycheckcalculator.com/"},{"@type":"BlogPosting","headline":"Nebraska Estimated Tax Payments and a W-2 Paycheck","description":"Nebraska estimated tax payments for 1099 and side income: the $500 test, Form 1040N-ES due dates, and how vouchers differ from W-2 paycheck withholding.","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-estimated-tax-payments","mainEntityOfPage":"https://nebraskapaycheckcalculator.com/blog/nebraska-estimated-tax-payments","inLanguage":"en-US","dateModified":"2026-11-05","author":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"publisher":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"about":"nebraska estimated tax payments"},{"@type":"WebPage","@id":"https://nebraskapaycheckcalculator.com/blog/nebraska-estimated-tax-payments#webpage","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-estimated-tax-payments","name":"Nebraska Estimated Tax Payments vs a W-2 Paycheck","description":"Nebraska estimated tax payments for 1099 and side income: the $500 test, Form 1040N-ES due dates, and how vouchers differ from W-2 paycheck withholding.","isPartOf":{"@id":"https://nebraskapaycheckcalculator.com/#website"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".faq summary + p","details p"]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nebraskapaycheckcalculator.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://nebraskapaycheckcalculator.com/blog/"},{"@type":"ListItem","position":3,"name":"Nebraska Estimated Tax Payments and a W-2 Paycheck","item":"https://nebraskapaycheckcalculator.com/blog/nebraska-estimated-tax-payments"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who has to make Nebraska estimated tax payments?","acceptedAnswer":{"@type":"Answer","text":"Residents and nonresidents who expect Nebraska income tax, after the personal exemption credit, to exceed withholding and other credits by $500 or more. The 2026 Form 1040N-ES worksheet tells you to stop when that gap is under $500."}},{"@type":"Question","name":"When are Nebraska estimated payments due?","acceptedAnswer":{"@type":"Answer","text":"The 2026 vouchers are due April 15, June 15, September 15, and January 15 of the next year. A later tax year uses those same quarter points on that year's vouchers. A weekend or legal holiday moves the date to the next business day."}},{"@type":"Question","name":"Can extra W-2 withholding replace the vouchers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Nebraska tax withheld from wages counts toward the required prepayment. Extra withholding on the W-4N is still withholding. A Form 1040N-ES payment is a separate quarterly payment you make yourself."}},{"@type":"Question","name":"Does the paycheck calculator include 1099 income in Nebraska tax?","acceptedAnswer":{"@type":"Answer","text":"No. The other-income field raises federal withholding only. Nebraska withholding stays on the wage the employer is paying. Side income is prepaid with extra Nebraska withholding or with Form 1040N-ES."}}]}]}</script>
+  <!-- /seo-meta -->
+</head>
+<body>
+  <div class="note-bar">Educational guide only. Not tax, legal, or payroll advice.</div>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="/">Nebraska <span>Paycheck</span> Calculator</a>
+      <nav class="site-nav" aria-label="Main"><a href="/">Home</a><a href="/hourly">Hourly</a><a href="/tax">Tax</a><a href="/blog/">Guides</a></nav>
+    </header>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li aria-current="page">Nebraska Estimated Tax Payments and a W-2 Paycheck</li></ol></nav>
+    <header>
+      <h1>Nebraska Estimated Tax Payments and a W-2 Paycheck</h1>
+      <p>Form 1040N-ES for income the Friday check never withholds</p>
+    </header>
+
+    <section class="section">
+      <h2>The Friday check never sees the 1099</h2>
+      <p>Nebraska estimated tax is the prepayment for income that no employer withheld on. A W-2 job already sends Nebraska income tax to the Department of Revenue on every payday. A side business, a 1099-NEC, rent, a pension with nothing withheld, or investment income does not. Form 1040N-ES is the voucher for that gap. The paycheck is a different prepayment, on a different calendar.</p>
+      <p>This site's reference employee earns $60,000, files single, claims one W-4N allowance, is paid biweekly, and has a pay date in 2027. Each check withholds $73.80 of Nebraska tax. Across 26 checks that is $1,918.80. A $20,000 payment from a client does not change those checks. The employer never received the 1099, so Circular EN never saw it. Box 17 on the W-2 will still be the tax withheld from wages.</p>
+      <p>The return is where the wage and the side income meet. Why withholding and Form 1040N can disagree even when every stub was right is <a href="/blog/nebraska-1040n-vs-withholding">Nebraska Form 1040N vs paycheck withholding</a>. This page stays on the quarterly payment: who has to make one, when it is due, and why typing the side income into a paycheck tool does not send it.</p>
+    </section>
+    <section class="section">
+      <h2>The $500 test</h2>
+      <p>The 2026 Form 1040N-ES instructions say every resident and every nonresident must make estimated payments if Nebraska income tax, after Nebraska personal exemption credits, is expected to exceed income tax withholding and other credits by $500 or more. The worksheet then says to stop if the estimated tax after credits, minus withholding, is under $500. Under that line, vouchers are allowed and they are not required.</p>
+      <p>The test is a tax test, not a gross-income test. A $20,000 1099 does not automatically mean a $500 voucher. A small gig on top of a job that already withholds can stay under the line. A year of self-employment with little or no withholding often will not. The personal exemption credit and other credits come off before you measure the $500. A child care credit, if you actually have one, is one of those credits. It is claimed on the return. It is not a reason to skip a voucher you have not measured.</p>
+      <p>Withholding counts. That includes Nebraska tax taken from wages and Nebraska tax taken from a pension or similar payment. Extra dollars you asked the employer to add on the W-4N count as withholding too. A voucher you mail or pay electronically is a separate payment. Both can cover the year's bill. They do not land in the same box on the W-2.</p>
+    </section>
+    <section class="section">
+      <h2>The four dates on the 2026 vouchers</h2>
+      <p>For a 2026 calendar year the instructions set four installments. You can pay the full estimate with the first one, or split it. If a due date falls on a Saturday, Sunday, or legal holiday, the next business day is the due date.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>Installment</th><th>Share, if you start in April</th><th>2026 voucher due date</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>One quarter</td><td>April 15, 2026</td></tr>
+          <tr><td>2</td><td>One quarter</td><td>June 15, 2026</td></tr>
+          <tr><td>3</td><td>One quarter</td><td>September 15, 2026</td></tr>
+          <tr><td>4</td><td>One quarter</td><td>January 15, 2027</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>A 2027 tax year follows the same quarter points: the 15th day of the fourth, sixth, and ninth months, and the 15th day of the first month of the next year. This page does not print a 2027 voucher set that has not been issued. Use the vouchers for the year you are paying. Fiscal-year filers move those same four points onto their own year.</p>
+      <p>Starting late changes the split, not the idea. The 2026 worksheet catches you up: half of the remaining amount on the June date if that is your first payment, three quarters on the September date if you start then, and the rest on the January date.</p>
+      <p>An electronic payment is treated as on time when it is completed, with a confirmation, before 5:00 p.m. Central time on the due date. Keep the confirmation. A paper voucher is the other route.</p>
+    </section>
+    <section class="section">
+      <h2>Safe harbor is a penalty rule, and April can still want a check</h2>
+      <p>The 2026 worksheet's required annual payment, the amount aimed at avoiding an underpayment penalty, is the smaller of two figures. One is 90% of the current year's Nebraska tax. The other is the tax shown on last year's Nebraska return, or 110% of that tax if you are not a farmer or fisher and last year's federal adjusted gross income was more than $150,000, or more than $75,000 if this year's filing status is married filing separately.</p>
+      <p>Farmers, ranchers, and fishers use 66 2/3% in place of the 90% figure. If at least two-thirds of gross income for the prior year or the current year is from farming, ranching, or fishing, the instructions allow the whole estimate to be paid by the January date. Filing Form 1040N by March 1 of the next year and paying the tax then can take the place of those estimates. That rule is about the source of the income. A W-2 job with a small garden does not become a farm year because the January date looks convenient.</p>
+      <p>Paying the safe-harbor amount can still leave a balance due when you file. The instructions say so. The penalty rule and the bill are different. A large 1099 in December can make the April return ask for more even though the four vouchers matched last year's tax. Increase a later installment when the year gets bigger. The amended computation on the worksheet is the arithmetic. Waiting until April is legal. It is also how a penalty gets measured if the prepayment fell short and was late.</p>
+    </section>
+    <section class="section">
+      <h2>Extra withholding and a voucher are the same dollars on two calendars</h2>
+      <p>An employee can ask the employer to withhold more Nebraska tax instead of making four payments. The 2026 instructions say that directly. The form that carries the extra dollar amount is the W-4N. How the allowance count and the extra-withholding line work is <a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a>. This page does not retell that form.</p>
+      <p>On the $60,000 biweekly example, an extra $25 of Nebraska withholding each check moves the state line from $73.80 to $98.80 and the deposit from $1,864.28 to $1,839.28. Across 26 checks that extra is $650. Those $650 count as withholding on the estimated-tax worksheet. Four vouchers of $162.50 would move the same $650 on the quarter dates instead of on Fridays. Same dollars, different calendar, different line on the return. Withholding shows up in the W-2. The voucher shows up as an estimated payment.</p>
+      <p>Neither figure is "the tax on $20,000 of side income." Multiplying side income by the 3.20% withholding share from the $60,000 wages is not the worksheet. That 3.20% is $1,918.80 divided by $60,000 of wages. The worksheet starts from estimated federal adjusted gross income, subtracts the Nebraska standard deduction or Nebraska itemized deductions, applies adjustments, runs the rate schedule, and then subtracts credits. The deduction amounts are <a href="/blog/nebraska-standard-deduction-paycheck">Nebraska standard deduction</a>. The rate schedule is <a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a>. This page owns the due dates and the $500 test.</p>
+    </section>
+    <section class="section">
+      <h2>The calculator's other-income box is a federal lever</h2>
+      <p>The paycheck calculator has a field for other income. On this $60,000 setup, typing $20,000 there raises federal withholding from $193.08 to $260.38. Nebraska stays $73.80. Net falls from $1,864.28 to $1,796.97 because of the federal line only. The field behaves like the federal W-4 step for other income. It does not create a Nebraska estimated payment, and it does not add $20,000 to the Circular EN wage.</p>
+      <p>That is useful, and it is easy to misread. A larger federal line means the day-job check is prepaying more federal income tax. It does not mean the Nebraska Department of Revenue received anything on the 1099. If the Nebraska gap is the problem, the levers are extra Nebraska withholding or Form 1040N-ES. Leaving the other-income field blank is the right model of the stub you have today. Filling it in is a model of a W-4 you have not given the employer yet.</p>
+      <p>Use the <a href="/">Nebraska paycheck calculator</a> for the W-2 deposit. Use <a href="/tax">Nebraska tax withholding</a> when the only number you want is the Nebraska line on that deposit. Neither tool fills out a voucher. Annualizing a 1099 into the salary box will invent a paycheck you are not receiving and will withhold as if an employer saw the whole amount. Do that only when you are asking a what-if about extra withholding, and label it as a what-if.</p>
+    </section>
+    <section class="section">
+      <h2>Self-employment tax is a federal payment</h2>
+      <p>Net profit on a side business can bring federal self-employment tax: both halves of Social Security and Medicare, the 15.3% people quote, with the Social Security portion capped once wages and self-employment earnings share the wage base. In 2027 that wage base is $192,300. None of that 15.3% is Nebraska income tax. A Form 1040N-ES payment does not pay it. A federal estimate, on the federal voucher, is the parallel payment to the IRS.</p>
+      <p>A W-2 job that already used part of the wage base leaves less room on the self-employment side. The employer match on the wage, and the fact that a 1099-NEC does not have Nebraska wage withholding or a FICA match, is <a href="/blog/nebraska-payroll-taxes">Nebraska payroll taxes</a>. The employee-versus-both-halves explanation is <a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a>. Half of the self-employment tax can reduce the income-tax computation. That deduction is a return item. It is not a line on Friday's stub.</p>
+    </section>
+    <section class="section">
+      <h2>Two states, one resident return</h2>
+      <p>A Nebraska resident is taxed on income from everywhere, with a credit in many cases for tax paid to another state. Side income earned across the river can produce a Nebraska voucher even when another state also wants a payment. The credit is claimed on the resident return. It does not lower the Nebraska withholding on an Omaha W-2, and it does not lower an Iowa withholding line on an Iowa stub.</p>
+      <p>Nebraska and Iowa do not have wage reciprocity. A Council Bluffs commute is <a href="/blog/nebraska-iowa-paycheck">Nebraska vs Iowa paycheck</a>. This page does not estimate Iowa's voucher. If the side income and the job are both Nebraska-source, one state's estimate is the whole state question, and the federal estimate is still separate.</p>
+      <p>Nonresidents with Nebraska-source income use the same $500 test. Their Nebraska tax is the Nebraska portion on the nonresident schedule. The paycheck tool assumes a Nebraska wage and will not split a 1099 between two states.</p>
+    </section>
+    <section class="section">
+      <h2>Frequently asked questions</h2>
+      <details><summary>Who has to make Nebraska estimated tax payments?</summary><p>Residents and nonresidents who expect Nebraska income tax, after the personal exemption credit, to exceed withholding and other credits by $500 or more. The 2026 Form 1040N-ES worksheet tells you to stop when that gap is under $500.</p></details>
+      <details><summary>When are Nebraska estimated payments due?</summary><p>The 2026 vouchers are due April 15, June 15, September 15, and January 15 of the next year. A later tax year uses those same quarter points on that year's vouchers. A weekend or legal holiday moves the date to the next business day.</p></details>
+      <details><summary>Can extra W-2 withholding replace the vouchers?</summary><p>Yes. Nebraska tax withheld from wages counts toward the required prepayment. Extra withholding on the W-4N is still withholding. A Form 1040N-ES payment is a separate quarterly payment you make yourself.</p></details>
+      <details><summary>Does the paycheck calculator include 1099 income in Nebraska tax?</summary><p>No. The other-income field raises federal withholding only. Nebraska withholding stays on the wage the employer is paying. Side income is prepaid with extra Nebraska withholding or with Form 1040N-ES.</p></details>
+    </section>
+
+
+    <aside class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/">Nebraska paycheck calculator</a> — the W-2 deposit, not the voucher</li><li><a href="/blog/nebraska-1040n-vs-withholding">Nebraska Form 1040N vs paycheck withholding</a> — prepayment versus the return</li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a> — self-employment tax is a different payment</li><li><a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a> — extra withholding instead of a voucher</li><li><a href="/blog/">Nebraska pay and tax guides</a></li></ul></aside>
+    <footer class="site-footer">
+      <div class="footer-cols">
+        <nav aria-label="Tools"><h2>Tools</h2><ul><li><a href="/">Nebraska paycheck calculator</a></li><li><a href="/hourly">hourly paycheck calculator</a></li><li><a href="/tax">Nebraska tax withholding</a></li></ul></nav>
+        <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="/blog/">Nebraska pay and tax guides</a></li><li><a href="/blog/nebraska-take-home-pay">Nebraska take-home pay</a></li><li><a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a></li><li><a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a></li><li><a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a></li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a></li></ul></nav>
+        <nav aria-label="Company and legal"><h2>Company &amp; Legal</h2><ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Use</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap">Sitemap</a></li></ul></nav>
+      </div>
+      <p class="disclaimer">Independent educational guide · Not tax, legal, or payroll advice · Not affiliated with the IRS, the Nebraska Department of Revenue, or any payroll provider. Figures are estimates; confirm with official sources.</p>
+      <p class="copy">© 2027 Nebraska Paycheck Calculator</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="aT-_To54tuHU7xgf4H4Hu3deLyW_8XjMq0NQvhRLbXE" />
+  <title>Tip Withholding on a Nebraska Paycheck in 2027</title>
+  <meta name="description" content="Tip withholding on a Nebraska paycheck in 2027: FICA on reported tips, federal and state income tax on the stub, and cash wages that cannot cover the tax." />
+  <link rel="canonical" href="https://nebraskapaycheckcalculator.com/blog/nebraska-tipped-paycheck" />
+  <meta name="robots" content="index,follow" />
+  <style>
+    html { scrollbar-gutter: stable; }
+    img { max-width: 100%; height: auto; }
+    :root {
+      --bg: #f3f6fb;
+      --ink: #122033;
+      --muted: #5b6b7c;
+      --line: #d5deea;
+      --card: #fff;
+      --blue: #1a5fb4;
+      --blue-dark: #134a8c;
+      --soft: #e8f0fb;
+      --red: #b42318;
+      --shadow: 0 8px 24px rgba(18,32,51,.06);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .note-bar { background: #0f2a4a; color: #dcebff; text-align: center; font-size: 13px; padding: 9px 12px; }
+    .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+    header h1 { margin: 0 0 8px; font-size: clamp(1.85rem, 4vw, 2.55rem); letter-spacing: -.02em; line-height: 1.15; }
+    header p { margin: 0 0 22px; color: var(--muted); max-width: 62ch; }
+    .calc { display: grid; grid-template-columns: 1.05fr .95fr; gap: 16px; margin-bottom: 34px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 20px; }
+    .card h2 { margin: 0 0 14px; font-size: 1.15rem; }
+    label { display: block; font-size: 13px; font-weight: 700; margin: 0 0 6px; }
+    .hint { font-weight: 500; color: var(--muted); font-size: 12px; }
+    .field, select { width: 100%; border: 1px solid #c7d3e0; border-radius: 10px; padding: 11px 12px; font: inherit; margin-bottom: 12px; background: #fff; }
+    .seg { display: flex; gap: 8px; margin-bottom: 12px; }
+    .seg button { flex: 1; border: 1px solid #c7d3e0; background: #fff; border-radius: 999px; padding: 9px 10px; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .seg button.active { background: var(--soft); color: var(--blue-dark); border-color: #9bb8e0; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn { width: 100%; border: 0; border-radius: 10px; padding: 12px 14px; background: var(--blue); color: #fff; font-weight: 800; cursor: pointer; }
+    .btn:hover { background: var(--blue-dark); }
+    .net { background: var(--soft); border: 1px solid #b7cceb; border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+    .net .k { font-size: 13px; font-weight: 700; color: var(--blue-dark); }
+    .net .v { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin-top: 2px; }
+    .net .s { color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .line { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid #edf1f6; font-size: 14px; }
+    .line:last-child { border-bottom: 0; font-weight: 800; }
+    .neg { color: var(--red); font-weight: 700; }
+    .zero { color: var(--blue-dark); font-weight: 700; }
+    .tiny { margin-top: 10px; font-size: 12px; color: var(--muted); }
+    .section { margin-top: 28px; }
+    .section h2 { margin: 0 0 10px; font-size: 1.45rem; }
+    .section p, .section li { color: var(--muted); }
+    .steps { display: grid; gap: 10px; }
+    .step { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; grid-template-columns: 42px 1fr; gap: 10px; align-items: start; }
+    .step b { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--soft); color: var(--blue-dark); }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .tile { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; box-shadow: var(--shadow); }
+    .tile strong { display: block; margin-bottom: 4px; }
+    .tile span { color: var(--muted); font-size: 13px; }
+    .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq p { margin: 8px 0 0; }
+    footer { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 860px) { .calc, .grid3, .row2 { grid-template-columns: 1fr; } }
+    .table-scroll{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .table{width:100%;table-layout:fixed;border-collapse:collapse;background:#fff;font-size:14px;line-height:1.45}
+    .table th,.table td{padding:12px 14px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line);overflow-wrap:break-word}
+    .table th{font-weight:800;background:#f4f7fb;color:var(--ink);border-bottom:2px solid #c5d0de}
+    .table th:first-child,.table td:first-child{text-align:left}
+    .table th:not(:first-child):not(:last-child),.table td:not(:first-child):not(:last-child){text-align:right;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+    .table th:last-child,.table td:last-child{text-align:right}
+    .table tbody tr:last-child td{border-bottom:0}
+    .table tbody tr:nth-child(even) td{background:#f7f9fb}
+    .table tr > :nth-child(1):nth-last-child(2){width:62%}
+    .table tr > :nth-child(2):nth-last-child(1){width:38%}
+    .table tr > :nth-child(1):nth-last-child(3){width:42%}
+    .table tr > :nth-child(2):nth-last-child(2){width:22%}
+    .table tr > :nth-child(3):nth-last-child(1){width:36%}
+    .table.num-3 tr > :nth-child(1):nth-last-child(3){width:34%}
+    .table.num-3 tr > :nth-child(2):nth-last-child(2){width:33%}
+    .table.num-3 tr > :nth-child(3):nth-last-child(1){width:33%}
+    .table tr > :nth-child(1):nth-last-child(4){width:28%}
+    .table tr > :nth-child(2):nth-last-child(3){width:14%}
+    .table tr > :nth-child(3):nth-last-child(2){width:14%}
+    .table tr > :nth-child(4):nth-last-child(1){width:44%}
+    @media (max-width:700px){
+      .table th,.table td{padding:10px 8px}
+      .table tr > :nth-child(1):nth-last-child(3){width:40%}
+      .table tr > :nth-child(2):nth-last-child(2){width:28%}
+      .table tr > :nth-child(3):nth-last-child(1){width:32%}
+    }
+    .section h3{margin:16px 0 6px;font-size:1.1rem}
+    .links a{margin-right:14px}
+
+    .site-nav{display:flex;gap:18px;flex-wrap:wrap;padding:12px 0;margin-bottom:14px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+    .site-nav a[aria-current]{color:var(--ink)}
+    .related{margin-top:30px;background:var(--soft);border:1px solid #b7cceb;border-radius:14px;padding:16px 18px}
+    .related h2{margin:0 0 8px;font-size:1.15rem}.related ul{margin:0;padding-left:18px}.related li{color:var(--muted);margin:4px 0}
+    footer nav{margin-top:8px}
+    .site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:14px 0;margin-bottom:10px;border-bottom:1px solid var(--line)}
+    .site-header .brand{font-weight:800;font-size:17px;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+    .site-header .brand span{color:var(--blue)}
+    .site-header .site-nav{border:0;margin:0;padding:0}
+    .site-nav a{text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent}
+    .site-nav a[aria-current]{border-bottom-color:var(--blue)}
+    .breadcrumbs{font-size:13px;color:var(--muted);margin:0 0 16px}
+    .breadcrumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+    .breadcrumbs li+li::before{content:"\203A";margin-right:6px;color:var(--muted)}
+    .breadcrumbs a{color:var(--blue);text-decoration:none}
+    .site-footer{text-align:left;margin-top:40px;padding:24px 0 12px}
+    .site-footer .footer-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-bottom:18px}
+    .site-footer h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:0 0 8px}
+    .site-footer ul{list-style:none;margin:0;padding:0}
+    .site-footer li{margin:4px 0}
+    .site-footer a{color:var(--blue);text-decoration:none}
+    .site-footer .disclaimer{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
+    .site-footer .copy{margin:6px 0 0;font-size:12px}
+  </style>
+
+
+  <!-- seo-meta -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Nebraska Paycheck Calculator" />
+  <meta property="og:title" content="Tip Withholding on a Nebraska Paycheck in 2027" />
+  <meta property="og:description" content="Tip withholding on a Nebraska paycheck in 2027: FICA on reported tips, federal and state income tax on the stub, and cash wages that cannot cover the tax." />
+  <meta property="og:url" content="https://nebraskapaycheckcalculator.com/blog/nebraska-tipped-paycheck" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Nebraska Paycheck Calculator — 2027 take-home pay after federal, FICA, and Nebraska tax" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://nebraskapaycheckcalculator.com/og.png" />
+  <meta name="twitter:title" content="Tip Withholding on a Nebraska Paycheck in 2027" />
+  <meta name="twitter:description" content="Tip withholding on a Nebraska paycheck in 2027: FICA on reported tips, federal and state income tax on the stub, and cash wages that cannot cover the tax." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://nebraskapaycheckcalculator.com/#org","name":"Nebraska Paycheck Calculator","url":"https://nebraskapaycheckcalculator.com/"},{"@type":"BlogPosting","headline":"Tip Withholding on a Nebraska Paycheck","description":"Tip withholding on a Nebraska paycheck in 2027: FICA on reported tips, federal and state income tax on the stub, and cash wages that cannot cover the tax.","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-tipped-paycheck","mainEntityOfPage":"https://nebraskapaycheckcalculator.com/blog/nebraska-tipped-paycheck","inLanguage":"en-US","dateModified":"2026-11-05","author":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"publisher":{"@id":"https://nebraskapaycheckcalculator.com/#org"},"about":"tip withholding on a nebraska paycheck"},{"@type":"WebPage","@id":"https://nebraskapaycheckcalculator.com/blog/nebraska-tipped-paycheck#webpage","url":"https://nebraskapaycheckcalculator.com/blog/nebraska-tipped-paycheck","name":"Tip Withholding on a Nebraska Paycheck in 2027","description":"Tip withholding on a Nebraska paycheck in 2027: FICA on reported tips, federal and state income tax on the stub, and cash wages that cannot cover the tax.","isPartOf":{"@id":"https://nebraskapaycheckcalculator.com/#website"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".faq summary + p","details p"]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nebraskapaycheckcalculator.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://nebraskapaycheckcalculator.com/blog/"},{"@type":"ListItem","position":3,"name":"Tip Withholding on a Nebraska Paycheck","item":"https://nebraskapaycheckcalculator.com/blog/nebraska-tipped-paycheck"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are tips taxed on a Nebraska paycheck?","acceptedAnswer":{"@type":"Answer","text":"Reported tips are wages. The employer withholds federal income tax, Nebraska income tax, and FICA on them. Cash tips can make the deposit smaller because the tax comes out of the cash wage."}},{"@type":"Question","name":"Does FICA apply to tips in Nebraska?","acceptedAnswer":{"@type":"Answer","text":"Yes. Reported tips are Social Security and Medicare wages. The employee share is withheld from cash wages. Uncollected employee FICA is still owed and is handled on the federal return."}},{"@type":"Question","name":"Where is the $2.13 cash wage explained?","acceptedAnswer":{"@type":"Answer","text":"The cash-wage floor, the makeup pay when tips miss the minimum, and the youth rate are on the Nebraska minimum wage guide. This page does not restate that floor."}},{"@type":"Question","name":"Will a federal tip deduction lower this week's Nebraska withholding?","acceptedAnswer":{"@type":"Answer","text":"No. A deduction for qualified tips, in a year when one is available, is claimed on the return. Reported tips stay in the wage that Circular EN and FICA use on the stub."}}]}]}</script>
+  <!-- /seo-meta -->
+</head>
+<body>
+  <div class="note-bar">Educational guide only. Not tax, legal, or payroll advice.</div>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="/">Nebraska <span>Paycheck</span> Calculator</a>
+      <nav class="site-nav" aria-label="Main"><a href="/">Home</a><a href="/hourly">Hourly</a><a href="/tax">Tax</a><a href="/blog/">Guides</a></nav>
+    </header>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Guides</a></li><li aria-current="page">Tip Withholding on a Nebraska Paycheck</li></ol></nav>
+    <header>
+      <h1>Tip Withholding on a Nebraska Paycheck</h1>
+      <p>Reported tips, FICA, and the cash left after tax</p>
+    </header>
+
+    <section class="section">
+      <h2>Reported tips are wages on the stub</h2>
+      <p>Tips a worker reports to the employer are wages for federal income tax, for Nebraska income tax, and for FICA. The employer withholds those taxes. Cash the guest left on the table can already be in the worker's pocket. The tax on that cash still has to come from somewhere, and the usual somewhere is the cash wage in the paycheck. The deposit gets smaller. The tips do not become tax-free because they skipped the direct deposit.</p>
+      <p>Charged tips often ride in the paycheck itself. They show up in the earnings block and they are paid on payday, so the gross and the deposit both include them. Cash tips often show up as "reported tips" or a similar memo. They increase the wage the tax is figured on, and they may not increase the deposit, because the worker already took the cash. Reading those labels is part of <a href="/blog/nebraska-pay-stub">how to read a Nebraska pay stub</a>. This page is the tax on the tips, not a tour of every stub column.</p>
+      <p>The cash wage an employer may pay before tips, and the makeup pay when tips miss the minimum, is the <a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a> guide. This page does not restate that floor. It starts from tips that were reported and asks which lines on the check move.</p>
+    </section>
+    <section class="section">
+      <h2>A $400 cash wage and $800 of reported tips</h2>
+      <p>Every tax figure below is this site's calculator for a 2027 pay date. The worker is single, claims one W-4N allowance, is paid biweekly, and has no pre-tax benefits. The tool has no separate tip box. Reported tips plus cash wages are entered as wages, which is how payroll treats tips the employer already has. Cash wages of $400 and reported tips of $800 are $1,200 of wages this check. Across 26 checks that is $31,200 for the year, so the row is a $31,200 salary.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>Biweekly line</th><th>Amount</th></tr></thead>
+        <tbody>
+          <tr><td>Wages the table sees</td><td>$1,200.00</td></tr>
+          <tr><td>Federal income tax</td><td>$60.15</td></tr>
+          <tr><td>Social Security</td><td>$74.40</td></tr>
+          <tr><td>Medicare</td><td>$17.40</td></tr>
+          <tr><td>FICA together</td><td>$91.80</td></tr>
+          <tr><td>Nebraska income tax</td><td>$31.03</td></tr>
+          <tr><td>Net if the whole $1,200 is paid in the check</td><td>$1,017.01</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>FICA is 7.65% of the $1,200. Social Security is $74.40 and Medicare is $17.40. Nebraska withholding is $31.03. Federal withholding is $60.15. Federal dollars still use the 2026 Publication 15-T percentage method, which is what the tool uses until a 2027 federal edition is the one loaded. Nebraska dollars use the 2027 Circular EN table. One allowance removes $96.54 from the biweekly wage before that table runs.</p>
+      <p>If the employer pays the whole $1,200 on payday, because the tips were charged and are in the check, the deposit is $1,017.01. If the $800 was already received in cash, the same taxes still come out of the $400 cash wage. The taxes add to $182.98. The employer's deposit is $400 minus $182.98, or $217.02. The worker also has the $800. The value for the period is still about $1,017. The stub looks thin because the tips did not ride in the deposit. Both stories are the same withholding. They are not the same envelope of cash on Friday.</p>
+    </section>
+    <section class="section">
+      <h2>When the cash wage cannot cover the tax</h2>
+      <p>The employer withholds the employee share of FICA on reported tips from the worker's cash wages. If this check's cash wages are too small, later cash wages in the year are the next place that withholding lands. What still cannot be collected does not disappear. The unpaid employee Social Security and Medicare remain the worker's, and they are settled with the federal return. They are not a Nebraska income-tax rate, and they are not a tip the employer gets to keep.</p>
+      <p>Federal income tax and Nebraska income tax that could not be taken from a small cash wage are also still part of the year's prepayment gap. The stub can be "right" and April can still want money, because the cash wage was never large enough to hold the tax. That gap is the same kind of gap as any other short withholding. The return side is <a href="/blog/nebraska-1040n-vs-withholding">Nebraska Form 1040N vs paycheck withholding</a>. The FICA side, including tips as FICA wages, is <a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a>.</p>
+      <p>Allocated tips are a different line. A large food or beverage employer may allocate tips when reported tips fall short of the employer's allocation method. Allocated tips are reported to the worker. The employer does not withhold on them. They still belong on the return. The examples on this page are reported tips the employer already has, which are the tips that change the stub. Do not subtract allocated tips from the deposit a second time. They were never in it.</p>
+    </section>
+    <section class="section">
+      <h2>The $20 month, and tips that never hit payroll</h2>
+      <p>Tips of $20 or more in a calendar month are reported to the employer. The employer then withholds. A month under $20 does not have that payroll report. Those tips can still be taxable on the return. They will not appear on the stub, so the Friday deposit will not have withheld anything for them. A year of small cash months can look lightly taxed on the W-2 and still belong in income when you file.</p>
+      <p>Workers report the month's tips to the employer on the employer's timeline, commonly by the 10th of the next month. A tip that is reported late can show up on a later check. The year-to-date column is where you see whether the year's tips were actually added to Social Security wages. In 2027 the 6.2% stops once Social Security wages at that employer pass $192,300. Tips count toward that cap. Medicare does not stop. The cap itself is the FICA guide. This page only notes that reported tips are in the wage that the cap measures.</p>
+    </section>
+    <section class="section">
+      <h2>A weekly version of the same $31,200</h2>
+      <p>The hourly tool can carry the same year if you put the tips inside the rate. Thirty hours at $20, with that $20 already including average tips, is $600 a week and $31,200 a year. Single, one allowance, no pre-tax benefits, weekly, 2027 pay date: federal withholding is $30.08, FICA is $45.90, Nebraska is $15.52, and net is $508.51.</p>
+      <div class="table-scroll">
+      <table class="table">
+        <thead><tr><th>Same $31,200 year</th><th>Weekly</th><th>Biweekly</th></tr></thead>
+        <tbody>
+          <tr><td>Gross this check</td><td>$600.00</td><td>$1,200.00</td></tr>
+          <tr><td>Federal income tax</td><td>$30.08</td><td>$60.15</td></tr>
+          <tr><td>FICA</td><td>$45.90</td><td>$91.80</td></tr>
+          <tr><td>Nebraska income tax</td><td>$15.52</td><td>$31.03</td></tr>
+          <tr><td>Net this check</td><td>$508.51</td><td>$1,017.01</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>FICA matches across the year because 7.65% does not care about the calendar. Nebraska does not match to the penny. Fifty-two weekly checks at $15.52 withhold $806.04. Twenty-six biweekly checks at $31.03 withhold $806.78. The year's difference is under a dollar. That penny gap is the per-period Circular EN table, explained in <a href="/blog/nebraska-circular-en">Nebraska Circular EN</a>. It is not a special tip rate. People who compare a weekly stub to a biweekly friend's stub should compare the year, not one envelope.</p>
+      <p>The $20 rate in this row is an average that already includes tips. It is not a cash wage, and it is not a minimum wage. If the cash wage and the tips are separate on the stub, add them before you decide the calculator "missed" the tax. Entering only the cash wage will understate every tax line.</p>
+    </section>
+    <section class="section">
+      <h2>A federal tip deduction does not rewrite the stub</h2>
+      <p>Reported tips are still wages for withholding. A federal deduction for qualified tips, in a year when one is available, is claimed when you file. It does not remove the 7.65% from the stub. It does not, by itself, change the Circular EN wage. Whether that deduction changes federal adjusted gross income, which is where Form 1040N starts, is a filing question for the year you are filing. Check the instructions for that year before you count on a smaller Friday deposit.</p>
+      <p>The hourly guide says the same thing in shorter form, because hourly workers ask it constantly. This page is the longer version for a check that actually contains tips. Overtime on a tipped job can use a regular rate that includes tips. The premium and the withholding on a heavy week are <a href="/blog/nebraska-overtime-pay">Nebraska overtime pay</a>. This page leaves that math there. A bonus paid to a tipped worker is still a bonus. <a href="/blog/nebraska-bonus-tax">Nebraska bonus tax</a> is the flat withholding method. Tips are not a bonus just because they vary by night.</p>
+    </section>
+    <section class="section">
+      <h2>How to use the tools without inventing a tip line</h2>
+      <p>The <a href="/hourly">hourly paycheck calculator</a> is the right tool when you have a rate and hours. Include reported tips in the wage you type if you want the tax on those tips. The <a href="/">Nebraska paycheck calculator</a> is the same engine with a yearly salary. A $31,200 salary, biweekly, is the $1,200 check in the table above. Neither screen has a box labeled tips. Payroll does not need one in order to withhold. It needs the tips to be in the wage.</p>
+      <p>Leave the rate as cash wages only when you are looking at the cash wage by itself. Say so, or the net will look high and the FICA line will look low next to a real stub that included Thursday's tips. Pre-tax benefits, if a tipped worker has them, come off before the tax. A cafeteria premium reduces FICA wages. A traditional 401(k) does not. Those fields work the same on a tipped check as on any other check. The benefits guide is <a href="/blog/hsa-fsa-nebraska-paycheck">HSA and health FSA on a Nebraska paycheck</a>.</p>
+      <p>City does not change the tip math. Omaha and Lincoln use the same Nebraska tables. A local tax line on a tipped stub should still be zero. If a second state is withholding because the restaurant is across a state line, that is a different return problem. The border case is <a href="/blog/nebraska-iowa-paycheck">Nebraska vs Iowa paycheck</a>.</p>
+    </section>
+    <section class="section">
+      <h2>Frequently asked questions</h2>
+      <details><summary>Are tips taxed on a Nebraska paycheck?</summary><p>Reported tips are wages. The employer withholds federal income tax, Nebraska income tax, and FICA on them. Cash tips can make the deposit smaller because the tax comes out of the cash wage.</p></details>
+      <details><summary>Does FICA apply to tips in Nebraska?</summary><p>Yes. Reported tips are Social Security and Medicare wages. The employee share is withheld from cash wages. Uncollected employee FICA is still owed and is handled on the federal return.</p></details>
+      <details><summary>Where is the $2.13 cash wage explained?</summary><p>The cash-wage floor, the makeup pay when tips miss the minimum, and the youth rate are on the Nebraska minimum wage guide. This page does not restate that floor.</p></details>
+      <details><summary>Will a federal tip deduction lower this week's Nebraska withholding?</summary><p>No. A deduction for qualified tips, in a year when one is available, is claimed on the return. Reported tips stay in the wage that Circular EN and FICA use on the stub.</p></details>
+    </section>
+
+
+    <aside class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/">Nebraska paycheck calculator</a> — include reported tips in the wage you type</li><li><a href="/hourly">hourly paycheck calculator</a> — a rate and hours when the rate already includes tips</li><li><a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a> — the cash-wage floor and makeup pay</li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a> — why reported tips are FICA wages</li><li><a href="/blog/">Nebraska pay and tax guides</a></li></ul></aside>
+    <footer class="site-footer">
+      <div class="footer-cols">
+        <nav aria-label="Tools"><h2>Tools</h2><ul><li><a href="/">Nebraska paycheck calculator</a></li><li><a href="/hourly">hourly paycheck calculator</a></li><li><a href="/tax">Nebraska tax withholding</a></li></ul></nav>
+        <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="/blog/">Nebraska pay and tax guides</a></li><li><a href="/blog/nebraska-take-home-pay">Nebraska take-home pay</a></li><li><a href="/blog/nebraska-income-tax-brackets">Nebraska income tax brackets</a></li><li><a href="/blog/nebraska-minimum-wage">Nebraska minimum wage</a></li><li><a href="/blog/nebraska-w4n-allowances">Nebraska W-4N</a></li><li><a href="/blog/fica-social-security-medicare-paycheck">FICA Social Security and Medicare</a></li></ul></nav>
+        <nav aria-label="Company and legal"><h2>Company &amp; Legal</h2><ul><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li><li><a href="/privacy">Privacy Policy</a></li><li><a href="/terms">Terms of Use</a></li><li><a href="/disclaimer">Disclaimer</a></li><li><a href="/sitemap">Sitemap</a></li></ul></nav>
+      </div>
+      <p class="disclaimer">Independent educational guide · Not tax, legal, or payroll advice · Not affiliated with the IRS, the Nebraska Department of Revenue, or any payroll provider. Figures are estimates; confirm with official sources.</p>
+      <p class="copy">© 2027 Nebraska Paycheck Calculator</p>
+    </footer>
+  </div>
+</body>
+</html>
