@@ -42,14 +42,14 @@
 
 **Guardrails:** Only the pillar receives the exact anchor "Nebraska paycheck calculator" (it appears in the hub box and the existing body links). Each page has at most about 5 related links plus the global nav/footer. No page links to every post except the hub.
 
-Note: the canonical URLs use the placeholder https://nebraskapaycheckcalculator.com/. Replace it with the live domain.
+Canonical host: https://www.nebraskapaycheckcalculator.com/ (www is the Google Search Console property).
 
 ## Blog (/blog/) — informational intent only; never "calculator" in H1/title
 | URL | Primary KW (owned) | Links to | Intent |
 |---|---|---|---|
 | `/blog/` blog/index.html | nebraska pay & tax guides (hub) | all posts, /, /hourly, /tax | Hub |
-| `/blog/nebraska-income-tax-brackets.html` | nebraska income tax brackets | /tax.html, / | Rates by bracket |
-| `/blog/nebraska-state-tax-rate.html` | nebraska state tax rate | /tax.html, / | Quick rate answer |
+| `/blog/nebraska-income-tax-brackets.html` | nebraska tax brackets 2026, nebraska tax brackets 2027 | filing-status thresholds, 2026 vs 2027, phase-in | Bracket table |
+| `/blog/nebraska-state-tax-rate.html` | nebraska state tax rate | effective rate, sales tax, local sales tax, no local wage tax | Overall rate and burden |
 | `/blog/nebraska-minimum-wage.html` | nebraska minimum wage 2027 | /hourly.html, / | $15.26 wage facts |
 | `/blog/nebraska-take-home-pay.html` | nebraska take home pay (explainer) | /, /hourly.html | Gross vs net concepts |
 | `/blog/omaha-lincoln-paycheck.html` | omaha paycheck (city cost context), lincoln | /, /hourly, /tax | City guide, not a calculator |
