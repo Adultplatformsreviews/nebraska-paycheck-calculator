@@ -2,9 +2,10 @@
    Educational only. Not tax, legal, or payroll advice.
    Federal income tax: IRS Publication 15-T (2026) Worksheet 1A percentage method.
    Nebraska: Circular EN percentage-method tables for the pay date's year.
-   2027 Publication 15-T was not available when this file was written, so 2027
-   pay dates still use the 2026 federal income-tax schedules. Social Security
-   wage base and Nebraska tables do switch on January 1, 2027. */
+   2027 filing brackets are in IRS Revenue Procedure 2026-35. The 2027
+   Publication 15-T is an early-release draft, so 2027 pay dates still use the
+   2026 federal income-tax schedules. Social Security wage base and Nebraska
+   tables do switch on January 1, 2027. */
 (function (root, factory) {
   var api = factory();
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
@@ -533,7 +534,7 @@
           '<button class="btn" type="button" data-calc>Calculate take-home</button>' +
           '<details class="pc-assumptions"><summary>Assumptions behind this estimate</summary>' +
             '<ul>' +
-              '<li>Federal income tax follows IRS Publication 15-T (2026) Worksheet 1A for a 2020 or later W-4. Pay dates in 2027 still use those federal schedules because the 2027 edition was not published yet. Withholding is kept in cents.</li>' +
+              '<li>Federal income tax follows IRS Publication 15-T (2026) Worksheet 1A for a 2020 or later W-4. Pay dates in 2027 still use those federal schedules. The IRS has announced 2027 filing brackets, and the 2027 Publication 15-T is only an early-release draft. Withholding is kept in cents.</li>' +
               '<li>Social Security is 6.2% up to $184,500 of 2026 wages or $192,300 of 2027 wages. Medicare is 1.45% on all wages, plus 0.9% Additional Medicare Tax above $200,000. The estimate treats this job as the only job and this pay as the rate for the full year.</li>' +
               '<li>Nebraska tax uses the Circular EN percentage-method table for the paycheck frequency. A 2026 pay date uses the 2026 tables (about 2.26%–4.60%). A 2027 pay date uses the 2027 tables (about 2.26%–4.03%). One allowance is $2,440 in 2026 and $2,510 in 2027.</li>' +
               '<li>Hourly and overtime pay are annualized as weekly amounts × 52, then divided by the number of paychecks. That matches a steady schedule, not a single unusual week on a semi-monthly calendar.</li>' +
